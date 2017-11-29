@@ -1,5 +1,4 @@
 # kubernetes-challenges
-:cloud: Challenges Your Kubernetes Skills And Knowledge
 
 [![Build Status](https://travis-ci.org/DennyZhang/kubernetes-challenges.svg?branch=master)](https://travis-ci.org/DennyZhang/kubernetes-challenges) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
@@ -14,7 +13,6 @@ File me [tickets](https://github.com/DennyZhang/kubernetes-challenges/issues) or
 Table of Contents
 =================
 
-   * [kubernetes-challenges](#kubernetes-challenges)
    * [Scenarios](#scenarios)
       * [Scenario-101: Docker Single-Node Jenkins Deployment I](#scenario-101-docker-single-node-jenkins-deployment-i)
       * [Scenario-102: Docker Single-Node Jenkins Deployment II](#scenario-102-docker-single-node-jenkins-deployment-ii)
@@ -23,12 +21,9 @@ Table of Contents
 
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
-Case study using AWS TechStack to setup Jenkins env
+Challenges Your Kubernetes Skills And Knowledge
 
-**Related GitHub Repos**:
-- [chef-study](https://github.com/DennyZhang/chef-study): Chef Case study from dummies to pros
-- [jenkins-groovy-study](https://github.com/DennyZhang/jenkins-groovy-study): Case Study: Use groovy and Pipeline in Jenkins as a Pro
-- [kubernetes-challenges](https://github.com/DennyZhang/kubernetes-challenges): Case Study Using AWS To Setup Jenkins.
+**Similar Challenges**: https://www.dennyzhang.com/battle
 
 # Scenarios
 
