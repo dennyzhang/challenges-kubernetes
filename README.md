@@ -14,8 +14,11 @@ Table of Contents
 =================
 
    * [Scenarios](#scenarios)
-      * [Scenario-101: Docker Single-Node Jenkins Deployment I](#scenario-101-docker-single-node-jenkins-deployment-i)
-      * [Scenario-102: Docker Single-Node Jenkins Deployment II](#scenario-102-docker-single-node-jenkins-deployment-ii)
+      * [Scenario-101: Single-Node K8S Deployment I](#scenario-101-single-node-k8s-deployment-i)
+      * [Scenario-102: Single-Node K8S Deployment II](#scenario-102-single-node-k8s-deployment-ii)
+      * [Scenario-103: Single-Node K8S Deployment III](#scenario-103-single-node-k8s-deployment-iii)
+      * [Scenario-201: 2-Nodes K8S Deployment I](#scenario-201-2-nodes-k8s-deployment-i)
+      * [Scenario-202: 2-Nodes K8S Deployment II](#scenario-202-2-nodes-k8s-deployment-ii)
    * [Contributors: Give People Credits](#contributors-give-people-credits)
    * [License](#license)
 
@@ -27,35 +30,61 @@ Challenges Your Kubernetes Skills And Knowledge
 
 # Scenarios
 
-## Scenario-101: Docker Single-Node Jenkins Deployment I
-- Objective: Deploy Docker container in AWS
+## Scenario-101: Single-Node K8S Deployment I
+- Objective: Get familiar with K8S concept
 - Requirements:
 ```
-1. Start an EC2 instance by cloudformation
-2. Provision the instance as docker daemon
-3. Setup Jenkins container inside the instance
+1. Start one node of k8s in your laptop. Mac or Linux
+2. Start a nginx webserver, which stateless
+3. Autoscale the service from 1 instance to 2 instance
 ```
-- Main Tech: Cloudformation, Docker
-
-[![Launch](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=aws-jenkins&templateURL=https://s3.amazonaws.com/aws.dennyzhang.com/cf-jenkins-main-101.yml)
+- Main Tech: minikube
 - See more: [Scenario-101](./Scenario-101)
 
-## Scenario-102: Docker Single-Node Jenkins Deployment II
-- Objective: Customize Jenkins docker deployment in AWS
+## Scenario-102: Single-Node K8S Deployment II
+- Objective: Single node deployment for stateful service
 - Requirements:
 ```
-1. Finish Scenario-101, create a jenkins user by code.
-2. Anonymous user can't open the jenkins. Only login user can.
-3. When Jenkins is down, get alerts
-4. Make sure Jenkins GUI changes can be seamlessly tracked in git repo.
+1. Finish Scenario-101
+2. Start a mysql service with only one instance
+3. Kill current mysql pod, make sure a new instance will start automatically.
 ```
-- Main Tech: Cloudformation, Docker
-
-[![Launch](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=aws-jenkins&templateURL=https://s3.amazonaws.com/aws.dennyzhang.com/cf-jenkins-main-102.yml)
+- Main Tech: minikube
 - See more: [Scenario-102](./Scenario-102)
-- TODO
 
-<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/kubernetes-challenges/master/images/jenkins_docker_aio.png"/> </a>
+## Scenario-103: Single-Node K8S Deployment III
+- Objective: Single node deployment for stateful service
+- Requirements:
+```
+1. Finish Scenario-102
+2. Start a mysql service with only 2 instance. 1 master, 1 slave
+3. Kill current mysql pod, make sure a new instance will start automatically.
+```
+- Main Tech: minikube
+- See more: [Scenario-103](./Scenario-103)
+
+## Scenario-201: 2-Nodes K8S Deployment I
+- Objective: Understand k8s cluster model
+- Requirements:
+```
+1. Deploy 2 nodes k8s
+2. Create a nginx service, with 3 instances
+3. Run performance test, meanwhile kill one or two nginx instace. Confirm the error rate is low.
+4. Avoid SPOF: Shutdown one node, make sure nginx service is still up and running
+```
+- Main Tech: minikube
+- See more: [Scenario-201](./Scenario-201)
+
+## Scenario-202: 2-Nodes K8S Deployment II
+- Objective: k8s cluster env with stateful service
+- Requirements:
+```
+1. Deploy 2 nodes k8s
+2. Create a mysql service, with 3 instances. 1 master 2 slave
+3. Avoid SPOF: Shutdown one node, make sure nginx service is still up and running
+```
+- Main Tech: minikube
+- See more: [Scenario-202](./Scenario-202)
 
 - **Highlights For This Case Study**
 TOOD
