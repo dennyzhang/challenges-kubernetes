@@ -32,7 +32,7 @@ Challenges Your Kubernetes Skills And Knowledge
 # Scenarios
 
 ## Scenario-101: 1-Node K8S Nginx Deployment I
-- Objective: Get familiar with K8S concept
+- Objective: Get familiar with K8S concept. Here K8S stands for Kubernetes.
 - Requirements:
 ```
 1. Start one node of k8s in your laptop. Mac or Linux
@@ -107,6 +107,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - See more: [Scenario-401](./Scenario-401)
 
 - **Highlights For This Case Study**
+
 TOOD
 
 # Contributors: Give People Credits
