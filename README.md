@@ -52,8 +52,6 @@ Challenges Your Kubernetes Skills And Knowledge
 - Main Tech: minikube
 - See more: [Scenario-102](./Scenario-102)
 
-<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
-
 ## Scenario-201: 1-Node K8S Mysql Deployment I
 - Objective: Single node deployment for stateful service
 - Requirements:
@@ -75,6 +73,8 @@ Challenges Your Kubernetes Skills And Knowledge
 ```
 - Main Tech: minikube
 - See more: [Scenario-202](./Scenario-202)
+
+<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
 ## Scenario-301: 2-Nodes K8S Nginx Deployment I
 - Objective: Understand k8s cluster model
