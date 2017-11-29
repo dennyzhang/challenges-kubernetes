@@ -14,11 +14,13 @@ Table of Contents
 =================
 
    * [Scenarios](#scenarios)
-      * [Scenario-101: Single-Node K8S Deployment I](#scenario-101-single-node-k8s-deployment-i)
-      * [Scenario-102: Single-Node K8S Deployment II](#scenario-102-single-node-k8s-deployment-ii)
-      * [Scenario-103: Single-Node K8S Deployment III](#scenario-103-single-node-k8s-deployment-iii)
-      * [Scenario-201: 2-Nodes K8S Deployment I](#scenario-201-2-nodes-k8s-deployment-i)
-      * [Scenario-202: 2-Nodes K8S Deployment II](#scenario-202-2-nodes-k8s-deployment-ii)
+      * [Scenario-101: Single-Node K8S Nginx Deployment I](#scenario-101-single-node-k8s-nginx-deployment-i)
+      * [Scenario-102: Single-Node K8S Nginx Deployment I](#scenario-102-single-node-k8s-nginx-deployment-i)
+      * [Scenario-201: Single-Node K8S Mysql Deployment I](#scenario-201-single-node-k8s-mysql-deployment-i)
+      * [Scenario-202: Single-Node K8S Mysql Deployment II](#scenario-202-single-node-k8s-mysql-deployment-ii)
+      * [Scenario-301: 2-Nodes K8S Nginx Deployment I](#scenario-301-2-nodes-k8s-nginx-deployment-i)
+      * [Scenario-302: 2-Nodes K8S Nginx Deployment II](#scenario-302-2-nodes-k8s-nginx-deployment-ii)
+      * [Scenario-401: 2-Nodes K8S Mysql Deployment I](#scenario-401-2-nodes-k8s-mysql-deployment-i)
    * [Contributors: Give People Credits](#contributors-give-people-credits)
    * [License](#license)
 
