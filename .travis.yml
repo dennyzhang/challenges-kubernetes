@@ -5,6 +5,6 @@ python:
 install:
   - pip install nose pylint
 # command to run tests
+# TODO: to be implemented
 script:
-  echo "TODO: enable later"
-  # - find . -name "*.py" | xargs pylint -E
+  - echo "enable later"
