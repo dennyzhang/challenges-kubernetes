@@ -1,14 +1,14 @@
-# kubernetes-challenges
+# challenges-kubernetes
 
-[![Build Status](https://travis-ci.org/DennyZhang/kubernetes-challenges.svg?branch=master)](https://travis-ci.org/DennyZhang/kubernetes-challenges) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![Build Status](https://travis-ci.org/DennyZhang/challenges-kubernetes.svg?branch=master)](https://travis-ci.org/DennyZhang/challenges-kubernetes) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 [![LinkedIn](https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/linkedin.png)](https://www.linkedin.com/in/dennyzhang001) <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="http://slack.dennyzhang.com/badge.svg" alt="slack"/></a> [![Github](https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/github.png)](https://github.com/DennyZhang)
 
-File me [tickets](https://github.com/DennyZhang/kubernetes-challenges/issues) or star [the repo](https://github.com/DennyZhang/kubernetes-challenges).
+File me [tickets](https://github.com/DennyZhang/challenges-kubernetes/issues) or star [the repo](https://github.com/DennyZhang/challenges-kubernetes).
 
 <a href="https://github.com/DennyZhang?tab=followers"><img align="right" width="200" height="183" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/fork_github.png" /></a>
 
-<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/kubernetes-challenges/master/images/kubernetes.png"/> </a>
+<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/kubernetes.png"/> </a>
 
 Table of Contents
 =================
