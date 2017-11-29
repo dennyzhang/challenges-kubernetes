@@ -22,6 +22,7 @@ Challenges Your Kubernetes Skills And Knowledge
       * [Scenario-301: 2-Nodes K8S Nginx Deployment I](#scenario-301-2-nodes-k8s-nginx-deployment-i)
       * [Scenario-302: 2-Nodes K8S Nginx Deployment II](#scenario-302-2-nodes-k8s-nginx-deployment-ii)
       * [Scenario-401: 2-Nodes K8S Mysql Deployment I](#scenario-401-2-nodes-k8s-mysql-deployment-i)
+   * [Highlights](#highlights)
    * [Contributors: Give People Credits](#contributors-give-people-credits)
    * [License](#license)
 
@@ -108,9 +109,9 @@ Challenges Your Kubernetes Skills And Knowledge
 - Main Tech:
 - See more: [Scenario-401](./Scenario-401)
 
-- **Highlights For This Case Study**
+# Highlights
 
-TOOD
+- TOOD
 
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
