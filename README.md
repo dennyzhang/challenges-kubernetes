@@ -59,7 +59,7 @@ Challenges Your Kubernetes Skills And Knowledge
 ```
 1. Start one node of k8s in your laptop.
 2. Start a mysql service with only one instance
-3. Kill current mysql pod, make sure a new instance will start automatically.
+3. Attach volume for mysql data
 ```
 - Main Tech: minikube, kops, volumes
 - See more: [Scenario-201](./Scenario-201)
