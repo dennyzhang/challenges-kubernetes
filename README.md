@@ -10,16 +10,15 @@ File me [tickets](https://github.com/DennyZhang/kubernetes-challenges/issues) or
 
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/kubernetes-challenges/master/images/kubernetes.png"/> </a>
 
-Challenges Your Kubernetes Skills And Knowledge
-
 Table of Contents
 =================
+Challenges Your Kubernetes Skills And Knowledge
 
    * [Scenarios](#scenarios)
-      * [Scenario-101: Single-Node K8S Nginx Deployment I](#scenario-101-single-node-k8s-nginx-deployment-i)
-      * [Scenario-102: Single-Node K8S Nginx Deployment II](#scenario-102-single-node-k8s-nginx-deployment-ii)
-      * [Scenario-201: Single-Node K8S Mysql Deployment I](#scenario-201-single-node-k8s-mysql-deployment-i)
-      * [Scenario-202: Single-Node K8S Mysql Deployment II](#scenario-202-single-node-k8s-mysql-deployment-ii)
+      * [Scenario-101: 1-Node K8S Nginx Deployment I](#scenario-101-single-node-k8s-nginx-deployment-i)
+      * [Scenario-102: 1-Node K8S Nginx Deployment II](#scenario-102-single-node-k8s-nginx-deployment-ii)
+      * [Scenario-201: 1-Node K8S Mysql Deployment I](#scenario-201-single-node-k8s-mysql-deployment-i)
+      * [Scenario-202: 1-Node K8S Mysql Deployment II](#scenario-202-single-node-k8s-mysql-deployment-ii)
       * [Scenario-301: 2-Nodes K8S Nginx Deployment I](#scenario-301-2-nodes-k8s-nginx-deployment-i)
       * [Scenario-302: 2-Nodes K8S Nginx Deployment II](#scenario-302-2-nodes-k8s-nginx-deployment-ii)
       * [Scenario-401: 2-Nodes K8S Mysql Deployment I](#scenario-401-2-nodes-k8s-mysql-deployment-i)
@@ -32,7 +31,7 @@ Table of Contents
 
 # Scenarios
 
-## Scenario-101: Single-Node K8S Nginx Deployment I
+## Scenario-101: 1-Node K8S Nginx Deployment I
 - Objective: Get familiar with K8S concept
 - Requirements:
 ```
@@ -42,7 +41,7 @@ Table of Contents
 - Main Tech: minikube
 - See more: [Scenario-101](./Scenario-101)
 
-## Scenario-102: Single-Node K8S Nginx Deployment II
+## Scenario-102: 1-Node K8S Nginx Deployment II
 - Objective: Get familiar with K8S concept
 - Requirements:
 ```
@@ -53,7 +52,7 @@ Table of Contents
 - Main Tech: minikube
 - See more: [Scenario-102](./Scenario-102)
 
-## Scenario-201: Single-Node K8S Mysql Deployment I
+## Scenario-201: 1-Node K8S Mysql Deployment I
 - Objective: Single node deployment for stateful service
 - Requirements:
 ```
@@ -64,7 +63,7 @@ Table of Contents
 - Main Tech: minikube
 - See more: [Scenario-201](./Scenario-201)
 
-## Scenario-202: Single-Node K8S Mysql Deployment II
+## Scenario-202: 1-Node K8S Mysql Deployment II
 - Objective: Single node deployment for stateful service
 - Requirements:
 ```
