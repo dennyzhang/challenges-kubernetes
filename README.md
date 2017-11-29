@@ -15,13 +15,13 @@ Table of Contents
 Challenges Your Kubernetes Skills And Knowledge
 
    * [Scenarios](#scenarios)
-      * [Scenario-101: 1-Node K8S Nginx Deployment I](#scenario-101-single-node-k8s-nginx-deployment-i)
-      * [Scenario-102: 1-Node K8S Nginx Deployment II](#scenario-102-single-node-k8s-nginx-deployment-ii)
-      * [Scenario-201: 1-Node K8S Mysql Deployment I](#scenario-201-single-node-k8s-mysql-deployment-i)
-      * [Scenario-202: 1-Node K8S Mysql Deployment II](#scenario-202-single-node-k8s-mysql-deployment-ii)
-      * [Scenario-301: 2-Nodes K8S Nginx Deployment I](#scenario-301-2-nodes-k8s-nginx-deployment-i)
-      * [Scenario-302: 2-Nodes K8S Nginx Deployment II](#scenario-302-2-nodes-k8s-nginx-deployment-ii)
-      * [Scenario-401: 2-Nodes K8S Mysql Deployment I](#scenario-401-2-nodes-k8s-mysql-deployment-i)
+      * [Scenario-101: 1-Node K8S Stateless Nginx Deployment I](#scenario-101-1-node-k8s-stateless-nginx-deployment-i)
+      * [Scenario-102: 1-Node K8S Stateless Nginx Deployment II](#scenario-102-1-node-k8s-stateless-nginx-deployment-ii)
+      * [Scenario-201: 1-Node K8S Stateful Mysql Deployment I](#scenario-201-1-node-k8s-stateful-mysql-deployment-i)
+      * [Scenario-202: 1-Node K8S Stateful Mysql Deployment II](#scenario-202-1-node-k8s-stateful-mysql-deployment-ii)
+      * [Scenario-301: 2-Nodes K8S Stateless Nginx Deployment I](#scenario-301-2-nodes-k8s-stateless-nginx-deployment-i)
+      * [Scenario-302: 2-Nodes K8S Stateless Nginx Deployment II](#scenario-302-2-nodes-k8s-stateless-nginx-deployment-ii)
+      * [Scenario-401: 2-Nodes K8S Stateful Mysql Deployment I](#scenario-401-2-nodes-k8s-stateful-mysql-deployment-i)
    * [Highlights](#highlights)
    * [Contributors: Give People Credits](#contributors-give-people-credits)
    * [License](#license)
@@ -32,7 +32,7 @@ Challenges Your Kubernetes Skills And Knowledge
 
 # Scenarios
 
-## Scenario-101: 1-Node K8S Nginx Deployment I
+## Scenario-101: 1-Node K8S Stateless Nginx Deployment I
 - Objective: Get familiar with K8S concept. Here K8S stands for Kubernetes.
 - Requirements:
 ```
@@ -42,7 +42,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Main Tech: minikube, kops
 - See more: [Scenario-101](./Scenario-101)
 
-## Scenario-102: 1-Node K8S Nginx Deployment II
+## Scenario-102: 1-Node K8S Stateless Nginx Deployment II
 - Objective: Get familiar with K8S concept
 - Requirements:
 ```
@@ -53,7 +53,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Main Tech: minikube, kops
 - See more: [Scenario-102](./Scenario-102)
 
-## Scenario-201: 1-Node K8S Mysql Deployment I
+## Scenario-201: 1-Node K8S Stateful Mysql Deployment I
 - Objective: Single node deployment for stateful service
 - Requirements:
 ```
@@ -64,7 +64,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Main Tech: minikube, kops, volumes
 - See more: [Scenario-201](./Scenario-201)
 
-## Scenario-202: 1-Node K8S Mysql Deployment II
+## Scenario-202: 1-Node K8S Stateful Mysql Deployment II
 - Objective: Single node deployment for stateful service
 - Requirements:
 ```
@@ -77,7 +77,7 @@ Challenges Your Kubernetes Skills And Knowledge
 
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
-## Scenario-301: 2-Nodes K8S Nginx Deployment I
+## Scenario-301: 2-Nodes K8S Stateless Nginx Deployment I
 - Objective: Understand k8s cluster model
 - Requirements:
 ```
@@ -88,7 +88,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Main Tech: kops
 - See more: [Scenario-301](./Scenario-301)
 
-## Scenario-302: 2-Nodes K8S Nginx Deployment II
+## Scenario-302: 2-Nodes K8S Stateless Nginx Deployment II
 - Objective: Understand k8s cluster model
 - Requirements:
 ```
@@ -98,7 +98,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Main Tech:
 - See more: [Scenario-302](./Scenario-302)
 
-## Scenario-401: 2-Nodes K8S Mysql Deployment I
+## Scenario-401: 2-Nodes K8S Stateful Mysql Deployment I
 - Objective: k8s cluster env with stateful service
 - Requirements:
 ```
