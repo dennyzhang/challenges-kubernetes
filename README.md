@@ -15,7 +15,7 @@ Table of Contents
 
    * [Scenarios](#scenarios)
       * [Scenario-101: Single-Node K8S Nginx Deployment I](#scenario-101-single-node-k8s-nginx-deployment-i)
-      * [Scenario-102: Single-Node K8S Nginx Deployment I](#scenario-102-single-node-k8s-nginx-deployment-i)
+      * [Scenario-102: Single-Node K8S Nginx Deployment II](#scenario-102-single-node-k8s-nginx-deployment-ii)
       * [Scenario-201: Single-Node K8S Mysql Deployment I](#scenario-201-single-node-k8s-mysql-deployment-i)
       * [Scenario-202: Single-Node K8S Mysql Deployment II](#scenario-202-single-node-k8s-mysql-deployment-ii)
       * [Scenario-301: 2-Nodes K8S Nginx Deployment I](#scenario-301-2-nodes-k8s-nginx-deployment-i)
@@ -42,7 +42,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Main Tech: minikube
 - See more: [Scenario-101](./Scenario-101)
 
-## Scenario-102: Single-Node K8S Nginx Deployment I
+## Scenario-102: Single-Node K8S Nginx Deployment II
 - Objective: Get familiar with K8S concept
 - Requirements:
 ```
