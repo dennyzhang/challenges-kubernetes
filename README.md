@@ -10,6 +10,8 @@ File me [tickets](https://github.com/DennyZhang/kubernetes-challenges/issues) or
 
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/kubernetes-challenges/master/images/kubernetes.png"/> </a>
 
+Challenges Your Kubernetes Skills And Knowledge
+
 Table of Contents
 =================
 
@@ -25,8 +27,6 @@ Table of Contents
    * [License](#license)
 
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
-
-Challenges Your Kubernetes Skills And Knowledge
 
 **Similar Challenges**: https://www.dennyzhang.com/battle
 
