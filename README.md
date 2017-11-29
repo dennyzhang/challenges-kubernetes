@@ -39,7 +39,7 @@ Challenges Your Kubernetes Skills And Knowledge
 1. Start one node of k8s in your laptop. Mac or Linux
 2. Start a nginx webserver, which stateless
 ```
-- Main Tech: minikube
+- Main Tech: minikube, kops
 - See more: [Scenario-101](./Scenario-101)
 
 ## Scenario-102: 1-Node K8S Nginx Deployment II
@@ -50,7 +50,7 @@ Challenges Your Kubernetes Skills And Knowledge
 2. Autoscale the service from 1 instance to 2 instance
 3. Setup two nginx vhosts. And run performance test, make sure the load is balanced
 ```
-- Main Tech: minikube
+- Main Tech: minikube, kops
 - See more: [Scenario-102](./Scenario-102)
 
 ## Scenario-201: 1-Node K8S Mysql Deployment I
@@ -61,7 +61,7 @@ Challenges Your Kubernetes Skills And Knowledge
 2. Start a mysql service with only one instance
 3. Kill current mysql pod, make sure a new instance will start automatically.
 ```
-- Main Tech: minikube
+- Main Tech: minikube, kops, volumes
 - See more: [Scenario-201](./Scenario-201)
 
 ## Scenario-202: 1-Node K8S Mysql Deployment II
@@ -72,7 +72,7 @@ Challenges Your Kubernetes Skills And Knowledge
 2. Start a mysql service with only 2 instance. 1 master, 1 slave
 3. Kill current mysql pod, make sure a new instance will start automatically.
 ```
-- Main Tech: minikube
+- Main Tech: minikube, kops, volumes
 - See more: [Scenario-202](./Scenario-202)
 
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
@@ -85,7 +85,7 @@ Challenges Your Kubernetes Skills And Knowledge
 2. Create a nginx service, with 3 instances
 3. Run performance test, meanwhile kill one or two nginx instace. Confirm the error rate is low.
 ```
-- Main Tech: minikube
+- Main Tech: kops
 - See more: [Scenario-301](./Scenario-301)
 
 ## Scenario-302: 2-Nodes K8S Nginx Deployment II
