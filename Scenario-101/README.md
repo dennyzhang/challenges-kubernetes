@@ -12,14 +12,14 @@ Table of Contents
 
 # Procedures
 
-For single node deployment, we can use minikube or kops
+For single node deployment, we have multiple choices
+https://kubernetes.io/docs/setup/pick-right-solution/#local-machine-solutions
 
-Here we do the test with kops + mac laptop
-
-Install kops: https://github.com/kubernetes/kops/blob/master/docs/install.md
+Here we use minikube.
+https://kubernetes.io/docs/getting-started-guides/minikube/
 
 - Verify kops installation
 ```
-which kops
+which minikube
 which kubectl
 ```

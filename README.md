@@ -93,7 +93,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Requirements:
 ```
 1. Finish Scenario-301
-4. Avoid SPOF: Shutdown one node, make sure nginx service is still up and running
+2. Avoid SPOF: Shutdown one node, make sure nginx service is still up and running
 ```
 - Main Tech:
 - See more: [Scenario-302](./Scenario-302)
