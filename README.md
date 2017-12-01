@@ -50,11 +50,10 @@ Challenges Your Kubernetes Skills And Knowledge
 1. Start one mysql server service with 1 instance.
 2. Start one mysql client service with 2 instances.
 3. Verify mysql server resilience.
-    Delete the instance, confirm another one will be started automatically.
+   Delete the instance, confirm another one will be started automatically.
 ```
 - Main Tech:
 - See more: [Scenario-102](./Scenario-102)
-- TODO
 
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 

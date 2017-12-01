@@ -16,12 +16,12 @@ Table of Contents
 1. Start one mysql server service with 1 instance.
 2. Start one mysql client service with 2 instances.
 3. Verify mysql server resilience.
-    Delete the instance, confirm another one will be started automatically.
+   Delete the instance, confirm another one will be started automatically.
 ```
 
 # 2. Procedures
 
-To setup mysql service, here we use [mysql image](https://hub.docker.com/_/mysql/) from docker hub
+To setup mysql service, here we use mysql image in [docker hub](https://hub.docker.com/_/mysql/).
 
 ## 2.1 Start env
 - Start vm
@@ -35,7 +35,8 @@ minikube start
 # TODO: use docker volume
 export mysql_root_passwd="my-secret-pw"
 # Docker: https://hub.docker.com/_/mysql/
-kubectl run hello-mysql-server --image=mysql --env="MYSQL_ROOT_PASSWORD=$mysql_root_passwd" --port=3306
+kubectl run hello-mysql-server --image=mysql \
+   --env="MYSQL_ROOT_PASSWORD=$mysql_root_passwd" --port=3306
 
 # Expose service
 kubectl expose deployment hello-mysql-server --type=NodePort
@@ -56,6 +57,10 @@ kubectl expose deployment hello-mysql-client --type=NodePort
 
 # Scale the client
 kubectl scale --replicas=2 deployment/hello-mysql-client
+
+# Get status
+kubectl get pod
+kubectl get deployment
 ```
 
 - Open mysql client to access the mysql server
