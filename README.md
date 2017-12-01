@@ -18,7 +18,7 @@ Challenges Your Kubernetes Skills And Knowledge
 
    * [Scenarios](#scenarios)
       * [Scenario-101: 1-Node K8S Deployment I](#scenario-101-1-node-k8s-deployment-i)
-      * [Scenario-102: 1-Node K8S Deployment III](#scenario-102-1-node-k8s-deployment-iii)
+      * [Scenario-102: 1-Node K8S Deployment II](#scenario-102-1-node-k8s-deployment-ii)
       * [Scenario-201: 2-Nodes K8S Deployment I](#scenario-201-2-nodes-k8s-deployment-i)
       * [Scenario-202: 2-Nodes K8S Deployment II](#scenario-202-2-nodes-k8s-deployment-ii)
       * [Scenario-301: 2-Nodes Jenkins Deployment I](#scenario-301-2-nodes-jenkins-deployment-i)
@@ -43,7 +43,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Main Tech: minikube
 - See more: [Scenario-101](./Scenario-101)
 
-## Scenario-102: 1-Node K8S Deployment III
+## Scenario-102: 1-Node K8S Deployment II
 - Objective: Single node deployment for stateful service
 - Requirements:
 ```
