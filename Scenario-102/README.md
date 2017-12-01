@@ -22,8 +22,6 @@ Table of Contents
 
 # 2. Procedures
 
-<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
-
 To setup mysql service, here we use [mysql image](https://hub.docker.com/_/mysql/) from docker hub
 
 ## 2.1 Start env
