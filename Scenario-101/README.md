@@ -49,7 +49,7 @@ kubectl expose deployment hello-nginx --type=NodePort
 kubectl get pod
 
 # list service
-kubectl service list
+minikube list service
 ```
 
 ## 2.3 Check k8s dashboard
