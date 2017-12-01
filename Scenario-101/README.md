@@ -21,9 +21,7 @@ Table of Contents
 
 # 2. Procedures
 
-For single node deployment, we have [multiple choices](https://kubernetes.io/docs/setup/pick-right-solution/#local-machine-solutions)
-
-Here we use [minikube](https://kubernetes.io/docs/getting-started-guides/minikube/).
+For single node deployment, we have [multiple choices](https://kubernetes.io/docs/setup/pick-right-solution/#local-machine-solutions). Here we use [minikube](https://kubernetes.io/docs/getting-started-guides/minikube/).
 
 ## 2.1 Install virtualbox and minikube
 ```
@@ -62,10 +60,12 @@ kubectl scale --replicas=2 deployment/hello-nginx
 
 ## 2.5 Verify deployment
 ```
+# Get endpoint url of nginx service
 kubectl list service
-```
 
-curl http://$service_url
+# Send requests
+for((i=0; i< 10; i++)); do { curl http://$service_url;}; done
+```
 
 Go to minikube dashboard -> Pods -> choose one pod -> LOGS
 
