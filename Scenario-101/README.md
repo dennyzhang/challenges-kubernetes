@@ -1,37 +1,80 @@
 Table of Contents
 =================
 
-   * [Requirements](#requirements)
-   * [Procedures](#procedures)
+   * [1. Requirements](#1-requirements)
+   * [2. Procedures](#2-procedures)
+      * [2.1 Install virtualbox and minikube](#21-install-virtualbox-and-minikube)
+      * [2.2 Start env](#22-start-env)
+      * [2.3 Check k8s dashboard](#23-check-k8s-dashboard)
+      * [2.4 Scale the instance](#24-scale-the-instance)
+      * [2.5 Verify deployment](#25-verify-deployment)
+   * [3. Highlights](#3-highlights)
+   * [4. More resources](#4-more-resources)
 
-# Requirements
+# 1. Requirements
 ```
 1. Start one node of k8s in your laptop. Mac or Linux
-2. Start a nginx webserver, which stateless
+2. Start a nginx webserver with one instance
+3. Scale nginx service into 2 instances.
+4. Test nginx URL, and confirm visit from nginx log
 ```
 
-# Procedures
+# 2. Procedures
 
 For single node deployment, we have [multiple choices](https://kubernetes.io/docs/setup/pick-right-solution/#local-machine-solutions)
 
 Here we use [minikube](https://kubernetes.io/docs/getting-started-guides/minikube/).
 
-- Verify minikube installation
+## 2.1 Install virtualbox and minikube
 ```
 which minikube
 which kubectl
 ```
 
-- Start env
+## 2.2 Start env
 ```
+# start a VM to host our deployment
 minikube start
+
+# Here we use nginx docker image from docker hub. Nginx listen on port 80
+# https://hub.docker.com/_/nginx/
+kubectl run hello-nginx --image=nginx --port=80
+
+# Expose service
+kubectl expose deployment hello-nginx --type=NodePort
+
+# Check instance status
+kubectl get pod
+
+# list service
+kubectl service list
 ```
+
+## 2.3 Check k8s dashboard
+```
+minikube dashboard
+```
+
+## 2.4 Scale the instance
+```
+kubectl scale --replicas=2 deployment/hello-nginx
+```
+
+## 2.5 Verify deployment
+```
+kubectl list service
+```
+
+curl http://$service_url
+
+Go to minikube dashboard -> Pods -> choose one pod -> LOGS
+
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
-# Highlights
+# 3. Highlights
 - Q: How to use your own docker image?
 
-# More resources
+# 4. More resources
 - minikube: https://kubernetes.io/docs/getting-started-guides/minikube/
 - k8s local solutions: https://kubernetes.io/docs/setup/pick-right-solution/#local-machine-solutions
 

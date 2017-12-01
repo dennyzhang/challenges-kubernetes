@@ -18,8 +18,7 @@ Challenges Your Kubernetes Skills And Knowledge
 
    * [Scenarios](#scenarios)
       * [Scenario-101: 1-Node K8S Deployment I](#scenario-101-1-node-k8s-deployment-i)
-      * [Scenario-102: 1-Node K8S Deployment II](#scenario-102-1-node-k8s-deployment-ii)
-      * [Scenario-103: 1-Node K8S Deployment III](#scenario-103-1-node-k8s-deployment-iii)
+      * [Scenario-102: 1-Node K8S Deployment III](#scenario-102-1-node-k8s-deployment-iii)
       * [Scenario-201: 2-Nodes K8S Deployment I](#scenario-201-2-nodes-k8s-deployment-i)
       * [Scenario-202: 2-Nodes K8S Deployment II](#scenario-202-2-nodes-k8s-deployment-ii)
       * [Scenario-301: 2-Nodes Jenkins Deployment I](#scenario-301-2-nodes-jenkins-deployment-i)
@@ -37,23 +36,14 @@ Challenges Your Kubernetes Skills And Knowledge
 - Requirements:
 ```
 1. Start one node of k8s in your laptop. Mac or Linux
-2. Start a nginx webserver, which stateless
+2. Start a nginx webserver with one instance
+3. Scale nginx service into 2 instances.
+4. Test nginx URL, and confirm visit from nginx log
 ```
 - Main Tech: minikube
 - See more: [Scenario-101](./Scenario-101)
 
-## Scenario-102: 1-Node K8S Deployment II
-- Objective: Get familiar with K8S concept
-- Requirements:
-```
-1. Finish Scenario-101
-2. Autoscale the service from 1 instance to 2 instance
-3. Setup two nginx vhosts. And run performance test, make sure the load is balanced
-```
-- Main Tech:
-- See more: [Scenario-102](./Scenario-102)
-
-## Scenario-103: 1-Node K8S Deployment III
+## Scenario-102: 1-Node K8S Deployment III
 - Objective: Single node deployment for stateful service
 - Requirements:
 ```
@@ -63,7 +53,7 @@ Challenges Your Kubernetes Skills And Knowledge
 4. Kill current mysql pod, make sure a new instance will start automatically.
 ```
 - Main Tech:
-- See more: [Scenario-103](./Scenario-103)
+- See more: [Scenario-102](./Scenario-102)
 
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
