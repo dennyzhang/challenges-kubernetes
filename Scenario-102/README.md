@@ -13,8 +13,11 @@ Table of Contents
 # 1. Requirements
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 ```
-1. Start one mysql service in your laptop. Use docker volume to persist the data
-2. Make mysql service is resilient. If one instance is down, another will be started automatcially.
+1. Start one mysql service in your laptop.
+   Use docker volume to persist the data
+
+2. Make mysql service is resilient.
+   If one instance is down, another will be started automatcially.
 ```
 
 # 2. Procedures
