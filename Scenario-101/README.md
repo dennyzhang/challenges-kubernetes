@@ -1,3 +1,5 @@
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
 Table of Contents
 =================
 
@@ -68,8 +70,6 @@ for((i=0; i< 10; i++)); do { curl http://$service_url;}; done
 ```
 
 Go to minikube dashboard -> Pods -> choose one pod -> LOGS
-
-<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
 # 3. Highlights
 - Q: How to use your own docker image?
