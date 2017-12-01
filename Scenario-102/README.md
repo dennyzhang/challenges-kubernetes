@@ -13,9 +13,10 @@ Table of Contents
 # 1. Requirements
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 ```
-1. Start one mysql server service with 1 instance. Make sure data persist from instance crash
+1. Start one mysql server service with 1 instance.
 2. Start one mysql client service with 2 instances.
-3. Verify mysql server resilience. Delete the instance, confirm another one will be started automatically.
+3. Verify mysql server resilience.
+    Delete the instance, confirm another one will be started automatically.
 ```
 
 # 2. Procedures

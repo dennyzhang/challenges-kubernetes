@@ -47,9 +47,10 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: Single node deployment for stateful service
 - Requirements:
 ```
-1. Start one mysql server service with 1 instance. Make sure data persist from instance crash
+1. Start one mysql server service with 1 instance.
 2. Start one mysql client service with 2 instances.
-3. Verify mysql server resilience. Delete the instance, confirm another one will be started automatically.
+3. Verify mysql server resilience.
+    Delete the instance, confirm another one will be started automatically.
 ```
 - Main Tech:
 - See more: [Scenario-102](./Scenario-102)
