@@ -15,13 +15,13 @@ Table of Contents
 Challenges Your Kubernetes Skills And Knowledge
 
    * [Scenarios](#scenarios)
-      * [Scenario-101: 1-Node K8S Stateless Nginx Deployment I](#scenario-101-1-node-k8s-stateless-nginx-deployment-i)
-      * [Scenario-102: 1-Node K8S Stateless Nginx Deployment II](#scenario-102-1-node-k8s-stateless-nginx-deployment-ii)
-      * [Scenario-201: 1-Node K8S Stateful Mysql Deployment I](#scenario-201-1-node-k8s-stateful-mysql-deployment-i)
-      * [Scenario-202: 1-Node K8S Stateful Mysql Deployment II](#scenario-202-1-node-k8s-stateful-mysql-deployment-ii)
-      * [Scenario-301: 2-Nodes K8S Stateless Nginx Deployment I](#scenario-301-2-nodes-k8s-stateless-nginx-deployment-i)
-      * [Scenario-302: 2-Nodes K8S Stateless Nginx Deployment II](#scenario-302-2-nodes-k8s-stateless-nginx-deployment-ii)
-      * [Scenario-401: 2-Nodes K8S Stateful Mysql Deployment I](#scenario-401-2-nodes-k8s-stateful-mysql-deployment-i)
+      * [Scenario-101: 1-Node K8S Deployment I](#scenario-101-1-node-k8s-deployment-i)
+      * [Scenario-102: 1-Node K8S Deployment II](#scenario-102-1-node-k8s-deployment-ii)
+      * [Scenario-103: 1-Node K8S Deployment III](#scenario-103-1-node-k8s-deployment-iii)
+      * [Scenario-201: 2-Nodes K8S Deployment I](#scenario-201-2-nodes-k8s-deployment-i)
+      * [Scenario-202: 2-Nodes K8S Deployment II](#scenario-202-2-nodes-k8s-deployment-ii)
+      * [Scenario-301: 2-Nodes Jenkins Deployment I](#scenario-301-2-nodes-jenkins-deployment-i)
+      * [Scenario-302: 2-Nodes Jenkins Deployment II](#scenario-302-2-nodes-jenkins-deployment-ii)
    * [Highlights](#highlights)
    * [Contributors: Give People Credits](#contributors-give-people-credits)
    * [License](#license)
@@ -32,7 +32,7 @@ See more challenges from Denny: [here](https://www.dennyzhang.com/battle)
 
 # Scenarios
 
-## Scenario-101: 1-Node K8S Stateless Nginx Deployment I
+## Scenario-101: 1-Node K8S Deployment I
 - Objective: Get familiar with K8S concept. Here K8S stands for Kubernetes.
 - Requirements:
 ```
@@ -42,7 +42,7 @@ See more challenges from Denny: [here](https://www.dennyzhang.com/battle)
 - Main Tech: minikube, kops
 - See more: [Scenario-101](./Scenario-101)
 
-## Scenario-102: 1-Node K8S Stateless Nginx Deployment II
+## Scenario-102: 1-Node K8S Deployment II
 - Objective: Get familiar with K8S concept
 - Requirements:
 ```
@@ -53,52 +53,33 @@ See more challenges from Denny: [here](https://www.dennyzhang.com/battle)
 - Main Tech: minikube, kops
 - See more: [Scenario-102](./Scenario-102)
 
-## Scenario-201: 1-Node K8S Stateful Mysql Deployment I
+## Scenario-103: 1-Node K8S Deployment III
 - Objective: Single node deployment for stateful service
 - Requirements:
 ```
 1. Start one node of k8s in your laptop.
-2. Start a mysql service with only one instance
-3. Attach volume for mysql data
-```
-- Main Tech: minikube, kops, volumes
-- See more: [Scenario-201](./Scenario-201)
-
-## Scenario-202: 1-Node K8S Stateful Mysql Deployment II
-- Objective: Single node deployment for stateful service
-- Requirements:
-```
-1. Finish Scenario-202
 2. Start a mysql service with only 2 instance. 1 master, 1 slave
-3. Kill current mysql pod, make sure a new instance will start automatically.
+3. Attach volume for mysql data
+4. Kill current mysql pod, make sure a new instance will start automatically.
 ```
 - Main Tech: minikube, kops, volumes
-- See more: [Scenario-202](./Scenario-202)
+- See more: [Scenario-103](./Scenario-103)
 
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
-## Scenario-301: 2-Nodes K8S Stateless Nginx Deployment I
+## Scenario-201: 2-Nodes K8S Deployment I
 - Objective: Understand k8s cluster model
 - Requirements:
 ```
 1. Deploy 2 nodes k8s
 2. Create a nginx service, with 3 instances
 3. Run performance test, meanwhile kill one or two nginx instace. Confirm the error rate is low.
+4. Avoid SPOF: Shutdown one node, make sure nginx service is still up and running
 ```
 - Main Tech: kops
-- See more: [Scenario-301](./Scenario-301)
+- See more: [Scenario-201](./Scenario-201)
 
-## Scenario-302: 2-Nodes K8S Stateless Nginx Deployment II
-- Objective: Understand k8s cluster model
-- Requirements:
-```
-1. Finish Scenario-301
-2. Avoid SPOF: Shutdown one node, make sure nginx service is still up and running
-```
-- Main Tech:
-- See more: [Scenario-302](./Scenario-302)
-
-## Scenario-401: 2-Nodes K8S Stateful Mysql Deployment I
+## Scenario-202: 2-Nodes K8S Deployment II
 - Objective: k8s cluster env with stateful service
 - Requirements:
 ```
@@ -107,7 +88,28 @@ See more challenges from Denny: [here](https://www.dennyzhang.com/battle)
 3. Avoid SPOF: Shutdown one node, make sure nginx service is still up and running
 ```
 - Main Tech:
-- See more: [Scenario-401](./Scenario-401)
+- See more: [Scenario-202](./Scenario-202)
+
+## Scenario-301: 2-Nodes Jenkins Deployment I
+- Objective: Real service deployment
+- Requirements:
+```
+1. Deploy 2 nodes Jenkins. 1 master 2 slaves
+2. When Jenkins crash, get alerts
+```
+- Main Tech:
+- See more: [Scenario-301](./Scenario-301)
+
+## Scenario-302: 2-Nodes Jenkins Deployment II
+- Objective: Real service deployment
+- Requirements:
+```
+1. Finish Scenario-301
+2. When jenkins master crash, make sure service doesn't crash
+3. Use nginx as an ingress for Jenkins master
+```
+- Main Tech:
+- See more: [Scenario-302](./Scenario-302)
 
 # Highlights
 
