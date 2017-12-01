@@ -31,10 +31,17 @@ minikube start
 
 # TODO: use docker volume
 # TODO: configure env
-kubectl run hello-mysql --image=mysql --port=8080
+# Docker: https://hub.docker.com/_/mysql/
+kubectl run hello-mysql-server --image=mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw --port=3306
 
 # Expose service
-kubectl expose deployment hello-mysql --type=NodePort
+kubectl expose deployment hello-mysql-server --type=NodePort
+
+# Docker: https://hub.docker.com/_/adminer/
+# TODO: link db
+kubectl run hello-mysql-client --image=adminer --port=8080
+# Expose service
+kubectl expose deployment hello-mysql-client --type=NodePort
 
 # Check instance status
 kubectl get pod
@@ -43,7 +50,7 @@ kubectl get pod
 kubectl service list
 ```
 
-- Access mysql to confirm the deployment
+- Access mysql service to confirm the deployment
 
 TODO
 
