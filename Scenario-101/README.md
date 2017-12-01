@@ -13,9 +13,11 @@ Table of Contents
 # Procedures
 
 For single node deployment, we have multiple choices
+
 https://kubernetes.io/docs/setup/pick-right-solution/#local-machine-solutions
 
 Here we use minikube.
+
 https://kubernetes.io/docs/getting-started-guides/minikube/
 
 - Verify minikube installation

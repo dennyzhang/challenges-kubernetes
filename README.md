@@ -111,11 +111,11 @@ See more challenges from Denny: [here](https://www.dennyzhang.com/battle)
 - Main Tech:
 - See more: [Scenario-302](./Scenario-302)
 
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
 # Highlights
 
 - TOOD
-
-<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
 # Contributors: Give People Credits
 Below are folks who have contributed via GitHub!
