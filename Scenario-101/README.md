@@ -20,7 +20,7 @@ Table of Contents
 1. Start one node of k8s in your laptop. Mac or Linux
 2. Start a nginx webserver with one instance
 3. Scale nginx service into 2 instances.
-4. Test nginx URL, and confirm the hits from nginx log of two instances
+4. Get familiar with k8s dashboard. Find pods from GUI, check nginx log.
 ```
 
 # 2. Procedures
@@ -49,7 +49,7 @@ kubectl expose deployment hello-nginx --type=NodePort
 kubectl get pod
 
 # list service
-minikube list service
+minikube service list
 ```
 
 ## 2.3 Check k8s dashboard

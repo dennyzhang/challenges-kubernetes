@@ -13,11 +13,9 @@ Table of Contents
 # 1. Requirements
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 ```
-1. Start one mysql server service and one mysql client service in your laptop.
-   Use docker volume to persist the data
-
-2. Make mysql service is resilient.
-   If one instance is down, another will be started automatcially.
+1. Start one mysql server service with 1 instance. Make sure data persist from instance crash
+2. Start one mysql client service with 2 instances.
+3. Verify mysql server resilience. Delete the instance, confirm another one will be started automatically.
 ```
 
 # 2. Procedures
@@ -47,7 +45,7 @@ kubectl expose deployment hello-mysql-client --type=NodePort
 kubectl get pod
 
 # list service
-minikube list service
+minikube service list
 ```
 
 - Access mysql service to confirm the deployment

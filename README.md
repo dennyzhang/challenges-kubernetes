@@ -38,7 +38,7 @@ Challenges Your Kubernetes Skills And Knowledge
 1. Start one node of k8s in your laptop. Mac or Linux
 2. Start a nginx webserver with one instance
 3. Scale nginx service into 2 instances.
-4. Test nginx URL, and confirm the hits from nginx log of two instances
+4. Get familiar with k8s dashboard. Find pods from GUI, check nginx log.
 ```
 - Main Tech: minikube
 - See more: [Scenario-101](./Scenario-101)
@@ -47,11 +47,9 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: Single node deployment for stateful service
 - Requirements:
 ```
-1. Start one mysql server service and one mysql client service in your laptop.
-   Use docker volume to persist the data
-
-2. Make mysql service is resilient.
-   If one instance is down, another will be started automatcially.
+1. Start one mysql server service with 1 instance. Make sure data persist from instance crash
+2. Start one mysql client service with 2 instances.
+3. Verify mysql server resilience. Delete the instance, confirm another one will be started automatically.
 ```
 - Main Tech:
 - See more: [Scenario-102](./Scenario-102)
