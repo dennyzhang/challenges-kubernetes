@@ -40,7 +40,7 @@ Challenges Your Kubernetes Skills And Knowledge
 3. Scale nginx service into 2 instances.
 4. Get familiar with k8s dashboard. Find pods from GUI, check nginx log.
 ```
-- Main Tech: minikube
+- Main Tech: minikube, nginx, dashboard
 - See more: [Scenario-101](./Scenario-101)
 
 ## Scenario-102: 1-Node K8S Deployment II
@@ -52,7 +52,7 @@ Challenges Your Kubernetes Skills And Knowledge
 3. Verify mysql server resilience.
    Delete the instance, confirm another one will be started automatically.
 ```
-- Main Tech:
+- Main Tech: minikube, mysql, volume
 - See more: [Scenario-102](./Scenario-102)
 
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
