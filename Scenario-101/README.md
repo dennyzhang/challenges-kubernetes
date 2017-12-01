@@ -12,9 +12,9 @@ Table of Contents
    * [3. Highlights](#3-highlights)
    * [4. More resources](#4-more-resources)
 
+# 1. Requirements
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
-# 1. Requirements
 ```
 1. Start one node of k8s in your laptop. Mac or Linux
 2. Start a nginx webserver with one instance
