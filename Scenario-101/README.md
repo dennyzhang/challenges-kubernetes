@@ -18,7 +18,7 @@ https://kubernetes.io/docs/setup/pick-right-solution/#local-machine-solutions
 Here we use minikube.
 https://kubernetes.io/docs/getting-started-guides/minikube/
 
-- Verify kops installation
+- Verify minikube installation
 ```
 which minikube
 which kubectl

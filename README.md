@@ -39,7 +39,7 @@ See more challenges from Denny: [here](https://www.dennyzhang.com/battle)
 1. Start one node of k8s in your laptop. Mac or Linux
 2. Start a nginx webserver, which stateless
 ```
-- Main Tech: minikube, kops
+- Main Tech: minikube
 - See more: [Scenario-101](./Scenario-101)
 
 ## Scenario-102: 1-Node K8S Deployment II
@@ -50,7 +50,7 @@ See more challenges from Denny: [here](https://www.dennyzhang.com/battle)
 2. Autoscale the service from 1 instance to 2 instance
 3. Setup two nginx vhosts. And run performance test, make sure the load is balanced
 ```
-- Main Tech: minikube, kops
+- Main Tech:
 - See more: [Scenario-102](./Scenario-102)
 
 ## Scenario-103: 1-Node K8S Deployment III
@@ -62,7 +62,7 @@ See more challenges from Denny: [here](https://www.dennyzhang.com/battle)
 3. Attach volume for mysql data
 4. Kill current mysql pod, make sure a new instance will start automatically.
 ```
-- Main Tech: minikube, kops, volumes
+- Main Tech:
 - See more: [Scenario-103](./Scenario-103)
 
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
@@ -76,7 +76,7 @@ See more challenges from Denny: [here](https://www.dennyzhang.com/battle)
 3. Run performance test, meanwhile kill one or two nginx instace. Confirm the error rate is low.
 4. Avoid SPOF: Shutdown one node, make sure nginx service is still up and running
 ```
-- Main Tech: kops
+- Main Tech:
 - See more: [Scenario-201](./Scenario-201)
 
 ## Scenario-202: 2-Nodes K8S Deployment II
