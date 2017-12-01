@@ -24,10 +24,14 @@ Table of Contents
 To setup mysql service, here we use [mysql image](https://hub.docker.com/_/mysql/) from docker hub
 
 ## 2.1 Start env
+- Start vm
 ```
 # start a VM to host our deployment
 minikube start
+```
 
+- Start mysql server service
+```
 # TODO: use docker volume
 export mysql_root_passwd="my-secret-pw"
 # Docker: https://hub.docker.com/_/mysql/
@@ -43,7 +47,7 @@ kubectl get pod
 minikube service list
 ```
 
-- Setup client
+- Setup mysql client service
 ```
 # Docker: https://hub.docker.com/_/adminer/
 kubectl run hello-mysql-client --image=adminer --port=8080
