@@ -47,13 +47,12 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: Single node deployment for stateful service
 - Requirements:
 ```
-1. Start one node of k8s in your laptop.
-2. Start a mysql service with only 2 instance. 1 master, 1 slave
-3. Attach volume for mysql data
-4. Kill current mysql pod, make sure a new instance will start automatically.
+1. Start one mysql service in your laptop. Use docker volume to persist the data
+2. Kill current mysql pod, make sure a new instance will start automatically.
 ```
 - Main Tech:
 - See more: [Scenario-102](./Scenario-102)
+- TODO
 
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
@@ -68,6 +67,7 @@ Challenges Your Kubernetes Skills And Knowledge
 ```
 - Main Tech:
 - See more: [Scenario-201](./Scenario-201)
+- TODO
 
 ## Scenario-202: 2-Nodes K8S Deployment II
 - Objective: k8s cluster env with stateful service
@@ -79,6 +79,7 @@ Challenges Your Kubernetes Skills And Knowledge
 ```
 - Main Tech:
 - See more: [Scenario-202](./Scenario-202)
+- TODO
 
 ## Scenario-301: 2-Nodes Jenkins Deployment I
 - Objective: Real service deployment
@@ -89,6 +90,7 @@ Challenges Your Kubernetes Skills And Knowledge
 ```
 - Main Tech:
 - See more: [Scenario-301](./Scenario-301)
+- TODO
 
 ## Scenario-302: 2-Nodes Jenkins Deployment II
 - Objective: Real service deployment
@@ -100,6 +102,7 @@ Challenges Your Kubernetes Skills And Knowledge
 ```
 - Main Tech:
 - See more: [Scenario-302](./Scenario-302)
+- TODO
 
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
