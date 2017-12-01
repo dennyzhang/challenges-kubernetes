@@ -47,7 +47,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: Single node deployment for stateful service
 - Requirements:
 ```
-1. Start one mysql service in your laptop.
+1. Start one mysql server service and one mysql client service in your laptop.
    Use docker volume to persist the data
 
 2. Make mysql service is resilient.
