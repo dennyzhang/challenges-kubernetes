@@ -1,27 +1,62 @@
 Table of Contents
 =================
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
    * [1. Requirements](#1-requirements)
    * [2. Procedures](#2-procedures)
-      * [2.1 Install virtualbox and minikube](#21-install-virtualbox-and-minikube)
-      * [2.2 Start env](#22-start-env)
-      * [2.3 Check k8s dashboard](#23-check-k8s-dashboard)
-      * [2.4 Scale the instance](#24-scale-the-instance)
-      * [2.5 Verify deployment](#25-verify-deployment)
+      * [2.1 Start env](#21-start-env)
+      * [2.2 Resilient test](#22-resilient-test)
+      * [2.3 Destroy env](#23-destroy-env)
    * [3. Highlights](#3-highlights)
    * [4. More resources](#4-more-resources)
 
 # 1. Requirements
+<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 ```
 1. Start one mysql service in your laptop. Use docker volume to persist the data
-2. Kill current mysql pod, make sure a new instance will start automatically.
+2. Make mysql service is resilient. If one instance is down, another will be started automatcially.
 ```
 
 # 2. Procedures
 
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
+To setup mysql service, here we use [mysql image](https://hub.docker.com/_/mysql/) from docker hub
+
+## 2.1 Start env
+```
+# start a VM to host our deployment
+minikube start
+
+# TODO: use docker volume
+# TODO: configure env
+kubectl run hello-mysql --image=mysql --port=8080
+
+# Expose service
+kubectl expose deployment hello-mysql --type=NodePort
+
+# Check instance status
+kubectl get pod
+
+# list service
+kubectl service list
+```
+
+- Access mysql to confirm the deployment
+
+TODO
+
+## 2.2 Resilient test
+- If one instance is down, another will be started automatcially.
+TODO
+
+## 2.3 Destroy env
+```
+minikube delete
+```
+
 # 3. Highlights
+- Q:
 
 # 4. More resources
 - minikube: https://kubernetes.io/docs/getting-started-guides/minikube/

@@ -48,7 +48,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Requirements:
 ```
 1. Start one mysql service in your laptop. Use docker volume to persist the data
-2. Kill current mysql pod, make sure a new instance will start automatically.
+2. Make mysql service is resilient. If one instance is down, another will be started automatcially.
 ```
 - Main Tech:
 - See more: [Scenario-102](./Scenario-102)

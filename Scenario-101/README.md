@@ -9,6 +9,7 @@ Table of Contents
       * [2.3 Check k8s dashboard](#23-check-k8s-dashboard)
       * [2.4 Scale the instance](#24-scale-the-instance)
       * [2.5 Verify deployment](#25-verify-deployment)
+      * [2.6 Destroy env](#26-destroy-env)
    * [3. Highlights](#3-highlights)
    * [4. More resources](#4-more-resources)
 
@@ -71,6 +72,11 @@ for((i=0; i< 10; i++)); do { curl http://$service_url;}; done
 ```
 
 Go to minikube dashboard -> Pods -> choose one pod -> LOGS
+
+## 2.6 Destroy env
+```
+minikube delete
+```
 
 # 3. Highlights
 - Q: How to use your own docker image?
