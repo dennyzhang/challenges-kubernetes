@@ -38,7 +38,7 @@ Challenges Your Kubernetes Skills And Knowledge
 1. Start one node of k8s in your laptop. Mac or Linux
 2. Start a nginx webserver with one instance
 3. Scale nginx service into 2 instances.
-4. Test nginx URL, and confirm visit from nginx log
+4. Test nginx URL, and confirm the hits from nginx log of two instances
 ```
 - Main Tech: minikube
 - See more: [Scenario-101](./Scenario-101)

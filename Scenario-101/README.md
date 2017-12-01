@@ -16,7 +16,7 @@ Table of Contents
 1. Start one node of k8s in your laptop. Mac or Linux
 2. Start a nginx webserver with one instance
 3. Scale nginx service into 2 instances.
-4. Test nginx URL, and confirm visit from nginx log
+4. Test nginx URL, and confirm the hits from nginx log of two instances
 ```
 
 # 2. Procedures
@@ -73,6 +73,8 @@ Go to minikube dashboard -> Pods -> choose one pod -> LOGS
 
 # 3. Highlights
 - Q: How to use your own docker image?
+
+- Q: What does "kubectl expose deployment .." do behind the scene?
 
 # 4. More resources
 - minikube: https://kubernetes.io/docs/getting-started-guides/minikube/
