@@ -4,9 +4,10 @@ Table of Contents
 
    * [1. Requirements](#1-requirements)
    * [2. Procedures](#2-procedures)
-      * [2.1 Start env](#21-start-env)
-      * [2.2 Resilient test](#22-resilient-test)
-      * [2.3 Destroy env](#23-destroy-env)
+      * [2.1 Start mysql server service](#21-start-mysql-server-service)
+      * [2.2 Start mysql client service](#22-start-mysql-client-service)
+      * [2.3 Mysql server resilient test](#23-mysql-server-resilient-test)
+      * [2.4 Destroy env](#24-destroy-env)
    * [3. Highlights](#3-highlights)
    * [4. More resources](#4-more-resources)
 
@@ -23,7 +24,7 @@ Table of Contents
 
 To setup mysql service, here we use mysql image in [docker hub](https://hub.docker.com/_/mysql/).
 
-## 2.1 Start env
+## 2.1 Start mysql server service
 - Start vm
 ```
 # start a VM to host our deployment
@@ -48,7 +49,7 @@ kubectl get pod
 minikube service list
 ```
 
-- Setup mysql client service
+## 2.2 Start mysql client service
 ```
 # Docker: https://hub.docker.com/_/adminer/
 kubectl run hello-mysql-client --image=adminer --port=8080
@@ -67,11 +68,11 @@ kubectl get deployment
 
 TODO
 
-## 2.2 Resilient test
+## 2.3 Mysql server resilient test
 - If one instance is down, another will be started automatcially.
 TODO
 
-## 2.3 Destroy env
+## 2.4 Destroy env
 ```
 minikube delete
 ```
