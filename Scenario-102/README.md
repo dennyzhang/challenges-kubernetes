@@ -25,12 +25,19 @@ Table of Contents
 
 # 2. Background Knowledge
 
-- Use persistent volume in 3 steps
+- Use persistent volumes in 3 steps
 ```
 Creating and using a persistent volume is a three step process:
-1. Provision: Administrator provision a networked storage in the cluster, such as AWS ElasticBlockStore volumes. This is called as PersistentVolume.
-2. Request storage: User requests storage for pods by using claims. Claims can specify levels of resources (CPU and memory), specific sizes and access modes (e.g. can be mounted once read/write or many times write only).
-This is called as PersistentVolumeClaim.
+
+1. Provision: Administrator provision a networked storage in the
+cluster, such as AWS ElasticBlockStore volumes. This is called as
+PersistentVolume.
+
+2. Request storage: User requests storage for pods by using
+claims. Claims can specify levels of resources (CPU and memory),
+specific sizes and access modes (e.g. can be mounted once read/write
+or many times write only).  This is called as PersistentVolumeClaim.
+
 3. Use claim: Claims are mounted as volumes and used in pods for storage.
 
 https://blog.couchbase.com/stateful-containers-kubernetes-amazon-ebs/
