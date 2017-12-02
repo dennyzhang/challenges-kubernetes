@@ -34,10 +34,8 @@ minikube start
 - Start mysql server service
 ```
 # TODO: use docker volume
-export mysql_root_passwd="my-secret-pw"
 # Docker: https://hub.docker.com/_/mysql/
-kubectl run hello-mysql-server --image=mysql \
-   --env="MYSQL_ROOT_PASSWORD=$mysql_root_passwd" --port=3306
+kubectl create -f./pod-mysql-server.yml
 
 # Expose service
 kubectl expose deployment hello-mysql-server --type=NodePort
