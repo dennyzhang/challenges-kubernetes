@@ -67,18 +67,17 @@ kubectl create -f ./claim-mysql-server.yml
 # Docker: https://hub.docker.com/_/mysql/
 kubectl create -f ./rc-mysql-server.yml
 
-# Check instance status
-kubectl get pod
-
 # Start service
 kubectl create -f ./service-mysql-server.yml
 
-# list service
+# Get status
+kubectl get pod
 kubectl get services
 ```
 
 ## 3.4 Start mysql client service
 ```
+# Start mysql client of ReplicationController with 2 instances
 kubectl create -f ./rc-mysql-client.yml
 
 # Start service
@@ -87,7 +86,6 @@ kubectl create -f ./service-mysql-client.yml
 # Get status
 kubectl get pod
 kubectl get services
-kubectl get deployment
 ```
 
 - Check Web UI
