@@ -33,7 +33,6 @@ minikube start
 
 - Start mysql server service
 ```
-# TODO: use docker volume
 # Docker: https://hub.docker.com/_/mysql/
 kubectl create -f./pod-mysql-server.yml
 
