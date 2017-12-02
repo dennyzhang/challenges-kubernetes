@@ -56,8 +56,13 @@ minikube start
 
 ## 3.2 Create volume
 ```
+# Create PersistentVolume
 kubectl create -f ./volume-mysql-server.yml
+kubectl get pv
+
+# Create PersistentVolumeClaim
 kubectl create -f ./claim-mysql-server.yml
+kubectl get pvc
 ```
 
 ## 3.3 Start mysql server service
@@ -65,10 +70,13 @@ kubectl create -f ./claim-mysql-server.yml
 - Start mysql server service
 ```
 # Docker: https://hub.docker.com/_/mysql/
+# Create ReplicationController for mysql server
 kubectl create -f ./rc-mysql-server.yml
+kubectl get rc
 
 # Start service
 kubectl create -f ./service-mysql-server.yml
+kubectl get service
 
 # Get status
 kubectl get pod
@@ -77,11 +85,20 @@ kubectl get services
 
 ## 3.4 Start mysql client service
 ```
-# Start mysql client of ReplicationController with 2 instances
+# Start ReplicationController for mysql client. It will start 2 instances
 kubectl create -f ./rc-mysql-client.yml
+kubectl get rc
+
+## ,-----------
+## | macs-DennyZhang.com:Scenario-102 mac$ kubectl get rc
+## | NAME              DESIRED   CURRENT   READY     AGE
+## | rc-mysql-client   2         2         2         15s
+## | rc-mysql-server   1         1         1         39s
+## `-----------
 
 # Start service
 kubectl create -f ./service-mysql-client.yml
+kubectl get services
 
 # Get status
 kubectl get pod
