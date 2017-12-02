@@ -1,0 +1,18 @@
+# https://kubernetes.io/docs/getting-started-guides/minikube/#configuring-kubernetes
+# https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: mysql001
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: slow
+  selector:
+    matchLabels:
+      release: "stable"
+    matchExpressions:
+      - {key: environment, operator: In, values: [dev]}

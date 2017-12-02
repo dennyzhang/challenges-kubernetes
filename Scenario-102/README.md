@@ -4,10 +4,12 @@ Table of Contents
 
    * [1. Requirements](#1-requirements)
    * [2. Procedures](#2-procedures)
-      * [2.1 Start mysql server service](#21-start-mysql-server-service)
-      * [2.2 Start mysql client service](#22-start-mysql-client-service)
-      * [2.3 Mysql server resilient test](#23-mysql-server-resilient-test)
-      * [2.4 Destroy env](#24-destroy-env)
+      * [2.1 Start env](#21-start-env)
+      * [2.2 Create volume](#22-create-volume)
+      * [2.3 Start mysql server service](#23-start-mysql-server-service)
+      * [2.4 Start mysql client service](#24-start-mysql-client-service)
+      * [2.5 Mysql server resilient test](#25-mysql-server-resilient-test)
+      * [2.6 Destroy env](#26-destroy-env)`
    * [3. Highlights](#3-highlights)
    * [4. More resources](#4-more-resources)
 
@@ -24,34 +26,41 @@ Table of Contents
 
 To setup mysql service, here we use mysql image in [docker hub](https://hub.docker.com/_/mysql/).
 
-## 2.1 Start mysql server service
+## 2.1 Start env
 - Start vm
 ```
 # start a VM to host our deployment
 minikube start
 ```
 
+## 2.2 Create volume
+```
+kubectl create -f ./volume-mysql-server.yml
+```
+
+## 2.3 Start mysql server service
+
 - Start mysql server service
 ```
 # Docker: https://hub.docker.com/_/mysql/
-kubectl create -f./pod-mysql-server.yml
+kubectl create -f ./rc-mysql-server.yml
 
 # Check instance status
 kubectl get pod
 
 # Start service
-kubectl create -f service-mysql-server.yml
+kubectl create -f ./service-mysql-server.yml
 
 # list service
 kubectl get services
 ```
 
-## 2.2 Start mysql client service
+## 2.4 Start mysql client service
 ```
-kubectl create -f./pod-mysql-client.yml
+kubectl create -f ./rc-mysql-client.yml
 
 # Start service
-kubectl create -f service-mysql-client.yml
+kubectl create -f ./service-mysql-client.yml
 
 # Get status
 kubectl get pod
@@ -68,11 +77,11 @@ minikube dashboard
 
 TODO
 
-## 2.3 Mysql server resilient test
+## 2.5 Mysql server resilient test
 - If one instance is down, another will be started automatcially.
 TODO
 
-## 2.4 Destroy env
+## 2.6 Destroy env
 ```
 minikube delete
 ```
