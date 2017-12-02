@@ -108,7 +108,7 @@ Challenges Your Kubernetes Skills And Knowledge
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
 # Highlights
-- TOOD
+- TODO
 
 - More resources
 ```
