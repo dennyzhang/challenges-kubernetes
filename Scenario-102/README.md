@@ -116,6 +116,7 @@ TODO
 
 ## 3.5 Mysql server resilient test
 - If one instance is down, another will be started automatcially.
+
 TODO
 
 ## 3.6 Destroy env
@@ -126,8 +127,11 @@ minikube delete
 # 4. Highlights
 - Q: How does the volume process work?
 
+- Q: How PersistentVolumeClaim know use which PersistentVolume?
+
 # 5. More resources
 - minikube: https://kubernetes.io/docs/getting-started-guides/minikube/
 - k8s local solutions: https://kubernetes.io/docs/setup/pick-right-solution/#local-machine-solutions
+- k8s volume: https://blog.couchbase.com/stateful-containers-kubernetes-amazon-ebs/
 
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
