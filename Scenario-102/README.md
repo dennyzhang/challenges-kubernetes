@@ -17,7 +17,7 @@ Table of Contents
 1. Use yaml to start one mysql server service with 1 instance.
 2. Use yaml to start one mysql client service with 2 instances.
 3. Verify mysql server resilience.
-   Delete the instance, confirm another one will be started automatically.
+   Delete the instance, confirm another one will be started with no data loss.
 ```
 
 # 2. Procedures
