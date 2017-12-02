@@ -107,7 +107,7 @@ minikube delete
 ```
 
 # 4. Highlights
-- Q:
+- Q: How does the volume process work?
 
 # 5. More resources
 - minikube: https://kubernetes.io/docs/getting-started-guides/minikube/
