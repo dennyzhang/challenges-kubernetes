@@ -49,7 +49,13 @@ kubectl create -f./pod-mysql-client.yml
 
 # Get status
 kubectl get pod
+kubectl get services
 kubectl get deployment
+```
+
+- Check Web UI
+```
+minikube dashboard
 ```
 
 - Open mysql client to access the mysql server

@@ -10,23 +10,22 @@ spec:
     app: hello-mysql-server
   template:
     metadata:
-      name: mysql
+      name: hello-mysql-server
       labels:
-        app: mysql
-  spec:
-    containers:
-    - name: hello-mysql-server
-      # Docker Image: https://hub.docker.com/_/mysql/
-      image: mysql
-      ports:
-      - containerPort: 3306
-      env:
-      - name: MYSQL_ROOT_PASSWORD
-        value: "my-secret-pw"
-      volumeMounts:
+        app: hello-mysql-server
+    spec:
+      containers:
+      - name: hello-mysql-server
+        # Docker Image: https://hub.docker.com/_/mysql/
+        image: mysql
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "my-secret-pw"
+        volumeMounts:
+        - name: mysql-storage
+          mountPath: /var/lib/mysql
+      volumes:
       - name: mysql-storage
-        mountPath: /var/lib/mysql
-        
-    volumes:
-    - name: mysql-storage
-      emptyDir: {}
+        emptyDir: {}

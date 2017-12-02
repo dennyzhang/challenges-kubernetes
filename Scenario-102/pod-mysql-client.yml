@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: srv-mysql-client
+  name: hello-mysql-client
 spec:
   replicas: 2
   # TODO: what is selector?
@@ -10,13 +10,13 @@ spec:
     app: hello-mysql-client
   template:
     metadata:
-      name: mysql
+      name: hello-mysql-client
       labels:
-        app: mysql
-  spec:
-    containers:
-    - name: hello-mysql-client
-      # Docker Image: https://hub.docker.com/_/adminer/
-      image: adminer
-      ports:
-      - containerPort: 8080
+        app: hello-mysql-client
+    spec:
+      containers:
+      - name: hello-mysql-client
+        # Docker Image: https://hub.docker.com/_/adminer/
+        image: adminer
+        ports:
+        - containerPort: 8080
