@@ -37,14 +37,14 @@ minikube start
 # Docker: https://hub.docker.com/_/mysql/
 kubectl create -f./pod-mysql-server.yml
 
-# Expose service
-kubectl expose deployment hello-mysql-server --type=NodePort
+# Get services
+kubectl get services
 
 # Check instance status
 kubectl get pod
 
 # list service
-minikube service list
+kubectl get services
 ```
 
 ## 2.2 Start mysql client service
