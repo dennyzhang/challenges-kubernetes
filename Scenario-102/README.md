@@ -112,12 +112,19 @@ minikube dashboard
 
 - Open mysql client to access the mysql server
 
+Use phpmyadmin, create a database and a table 
 TODO
 
 ## 3.5 Mysql server resilient test
 - If one instance is down, another will be started automatcially.
 
 TODO
+
+From Web UI, delete the mysql server Pod.
+
+We should see ReplicationController will start a new one.
+
+Confirm the database and table still persist, which were created in last step.
 
 ## 3.6 Destroy env
 ```
