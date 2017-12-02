@@ -1,0 +1,22 @@
+# http://containertutorials.com/get_started_kubernetes/k8s_example.html#
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: srv-mysql-client
+spec:
+  replicas: 2
+  # TODO: what is selector?
+  selector:
+    app: hello-mysql-client
+  template:
+    metadata:
+      name: mysql
+      labels:
+        app: mysql
+  spec:
+    containers:
+    - name: hello-mysql-client
+      # Docker Image: https://hub.docker.com/_/adminer/
+      image: adminer
+      ports:
+      - containerPort: 8080

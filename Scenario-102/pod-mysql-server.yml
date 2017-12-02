@@ -1,20 +1,32 @@
+# http://containertutorials.com/get_started_kubernetes/k8s_example.html#
 apiVersion: v1
-kind: Pod
+kind: ReplicationController
 metadata:
-  name: hello-mysql-server
+  name: srv-mysql-server
 spec:
-  containers:
-  - name: hello-mysql-server
-    image: mysql
-    ports:
-    - containerPort: 3306
-    env:
-    - name: MYSQL_ROOT_PASSWORD
-      value: "my-secret-pw"
-    volumeMounts:
+  replicas: 1
+  # TODO: what is selector?
+  selector:
+    app: hello-mysql-server
+  template:
+    metadata:
+      name: mysql
+      labels:
+        app: mysql
+  spec:
+    containers:
+    - name: hello-mysql-server
+      # Docker Image: https://hub.docker.com/_/mysql/
+      image: mysql
+      ports:
+      - containerPort: 3306
+      env:
+      - name: MYSQL_ROOT_PASSWORD
+        value: "my-secret-pw"
+      volumeMounts:
+      - name: mysql-storage
+        mountPath: /var/lib/mysql
+        
+    volumes:
     - name: mysql-storage
-      mountPath: /var/lib/mysql
-      
-  volumes:
-  - name: mysql-storage
-    emptyDir: {}
+      emptyDir: {}

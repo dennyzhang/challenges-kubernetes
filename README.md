@@ -47,8 +47,8 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: Single node deployment for stateful service
 - Requirements:
 ```
-1. Start one mysql server service with 1 instance.
-2. Start one mysql client service with 2 instances.
+1. Use yaml to start one mysql server service with 1 instance.
+2. Use yaml to start one mysql client service with 2 instances.
 3. Verify mysql server resilience.
    Delete the instance, confirm another one will be started automatically.
 ```
@@ -108,8 +108,12 @@ Challenges Your Kubernetes Skills And Knowledge
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
 # Highlights
-
 - TOOD
+
+- More resources
+```
+http://containertutorials.com/get_started_kubernetes/k8s_example.html
+```
 
 # Contributors: Give People Credits
 Below are folks who have contributed via GitHub!

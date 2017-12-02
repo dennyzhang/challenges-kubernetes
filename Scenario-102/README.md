@@ -14,8 +14,8 @@ Table of Contents
 # 1. Requirements
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 ```
-1. Start one mysql server service with 1 instance.
-2. Start one mysql client service with 2 instances.
+1. Use yaml to start one mysql server service with 1 instance.
+2. Use yaml to start one mysql client service with 2 instances.
 3. Verify mysql server resilience.
    Delete the instance, confirm another one will be started automatically.
 ```
@@ -36,9 +36,6 @@ minikube start
 # Docker: https://hub.docker.com/_/mysql/
 kubectl create -f./pod-mysql-server.yml
 
-# Get services
-kubectl get services
-
 # Check instance status
 kubectl get pod
 
@@ -48,13 +45,7 @@ kubectl get services
 
 ## 2.2 Start mysql client service
 ```
-# Docker: https://hub.docker.com/_/adminer/
-kubectl run hello-mysql-client --image=adminer --port=8080
-# Expose service
-kubectl expose deployment hello-mysql-client --type=NodePort
-
-# Scale the client
-kubectl scale --replicas=2 deployment/hello-mysql-client
+kubectl create -f./pod-mysql-client.yml
 
 # Get status
 kubectl get pod
