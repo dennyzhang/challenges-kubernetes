@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: hello-mysql-client
+  name: rc-mysql-client
 spec:
   replicas: 2
   # TODO: what is selector?
