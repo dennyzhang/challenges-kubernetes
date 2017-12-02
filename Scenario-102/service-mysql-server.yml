@@ -1,0 +1,13 @@
+# http://containertutorials.com/get_started_kubernetes/k8s_example.html#
+apiVersion: v1
+kind: Service
+metadata:
+  name: srv-mysql-server
+spec:
+  ports:
+  # The port that this service should serve on.
+  - port: 3306
+  # Label keys and values that must match in order to receive traffic for this service.
+  selector:
+    app: hello-mysql-server
+  type: LoadBalancer

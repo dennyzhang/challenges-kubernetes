@@ -39,6 +39,9 @@ kubectl create -f./pod-mysql-server.yml
 # Check instance status
 kubectl get pod
 
+# Start service
+kubectl create -f service-mysql-server.yml
+
 # list service
 kubectl get services
 ```
@@ -46,6 +49,9 @@ kubectl get services
 ## 2.2 Start mysql client service
 ```
 kubectl create -f./pod-mysql-client.yml
+
+# Start service
+kubectl create -f service-mysql-client.yml
 
 # Get status
 kubectl get pod
