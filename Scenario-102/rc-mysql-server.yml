@@ -30,5 +30,5 @@ spec:
       volumes:
       - name: mysqlstorage
         persistentVolumeClaim:
-          # check ./volume-mysql-server.yml
-          claimName: mysql001
+          # check ./claim-mysql-server.yml
+          claimName: mysql001-1

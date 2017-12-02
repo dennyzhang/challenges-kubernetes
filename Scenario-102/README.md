@@ -36,6 +36,7 @@ minikube start
 ## 2.2 Create volume
 ```
 kubectl create -f ./volume-mysql-server.yml
+kubectl create -f ./claim-mysql-server.yml
 ```
 
 ## 2.3 Start mysql server service
