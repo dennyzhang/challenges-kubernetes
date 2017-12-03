@@ -114,6 +114,7 @@ Challenges Your Kubernetes Skills And Knowledge
 ```
 - http://containertutorials.com/get_started_kubernetes/k8s_example.html
 - https://kubernetes.io/docs/getting-started-guides/scratch/
+- https://github.com/kelseyhightower/kubernetes-the-hard-way
 ```
 
 # Contributors: Give People Credits

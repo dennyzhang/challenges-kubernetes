@@ -1,5 +1,5 @@
 # https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/getting_started_with_kubernetes/get_started_provisioning_storage_in_kubernetes
-# check ./volume-mysql-server.yml
+# check ./volume-mysql-server.yaml
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:

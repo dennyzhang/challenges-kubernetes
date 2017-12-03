@@ -19,6 +19,8 @@ Table of Contents
 
 # 2. Procedures
 
+https://github.com/kelseyhightower/kubernetes-the-hard-way
+
 # 3. Highlights
 - Q: 
 
