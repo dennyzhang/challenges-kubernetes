@@ -64,14 +64,16 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: Advanced k8s deployment for one single db service
 - Requirements:
 ```
-1. Use StatefulSet to create one mysql db instance in yaml
-2. Add livenessProbe for db server
-3. When db first started, create a dummy table and dummy records
-4. When db process has failed, make sure a new one will be started and no data loss
+1. In yaml, define a k8s context. Thus we can segreate different k8s envs
+2. Use StatefulSet to create one mysql db instance in yaml
+3. Add livenessProbe for db server
+4. When db first started, create a dummy table and dummy records
+5. When db process has failed, make sure a new one will be started and no data loss
 ```
 - See [kubernetes.yaml](Scenario-103/kubernetes.yaml)
-- Main Tech: minikube, mysql, volume
+- Main Tech: minikube, mysql, volume, Job
 - See more: [Scenario-103](./Scenario-103)
+- TODO
 
 ## Scenario-201: 2-Nodes K8S Deployment I
 - Objective: Understand k8s cluster model
