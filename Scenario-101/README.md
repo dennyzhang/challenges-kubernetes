@@ -6,10 +6,8 @@ Table of Contents
    * [2. Procedures](#2-procedures)
       * [2.1 Install virtualbox and minikube](#21-install-virtualbox-and-minikube)
       * [2.2 Start env](#22-start-env)
-      * [2.3 Check k8s dashboard](#23-check-k8s-dashboard)
-      * [2.4 Scale the instance](#24-scale-the-instance)
-      * [2.5 Verify deployment](#25-verify-deployment)
-      * [2.6 Destroy env](#26-destroy-env)
+      * [2.3 Check Status](#23-check-status)
+      * [2.4 Destroy env](#24-destroy-env)
    * [3. Highlights](#3-highlights)
    * [4. More resources](#4-more-resources)
 
@@ -43,6 +41,7 @@ kubectl create -f ./kubernetes.yaml
 ```
 
 ## 2.3 Check Status
+- List k8s resources
 ```
 # list deployments
 kubectl get deployment
@@ -54,12 +53,12 @@ kubectl get services
 kubectl get pods
 ```
 
-## 2.4 Check Web UI of k8s dashboard
+- Check k8s web UI Dashboard
 ```
 minikube dashboard
 ```
 
-## 2.5 Verify deployment
+- Run functional test
 ```
 # Get endpoint url of nginx service
 kubectl list service
@@ -68,7 +67,7 @@ kubectl list service
 for((i=0; i< 10; i++)); do { curl http://$service_url;}; done
 ```
 
-## 2.6 Destroy env
+## 2.4 Destroy env
 - Delete k8s resources
 ```
 kubectl delete -f ./kubernetes.yaml
