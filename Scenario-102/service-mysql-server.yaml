@@ -12,4 +12,5 @@ spec:
   # Label keys and values that must match in order to receive traffic for this service.
   selector:
     app: hello-mysql-server
+  # https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport
   type: NodePort

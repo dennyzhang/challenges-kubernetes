@@ -80,8 +80,8 @@ minikube dashboard
 kubectl get services
 
 # Send requests
-server_url="192.168.99.102:30000"
-for((i=0; i< 10; i++)); do { curl http://$service_url;}; done
+service_url="$(minikube service my-nginx-service --url)"
+for((i=0; i< 5; i++)); do { curl -I "$service_url";}; done
 ```
 
 ## 2.4 Destroy env
