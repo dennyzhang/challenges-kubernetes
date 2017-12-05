@@ -13,7 +13,7 @@ Table of Contents
 # Requirements
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 ```
-1. In yaml, define a k8s context. Thus we can segreate different k8s envs
+1. In yaml, define a k8s namespace. Thus we can segreate different k8s envs
 2. Use StatefulSet to create one mysql db instance in yaml
 3. Add livenessProbe for db server
 4. When db first started, create a dummy table and dummy records
