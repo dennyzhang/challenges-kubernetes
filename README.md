@@ -40,6 +40,7 @@ Challenges Your Kubernetes Skills And Knowledge
 3. Scale nginx service into 2 instances.
 4. Get familiar with k8s dashboard. Find pods from GUI, check nginx log.
 ```
+- See [kubernetes.yaml](Scenario-101/kubernetes.yaml)
 - Main Tech: minikube, nginx, dashboard
 - See more: [Scenario-101](./Scenario-101)
 
@@ -49,9 +50,10 @@ Challenges Your Kubernetes Skills And Knowledge
 ```
 1. Use yaml to start one mysql server service with 1 instance.
 2. Use yaml to start one mysql client service with 2 instances.
-3. Verify mysql server resilience.
-   Delete the instance, confirm another one will be started with no data loss.
+3. Delete the db server instance, make sure a new one will be created automatically.
+4. When db server is recreated, make sure no data loss.
 ```
+- See [kubernetes.yaml](Scenario-102/kubernetes.yaml)
 - Main Tech: minikube, mysql, volume
 - See more: [Scenario-102](./Scenario-102)
 
