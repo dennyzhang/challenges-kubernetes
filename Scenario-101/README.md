@@ -38,28 +38,25 @@ which kubectl
 # start a VM to host our deployment
 minikube start
 
-# Here we use nginx docker image from docker hub. Nginx listen on port 80
-# https://hub.docker.com/_/nginx/
-kubectl run hello-nginx --image=nginx --port=80
+# Create k8s deployment and export service
+kubectl create -f ./kubernetes.yaml
+```
 
-# Expose service
-kubectl expose deployment hello-nginx --type=NodePort
-
-# Check instance status
-kubectl get pod
+## 2.3 Check Status
+```
+# list deployments
+kubectl get deployment
 
 # list service
 kubectl get services
+
+# list pods
+kubectl get pods
 ```
 
-## 2.3 Check k8s dashboard
+## 2.4 Check Web UI of k8s dashboard
 ```
 minikube dashboard
-```
-
-## 2.4 Scale the instance
-```
-kubectl scale --replicas=2 deployment/hello-nginx
 ```
 
 ## 2.5 Verify deployment
@@ -71,9 +68,13 @@ kubectl list service
 for((i=0; i< 10; i++)); do { curl http://$service_url;}; done
 ```
 
-Go to minikube dashboard -> Pods -> choose one pod -> LOGS
-
 ## 2.6 Destroy env
+- Delete k8s resources
+```
+kubectl delete -f ./kubernetes.yaml
+```
+
+- Remove VM
 ```
 minikube delete
 ```
