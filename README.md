@@ -22,8 +22,9 @@ Challenges Your Kubernetes Skills And Knowledge
       * [Scenario-103: 1-Node K8S Deployment III](#scenario-103-1-node-k8s-deployment-iii)
       * [Scenario-201: 2-Nodes K8S Deployment I](#scenario-201-2-nodes-k8s-deployment-i)
       * [Scenario-202: 2-Nodes K8S Deployment II](#scenario-202-2-nodes-k8s-deployment-ii)
-      * [Scenario-301: 2-Nodes Jenkins Deployment I](#scenario-301-2-nodes-jenkins-deployment-i)
-      * [Scenario-302: 2-Nodes Jenkins Deployment II](#scenario-302-2-nodes-jenkins-deployment-ii)
+      * [Scenario-301: 2-Nodes Elasticsearch Deployment I](#scenario-301-2-nodes-elasticsearch-deployment-i)
+      * [Scenario-401: 2-Nodes Jenkins Deployment I](#scenario-401-2-nodes-jenkins-deployment-i)
+      * [Scenario-402: 2-Nodes Jenkins Deployment II](#scenario-402-2-nodes-jenkins-deployment-ii)
    * [Highlights](#highlights)
    * [Contributors: Give People Credits](#contributors-give-people-credits)
    * [License](#license)
@@ -100,7 +101,18 @@ Challenges Your Kubernetes Skills And Knowledge
 - See more: [Scenario-202](./Scenario-202)
 - TODO
 
-## Scenario-301: 2-Nodes Jenkins Deployment I
+## Scenario-301: 2-Nodes Elasticsearch Deployment I
+- Objective: Real service deployment for db service
+- Requirements:
+```
+1. Deploy elasticsearch k8s cluster with 3 nodes. Configure the replica count to 3.
+2. Simulate node crash event and make sure no data loss. And no downtime.
+```
+- Main Tech:
+- See more: [Scenario-301](./Scenario-301)
+- TODO
+
+## Scenario-401: 2-Nodes Jenkins Deployment I
 - Objective: Real service deployment
 - Requirements:
 ```
@@ -108,19 +120,19 @@ Challenges Your Kubernetes Skills And Knowledge
 2. When Jenkins crash, get alerts
 ```
 - Main Tech:
-- See more: [Scenario-301](./Scenario-301)
+- See more: [Scenario-401](./Scenario-401)
 - TODO
 
-## Scenario-302: 2-Nodes Jenkins Deployment II
+## Scenario-402: 2-Nodes Jenkins Deployment II
 - Objective: Real service deployment
 - Requirements:
 ```
-1. Finish Scenario-301
+1. Finish Scenario-401
 2. When jenkins master crash, make sure service doesn't crash
 3. Use nginx as an ingress for Jenkins master
 ```
 - Main Tech:
-- See more: [Scenario-302](./Scenario-302)
+- See more: [Scenario-402](./Scenario-402)
 - TODO
 
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
