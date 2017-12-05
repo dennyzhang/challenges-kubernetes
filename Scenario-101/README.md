@@ -19,6 +19,8 @@ Table of Contents
 4. Get familiar with k8s dashboard. Find pods from GUI, check nginx log.
 ```
 
+See [kubernetes.yaml](kubernetes.yaml)
+
 # Procedures
 
 For single node deployment, we have [multiple choices](https://kubernetes.io/docs/setup/pick-right-solution/#local-machine-solutions). Here we use [minikube](https://kubernetes.io/docs/getting-started-guides/minikube/).

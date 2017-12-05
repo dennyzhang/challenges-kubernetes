@@ -19,6 +19,8 @@ Table of Contents
    Delete the instance, confirm another one will be started with no data loss.
 ```
 
+See [kubernetes.yaml](kubernetes.yaml)
+
 # Background Knowledge
 
 - Use persistent volumes in 3 steps
@@ -77,9 +79,13 @@ Open mysql client to access the mysql server
 Use phpmyadmin, create a database and a table 
 TODO
 
-phpmyadmin url: minikube service my-dbclient-service --url
+phpmyadmin url:
+```minikube service my-dbclient-service --url```
 
-dbserver_url="$(minikube service my-dbserver-service --url)"
+dbserver_url:
+```"$(minikube service my-dbserver-service --url)"```
+
+TODO: remove http, add screenshot
 
 -  Mysql server resilient test
 - If one instance is down, another will be started automatcially.
