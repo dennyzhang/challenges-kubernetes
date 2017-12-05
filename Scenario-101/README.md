@@ -2,16 +2,14 @@ Table of Contents
 =================
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
-   * [1. Requirements](#1-requirements)
-   * [2. Procedures](#2-procedures)
-      * [2.1 Install virtualbox and minikube](#21-install-virtualbox-and-minikube)
-      * [2.2 Start env](#22-start-env)
-      * [2.3 Check Status](#23-check-status)
-      * [2.4 Destroy env](#24-destroy-env)
-   * [3. Highlights](#3-highlights)
-   * [4. More resources](#4-more-resources)
+   * [Requirements](#requirements)
+   * [Procedures](#procedures)
+      * [Deployment](#deployment)
+      * [Verify Deployment](#verify-deployment)
+   * [Highlights](#highlights)
+   * [More resources](#more-resources)
 
-# 1. Requirements
+# Requirements
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
 ```
@@ -21,17 +19,18 @@ Table of Contents
 4. Get familiar with k8s dashboard. Find pods from GUI, check nginx log.
 ```
 
-# 2. Procedures
+# Procedures
 
 For single node deployment, we have [multiple choices](https://kubernetes.io/docs/setup/pick-right-solution/#local-machine-solutions). Here we use [minikube](https://kubernetes.io/docs/getting-started-guides/minikube/).
 
-## 2.1 Install virtualbox and minikube
+## Deployment
+- Install virtualbox and minikube
 ```
 which minikube
 which kubectl
 ```
 
-## 2.2 Start env
+- Start env
 ```
 # start a VM to host our deployment
 minikube start
@@ -40,7 +39,12 @@ minikube start
 kubectl create -f ./kubernetes.yaml
 ```
 
-## 2.3 Check Status
+## Verify Deployment
+- Check k8s web UI Dashboard
+```
+minikube dashboard
+```
+
 - List k8s resources
 ```
 # list deployments
@@ -69,11 +73,6 @@ kubectl exec -ti $POD_NAME hostname
 kubectl logs -f $POD_NAME
 ```
 
-- Check k8s web UI Dashboard
-```
-minikube dashboard
-```
-
 - Run functional test
 ```
 # Get endpoint url of nginx service
@@ -84,7 +83,7 @@ service_url="$(minikube service my-nginx-service --url)"
 for((i=0; i< 5; i++)); do { curl -I "$service_url";}; done
 ```
 
-## 2.4 Destroy env
+Destroy env:
 - Delete k8s resources
 ```
 kubectl delete -f ./kubernetes.yaml
@@ -95,12 +94,12 @@ kubectl delete -f ./kubernetes.yaml
 minikube delete
 ```
 
-# 3. Highlights
+# Highlights
 - Q: How to use your own docker image?
 
 - Q: What does "kubectl expose deployment .." do behind the scene?
 
-# 4. More resources
+# More resources
 - minikube: https://kubernetes.io/docs/getting-started-guides/minikube/
 - k8s local solutions: https://kubernetes.io/docs/setup/pick-right-solution/#local-machine-solutions
 
