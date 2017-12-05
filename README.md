@@ -19,6 +19,7 @@ Challenges Your Kubernetes Skills And Knowledge
    * [Scenarios](#scenarios)
       * [Scenario-101: 1-Node K8S Deployment I](#scenario-101-1-node-k8s-deployment-i)
       * [Scenario-102: 1-Node K8S Deployment II](#scenario-102-1-node-k8s-deployment-ii)
+      * [Scenario-103: 1-Node K8S Deployment III](#scenario-103-1-node-k8s-deployment-iii)
       * [Scenario-201: 2-Nodes K8S Deployment I](#scenario-201-2-nodes-k8s-deployment-i)
       * [Scenario-202: 2-Nodes K8S Deployment II](#scenario-202-2-nodes-k8s-deployment-ii)
       * [Scenario-301: 2-Nodes Jenkins Deployment I](#scenario-301-2-nodes-jenkins-deployment-i)
@@ -58,6 +59,19 @@ Challenges Your Kubernetes Skills And Knowledge
 - See more: [Scenario-102](./Scenario-102)
 
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+
+## Scenario-103: 1-Node K8S Deployment III
+- Objective: Advanced k8s deployment for one single db service
+- Requirements:
+```
+1. Use StatefulSet to create one mysql db instance in yaml
+2. Add livenessProbe for db server
+3. When db first started, create a dummy table and dummy records
+4. When db process has failed, make sure a new one will be started and no data loss
+```
+- See [kubernetes.yaml](Scenario-103/kubernetes.yaml)
+- Main Tech: minikube, mysql, volume
+- See more: [Scenario-103](./Scenario-103)
 
 ## Scenario-201: 2-Nodes K8S Deployment I
 - Objective: Understand k8s cluster model
