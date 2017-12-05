@@ -53,6 +53,22 @@ kubectl get services
 kubectl get pods
 ```
 
+- Check the first pod
+```
+# Get all pods
+kubectl get pods -l app="nginx"
+
+# Get the first pod
+POD_NAME=$(kubectl get pods -l app="nginx" -o jsonpath="{.items[0].metadata.name}")
+echo "POD_NAME: $POD_NAME"
+
+# Login to the first pod
+kubectl exec -ti $POD_NAME hostname
+
+# Check log of the first pd
+kubectl logs -f $POD_NAME
+```
+
 - Check k8s web UI Dashboard
 ```
 minikube dashboard
@@ -61,9 +77,10 @@ minikube dashboard
 - Run functional test
 ```
 # Get endpoint url of nginx service
-kubectl list service
+kubectl get services
 
 # Send requests
+server_url="192.168.99.102:30000"
 for((i=0; i< 10; i++)); do { curl http://$service_url;}; done
 ```
 
