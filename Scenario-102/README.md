@@ -54,6 +54,7 @@ minikube start
 # Create k8s volume, deployment and service
 kubectl create -f ./kubernetes.yaml
 ```
+See [kubernetes.yaml](kubernetes.yaml)
 
 ## Verify Deployment
 - Check k8s web UI Dashboard
@@ -80,9 +81,11 @@ Use phpmyadmin, create a database and a table
 TODO
 
 phpmyadmin url:
+
 ```minikube service my-dbclient-service --url```
 
 dbserver_url:
+
 ```"$(minikube service my-dbserver-service --url)"```
 
 TODO: remove http, add screenshot

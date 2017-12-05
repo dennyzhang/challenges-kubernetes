@@ -55,6 +55,7 @@ minikube start
 # Create k8s volume, deployment and service
 kubectl create -f ./kubernetes.yaml
 ```
+See [kubernetes.yaml](kubernetes.yaml)
 
 ## Verify Deployment
 - Check k8s web UI Dashboard
