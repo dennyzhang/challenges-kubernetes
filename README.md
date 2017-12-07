@@ -76,7 +76,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: Know how to deployment k8s cluster env
 - Requirements:
 ```
-1. Deploy 3 nodes k8s. One as k8s master and worker, and others as worker
+1. Deploy 3 nodes k8s. One controller, others as worker
 2. Create a nginx service with 6 instances.
 3. Visit nginx service by loadbalancer. (Hint: Ingress)
 ```
@@ -88,7 +88,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: k8s cluster env with stateful service
 - Requirements:
 ```
-1. Deploy a 3node k8s. One as k8s master and worker, and the other two as worker
+1. Deploy 3 nodes k8s. One controller, others as worker
 2. Create an elasticsearch service with 6 instances. And ES indices replica as 3
 3. Create a nightly job to backup elasticsearch cluster. (Hint: Cron Jobs)
 ```
@@ -100,7 +100,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: Real service deployment
 - Requirements:
 ```
-1. Deploy a 3node k8s. One as k8s master and worker, and the other two as worker
+1. Deploy 3 nodes k8s. One controller, others as worker
 1. Deploy jenkins service with 1 master 3 agents
 2. When Jenkins crash, get alerts
 ```
@@ -112,7 +112,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: Real service deployment
 - Requirements:
 ```
-1. Deploy a 3node k8s. One as k8s master and worker, and the other two as worker
+1. Deploy 3 nodes k8s. One controller, others as worker
 2. Deploy Jenkins service by helm
 3. Use nginx as an ingress for Jenkins master
 ```

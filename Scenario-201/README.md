@@ -12,7 +12,7 @@ Table of Contents
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
 ```
-1. Deploy 3 nodes k8s. One as k8s master and worker, and others as worker
+1. Deploy 3 nodes k8s. One controller, others as worker
 2. Create a nginx service with 6 instances.
 3. Visit nginx service by loadbalancer. (Hint: Ingress)
 ```
@@ -25,6 +25,11 @@ Here we focus more on the second category.
 
 For Category#1, I have 2 recommendated GitHub Repo.
 ```
+Start 3 nodes k8s cluster by vagrant. 1 controller 2 workers
+https://github.com/davidkbainbridge/k8s-playground
+
+Start 6 nodes k8s cluster in Google Cloud Platform. 3 controller 3 workers
+https://github.com/kelseyhightower/kubernetes-the-hard-way
 ```
 
 # 2. Procedures
