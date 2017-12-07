@@ -3,12 +3,15 @@
 Table of Contents
 =================
 
-   * [1. Requirements](#1-requirements)
-   * [2. Procedures](#2-procedures)
-   * [3. Highlights](#3-highlights)
-   * [4. More resources](#4-more-resources)
+   * [Requirements](#requirements)
+   * [Background &amp; Highlights](#background--highlights)
+   * [Procedures](#procedures)
+      * [Start 3 nodes local env of k8s cluster](#start-3-nodes-local-env-of-k8s-cluster)
+      * [Deploy nginx service](#deploy-nginx-service)
+      * [Verify Deployment](#verify-deployment)
+   * [More resources](#more-resources)
 
-# 1. Requirements
+# Requirements
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
 ```
@@ -21,9 +24,9 @@ Two different categories:
 1. Setup a k8s cluster itself. Improve k8s availability and reliablity
 2. Deploy clustered services in k8s cluster. Improve services' availability and reliablity
 
-Our focus is more about category #2.
+**Our focus is more about category #2.**
 
-For Category #1, I have 2 recommendated GitHub Repo.
+For Category #1, I have recommendations for two GitHub Repos.
 ```
 Start 3 nodes k8s cluster by vagrant. 1 controller 2 workers
 https://github.com/davidkbainbridge/k8s-playground
@@ -32,10 +35,16 @@ Start 6 nodes k8s cluster in Google Cloud Platform. 3 controller 3 workers
 https://github.com/kelseyhightower/kubernetes-the-hard-way
 ```
 
-# 2. Procedures
+# Background & Highlights
 
-## 2.1 Start 3 nodes local env of k8s cluster
+# Procedures
+
+## Start 3 nodes local env of k8s cluster
 - Install virtualbox and vagrant
+
+Here we use davidkbainbridge's repo of [k8s-playground](https://github.com/davidkbainbridge/k8s-playground)
+
+It will setup 3 nodes k8s cluster in your local virtualbox.
 
 - Start k8s cluster by vagrant
 ```
@@ -43,11 +52,28 @@ cd challenges-kubernetes/Scenario-201/k8s-playground
 vagrant up -d
 ```
 
-We will use [davidkbainbridge/k8s-playground](https://github.com/davidkbainbridge/k8s-playground) to setup 3 nodes k8s cluster by virtualbox.
+- Verify k8s cluster env
 
-# 3. Highlights
-- Q: 
+TODO
 
-# 4. More resources
+## Deploy nginx service
+
+- Create namespace
+```
+kubectl create namespace nginx-6node-test
+```
+
+- Run deployment
+```
+kubectl --namespace nginx-6node-test create -f ./kubernetes.yaml
+```
+
+## Verify Deployment
+```
+```
+
+TODO
+
+# More resources
 
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>

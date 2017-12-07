@@ -3,11 +3,10 @@ Table of Contents
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
    * [Requirements](#requirements)
-   * [Background Knowledge](#background-knowledge)
+   * [Background &amp; Highlights](#background--highlights)
    * [Procedure](#procedure)
       * [Deployment](#deployment)
       * [Verify Deployment](#verify-deployment)
-   * [Highlights](#highlights)
    * [More resources](#more-resources)
 
 # Requirements
@@ -21,7 +20,7 @@ Table of Contents
 
 See [kubernetes.yaml](kubernetes.yaml)
 
-# Background Knowledge
+# Background & Highlights
 
 - Use persistent volumes in 3 steps
 ```
@@ -39,6 +38,12 @@ or many times write only).  This is called as PersistentVolumeClaim.
 3. Use claim: Claims are mounted as volumes and used in pods for storage.
 
 https://blog.couchbase.com/stateful-containers-kubernetes-amazon-ebs/
+```
+
+- Highlights
+```
+Q: How does the volume process work?
+Q: How PersistentVolumeClaim know use which PersistentVolume?
 ```
 
 # Procedure
@@ -111,10 +116,6 @@ kubectl delete -f ./kubernetes.yaml
 minikube delete
 ```
 
-# Highlights
-- Q: How does the volume process work?
-
-- Q: How PersistentVolumeClaim know use which PersistentVolume?
 
 # More resources
 - minikube: https://kubernetes.io/docs/getting-started-guides/minikube/

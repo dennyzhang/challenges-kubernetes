@@ -3,10 +3,10 @@ Table of Contents
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
    * [Requirements](#requirements)
+   * [Background &amp; Highlights](#background--highlights)
    * [Procedures](#procedures)
       * [Deployment](#deployment)
       * [Verify Deployment](#verify-deployment)
-   * [Highlights](#highlights)
    * [More resources](#more-resources)
 
 # Requirements
@@ -20,6 +20,11 @@ Table of Contents
 ```
 
 See [kubernetes.yaml](kubernetes.yaml)
+
+# Background & Highlights
+- Q: How to use your own docker image?
+
+- Q: What does "kubectl expose deployment .." do behind the scene?
 
 # Procedures
 
@@ -96,11 +101,6 @@ kubectl delete -f ./kubernetes.yaml
 ```
 minikube delete
 ```
-
-# Highlights
-- Q: How to use your own docker image?
-
-- Q: What does "kubectl expose deployment .." do behind the scene?
 
 # More resources
 - minikube: https://kubernetes.io/docs/getting-started-guides/minikube/

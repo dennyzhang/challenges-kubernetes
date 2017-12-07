@@ -4,7 +4,7 @@ Table of Contents
 =================
 
    * [Requirements](#requirements)
-   * [Background Knowledge](#background-knowledge)
+   * [Background &amp; Highlights](#background--highlights)
    * [Procedure](#procedure)
       * [Deployment](#deployment)
       * [Verify Deployment](#verify-deployment)
@@ -21,7 +21,7 @@ Table of Contents
 
 See [kubernetes.yaml](kubernetes.yaml)
 
-# Background Knowledge
+# Background & Highlights
 
 - What is StatefulSet? Why we need it?
 - ResourceQuota can apply to current namespace.
