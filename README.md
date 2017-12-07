@@ -76,9 +76,10 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: Know how to deployment k8s cluster env
 - Requirements:
 ```
-1. Deploy 3 nodes k8s. One controller, others as worker
-2. Create a nginx service with 6 instances. Confirmed they are distributed.
-3. Visit nginx service by loadbalancer. (Hint: Ingress)
+1. Deploy 3 nodes k8s in your local virtualbox. One controller, others as worker
+2. Deploy k8s web UI, which is disabled by default.
+3. Create a nginx service with 6 instances. Confirmed they are distributed.
+4. Visit nginx service by loadbalancer. (Hint: Ingress)
 ```
 - Main Tech:
 - See more: [Scenario-201](./Scenario-201)

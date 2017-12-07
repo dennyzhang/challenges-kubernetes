@@ -15,9 +15,10 @@ Table of Contents
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
 ```
-1. Deploy 3 nodes k8s. One controller, others as worker
-2. Create a nginx service with 6 instances. Confirmed they are distributed.
-3. Visit nginx service by loadbalancer. (Hint: Ingress)
+1. Deploy 3 nodes k8s in your local virtualbox. One controller, others as worker
+2. Deploy k8s web UI, which is disabled by default.
+3. Create a nginx service with 6 instances. Confirmed they are distributed.
+4. Visit nginx service by loadbalancer. (Hint: Ingress)
 ```
 
 # Background & Highlights
@@ -105,7 +106,7 @@ kubectl --namespace nginx-6node-test get services
 kubectl --namespace nginx-6node-test get pods
 ```
 
-List pods with node info attached.
+List all pods with node info attached.
 ```
 for pod in $(kubectl --namespace nginx-6node-test get pods -o jsonpath="{.items[*].metadata.name}"); do
     node_info=$(kubectl --namespace nginx-6node-test describe pod $pod | grep "Node:")
