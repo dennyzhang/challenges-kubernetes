@@ -51,11 +51,15 @@ To setup mysql service, here we use mysql image in [docker hub](https://hub.dock
 ```
 # start a VM to host our deployment
 minikube start
+```
 
-# Here we have created a namespace of k8s-1node-test
+Here we have created a namespace of k8s-1node-test
+```
 # https://kubernetes.io/docs/tasks/administer-cluster/namespaces-walkthrough/
 kubectl create namespace k8s-1node-test
+```
 
+```
 # Create k8s volume, deployment and service
 kubectl create -f ./kubernetes.yaml --namespace k8s-1node-test
 ```
