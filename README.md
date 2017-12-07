@@ -76,7 +76,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: Know how to deployment k8s cluster env
 - Requirements:
 ```
-1. Deploy 3 nodes k8s' env in your virtualbox.
+1. Deploy 3 nodes k8s env in your virtualbox.
    One as controller, the other two as worker
 2. Deploy k8s web UI, which is missing by default.
 3. Create a nginx service with 6 instances.

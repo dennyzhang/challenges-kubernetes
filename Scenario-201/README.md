@@ -15,7 +15,7 @@ Table of Contents
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
 ```
-1. Deploy 3 nodes k8s' env in your virtualbox.
+1. Deploy 3 nodes k8s env in your virtualbox.
    One as controller, the other two as worker
 2. Deploy k8s web UI, which is missing by default.
 3. Create a nginx service with 6 instances.
