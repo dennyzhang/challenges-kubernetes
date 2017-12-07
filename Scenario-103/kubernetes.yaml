@@ -4,6 +4,7 @@ kind: ResourceQuota
 metadata:
   name: only-one-dbserver
 spec:
+  # TODO: we should only allow 1 db master at most
   hard:
     pods: "2"
 ################################################################################

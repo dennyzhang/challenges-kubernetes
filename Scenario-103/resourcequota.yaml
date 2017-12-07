@@ -1,0 +1,11 @@
+# https://kubernetes.io/docs/tasks/administer-cluster/quota-pod-namespace/
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: only-one-dbserver
+spec:
+  # TODO: we should only allow 1 db master at most
+  # TODO: merge current file into kubernetes.yaml, thus we only have one file
+  hard:
+    pods: "3"
+################################################################################

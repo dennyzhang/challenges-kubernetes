@@ -48,7 +48,12 @@ kubectl create namespace k8s-1node-test
 
 ```
 # Create k8s volume, deployment and service
-kubectl create -f ./kubernetes.yaml --namespace k8s-1node-test
+kubectl --namespace k8s-1node-test create -f ./resourcequota.yaml
+```
+
+```
+# Create k8s volume, deployment and service
+kubectl --namespace k8s-1node-test create -f ./kubernetes.yaml
 ```
 See [kubernetes.yaml](kubernetes.yaml)
 
@@ -61,13 +66,16 @@ minikube dashboard
 - List k8s resources
 ```
 # list deployments
-kubectl get deployment
+kubectl --namespace k8s-1node-test get deployment
 
 # list service
-kubectl get services
+kubectl --namespace k8s-1node-test get services
 
 # list pods
-kubectl get pods
+kubectl --namespace k8s-1node-test get pods
+
+# List ResourceQuota
+kubectl --namespace k8s-1node-test --namespace=k8s-1node-test get resourcequota
 ```
 - Run functional test
 
@@ -97,7 +105,8 @@ Confirm the database and table still persist, which were created in last step.
 
 - Delete k8s resources
 ```
-kubectl delete -f ./kubernetes.yaml --namespace k8s-1node-test
+kubectl --namespace k8s-1node-test delete -f ./kubernetes.yaml
+kubectl --namespace k8s-1node-test delete -f ./resourcequota.yaml
 ```
 
 - Delete namespace
