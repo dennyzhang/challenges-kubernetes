@@ -67,7 +67,6 @@ Challenges Your Kubernetes Skills And Knowledge
 1. Suppose your k8s/minikube have multiple cluster, how you can segrate them? (Hint: namespace)
 2. When we initialize mysql via yaml, avoid store mysql root password in plain text. (Hint: secrets)
 3. Make sure we can create no more than 1 pods for DB server. (Hint: ResourceQuota)
-4. When db process has failed, make sure a new one will be started and no data loss
 ```
 - See [kubernetes.yaml](Scenario-103/kubernetes.yaml)
 - Main Tech: minikube, mysql, volume, Job
