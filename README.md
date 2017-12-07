@@ -77,7 +77,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Requirements:
 ```
 1. Deploy 3 nodes k8s. One controller, others as worker
-2. Create a nginx service with 6 instances.
+2. Create a nginx service with 6 instances. Confirmed they are distributed.
 3. Visit nginx service by loadbalancer. (Hint: Ingress)
 ```
 - Main Tech:
