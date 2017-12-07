@@ -69,13 +69,11 @@ spec:
         - containerPort: 3306
         env:
         # https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-environment-variables
-        - name: MYSQL_ROOT_PASSWORD2
-          valueFrom:
-          secretKeyRef:
-            name: mysecret
-            key: mysql_root_password
         - name: MYSQL_ROOT_PASSWORD
-          value: test
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: mysql_root_password
         # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#claims-as-volumes
         volumeMounts:
         - mountPath: "/var/lib/mysql"
