@@ -1,3 +1,11 @@
+# https://kubernetes.io/docs/tasks/administer-cluster/quota-pod-namespace/
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: only-one-dbserver
+spec:
+  hard:
+    pods: "2"
 ################################################################################
 # Create volume for DB server
 # https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/getting_started_with_kubernetes/get_started_provisioning_storage_in_kubernetes
@@ -51,6 +59,7 @@ spec:
       - name: dbserver
         # Docker Image: https://hub.docker.com/_/mysql/
         image: mysql
+        # https://kubernetes.io/docs/concepts/policy/resource-quotas/
         resources:
           requests:
             cpu: 400m
