@@ -49,7 +49,7 @@ Check more: [here](https://kubernetes.io/docs/tasks/access-application-cluster/w
 ## Start k8s Cluster
 - Install virtualbox and vagrant
 
-Here we use davidkbainbridge's GitHub repo of **k8s-playground**. Check more [here](https://github.com/davidkbainbridge/k8s-playground)
+Here we use **k8s-playground** [Github repo](https://github.com/davidkbainbridge/k8s-playground)
 
 It will setup 3 nodes k8s cluster in your local virtualbox.
 
