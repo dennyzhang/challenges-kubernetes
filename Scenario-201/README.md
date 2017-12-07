@@ -42,7 +42,9 @@ https://github.com/kelseyhightower/kubernetes-the-hard-way
 ## Start k8s Cluster
 - Install virtualbox and vagrant
 
-Here we use davidkbainbridge's repo of [k8s-playground](https://github.com/davidkbainbridge/k8s-playground)
+Here we use davidkbainbridge's GitHub repo of **k8s-playground**.
+
+Check more [here](https://github.com/davidkbainbridge/k8s-playground)
 
 It will setup 3 nodes k8s cluster in your local virtualbox.
 
@@ -53,6 +55,22 @@ vagrant up -d
 ```
 
 - Verify k8s cluster env
+```
+vagrant ssh k8s1
+kubectl -n kube-system get po -o wide
+```
+
+- Starting Networking
+```
+vagrant ssh k8s1
+ubuntu@k8s1:~$ start-weave
+serviceaccount "weave-net" created
+clusterrole "weave-net" created
+clusterrolebinding "weave-net" created
+role "weave-net-kube-peer" created
+rolebinding "weave-net-kube-peer" created
+daemonset "weave-net" created
+```
 
 TODO
 
