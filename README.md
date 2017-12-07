@@ -89,7 +89,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Requirements:
 ```
 1. Deploy a 3node k8s. One as k8s master and worker, and the other two as worker
-2. Create an elasticsearch service with 6 instances. Configure replica count to 3
+2. Create an elasticsearch service with 6 instances. And ES indices replica as 3
 3. Create a nightly job to backup elasticsearch cluster. (Hint: Cron Jobs)
 ```
 - Main Tech:
