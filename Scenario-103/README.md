@@ -13,7 +13,7 @@ Table of Contents
 # Requirements
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 ```
-1. In yaml, define a k8s namespace. Thus we can segreate different k8s envs
+1. Suppose your k8s/minikube have multiple cluster, how you can segrate them? (Hint: namespace)
 2. Make sure we can create no more than 1 pods for DB server. (Hint: ResourceQuota)
 3. Before we can start mysql server, make sure volume is ready. (Hint: livenessProbe)
 4. When we initialize mysql, pass mysql root password in a secured way. (Hint: secrets)
