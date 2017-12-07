@@ -76,7 +76,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: Know how to deployment k8s cluster env
 - Requirements:
 ```
-1. Deploy 3 nodes k8s. One as k8s master and worker, and the other two as worker
+1. Deploy 3 nodes k8s. One as k8s master and worker, and others as worker
 2. Create a nginx service with 6 instances.
 3. Visit nginx service by loadbalancer. (Hint: Ingress)
 ```
@@ -127,10 +127,20 @@ Challenges Your Kubernetes Skills And Knowledge
 
 - More resources
 ```
-- http://containertutorials.com/get_started_kubernetes/k8s_example.html
-- https://kubernetes.io/docs/getting-started-guides/scratch/
-- https://github.com/kelseyhightower/kubernetes-the-hard-way
-- https://kubernetes.io/docs/tutorials/
+Creating a Custom Cluster from Scratch
+https://kubernetes.io/docs/getting-started-guides/scratch/
+
+Kubernetes Example
+http://containertutorials.com/get_started_kubernetes/k8s_example.html
+
+kubernetes kubernetes
+https://kubernetes.io/docs/tutorials/
+
+Bootstrap Kubernetes the hard way on Google Cloud Platform. No scripts.
+https://github.com/kelseyhightower/kubernetes-the-hard-way
+
+Simple VM based Kubernetes cluster setup
+https://github.com/davidkbainbridge/k8s-playground
 
 kubernetes examples in GitHub From Google
 https://github.com/kubernetes/examples
