@@ -22,6 +22,7 @@ Table of Contents
    They should be balanced across worker nodes.
 4. Visit nginx service by loadbalancer. (Hint: Ingress)
 ```
+<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
 
 # Background & Highlights
 
