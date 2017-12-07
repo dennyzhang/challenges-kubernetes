@@ -23,8 +23,8 @@ spec:
         # https://kubernetes.io/docs/concepts/policy/resource-quotas/
         resources:
           requests:
-            cpu: 100m
-            memory: 100Mi
+            cpu: 500m
+            memory: 600Mi
         ports:
         - containerPort: 9200
         - containerPort: 9300
