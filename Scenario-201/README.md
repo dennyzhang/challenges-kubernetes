@@ -21,9 +21,9 @@ Two different categories:
 1. Setup a k8s cluster itself. Improve k8s availability and reliablity
 2. Deploy clustered services in k8s cluster. Improve services' availability and reliablity
 
-Here we focus more on the second category.
+Our focus is more about category #2.
 
-For Category#1, I have 2 recommendated GitHub Repo.
+For Category #1, I have 2 recommendated GitHub Repo.
 ```
 Start 3 nodes k8s cluster by vagrant. 1 controller 2 workers
 https://github.com/davidkbainbridge/k8s-playground
@@ -34,7 +34,9 @@ https://github.com/kelseyhightower/kubernetes-the-hard-way
 
 # 2. Procedures
 
-https://github.com/kelseyhightower/kubernetes-the-hard-way
+## 2.1 Start 3 nodes local env of k8s cluster
+
+We will use [davidkbainbridge/k8s-playground](https://github.com/davidkbainbridge/k8s-playground) to setup 3 nodes k8s cluster by virtualbox.
 
 # 3. Highlights
 - Q: 
