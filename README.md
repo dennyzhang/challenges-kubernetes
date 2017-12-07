@@ -77,7 +77,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Requirements:
 ```
 1. Deploy 3 nodes k8s' env in your virtualbox.
-   One controller, others as worker
+   One as controller, the other two as worker
 2. Deploy k8s web UI, which is missing by default.
 3. Create a nginx service with 6 instances.
    They should be balanced across worker nodes.
