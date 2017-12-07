@@ -49,12 +49,14 @@ kubectl create namespace k8s-1node-test
 Specify mysql root password via k8s secrets, instead of storing the plain text password in yaml directly.
 ```
 kubectl --namespace k8s-1node-test create secret generic mysecret --from-literal=mysql_root_password=my-secret-pw
-kubectl --namespace k8s-1node-test get secrets -o yaml
+kubectl --namespace k8s-1node-test get secrets
+kubectl --namespace k8s-1node-test describe secret mysecret
 ```
 
 ```
 # Create k8s volume, deployment and service
 kubectl --namespace k8s-1node-test create -f ./resourcequota.yaml
+kubectl --namespace k8s-1node-test --namespace=k8s-1node-test get resourcequota
 ```
 
 ```
