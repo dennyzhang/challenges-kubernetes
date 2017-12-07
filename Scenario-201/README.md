@@ -102,6 +102,7 @@ kubectl create namespace nginx-6node-test
 ```
 kubectl --namespace nginx-6node-test create -f ./kubernetes.yaml
 ```
+See [kubernetes.yaml](kubernetes.yaml)
 
 ## Verify Deployment
 ```
@@ -132,7 +133,16 @@ done
 ## Pod: nginx-deployment-668845bd79-zqqwc, Node:           k8s2/172.42.42.2
 ```
 
-TODO
+- clean up: nginx deployment
+```
+kubectl --namespace nginx-6node-test delete -f ./kubernetes.yaml
+```
+
+- clean up: virtualbox env
+```
+cd challenges-kubernetes/Scenario-201/k8s-playground
+vagrant destroy
+```
 
 # More resources
 
