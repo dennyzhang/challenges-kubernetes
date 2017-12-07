@@ -35,6 +35,13 @@ https://github.com/kelseyhightower/kubernetes-the-hard-way
 # 2. Procedures
 
 ## 2.1 Start 3 nodes local env of k8s cluster
+- Install virtualbox and vagrant
+
+- Start k8s cluster by vagrant
+```
+cd challenges-kubernetes/Scenario-201/k8s-playground
+vagrant up -d
+```
 
 We will use [davidkbainbridge/k8s-playground](https://github.com/davidkbainbridge/k8s-playground) to setup 3 nodes k8s cluster by virtualbox.
 
