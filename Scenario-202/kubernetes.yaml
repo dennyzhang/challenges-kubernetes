@@ -16,19 +16,43 @@ spec:
       labels:
         app: elasticsearch
     spec:
+      # https://github.com/kubernetes/kubernetes/blob/master/examples/elasticsearch/production_cluster/es-client-rc.yaml
       containers:
       - name: elasticsearch
-        image: elasticsearch:1.7.9
+        image: quay.io/pires/docker-elasticsearch-kubernetes:1.7.1-4
         # https://kubernetes.io/docs/concepts/policy/resource-quotas/
         resources:
           requests:
             cpu: 100m
             memory: 100Mi
         ports:
-        - containerPort: 80
+        - containerPort: 9200
+        - containerPort: 9300
+        env:
+          - name: KUBERNETES_CA_CERTIFICATE_FILE
+            value: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+          - name: NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+          - name: "CLUSTER_NAME"
+            value: "myesdb"
+          - name: NODE_MASTER
+            value: "false"
+          - name: NODE_DATA
+            value: "false"
+          - name: HTTP_ENABLE
+            value: "true"
+        # TODO: make sure data folder persists
+        volumeMounts:
+          - mountPath: /data
+            name: storage
+      volumes:
+      - name: storage
+        emptyDir: {}
 ---
 # Use services to export my app
-# https://kubernetes.io/docs/concepts/services-networking/service/
+# https://github.com/kubernetes/kubernetes/blob/master/examples/elasticsearch/es-svc.yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -36,10 +60,14 @@ metadata:
   labels:
     app: elasticsearch
 spec:
-  type: NodePort  
+  type: LoadBalancer
   ports:
-  - port: 80
-    targetPort: 80
+  - name: http
+    port: 9200
+    protocol: TCP
+  - name: transport
+    port: 9300
+    protocol: TCP
   selector:
     app: elasticsearch
 ################################################################################

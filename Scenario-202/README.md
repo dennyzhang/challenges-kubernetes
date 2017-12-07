@@ -127,6 +127,9 @@ vagrant destroy
 # More resources
 
 ```
+https://github.com/kubernetes/kubernetes/tree/master/examples/elasticsearch
+elasticsearch kubernetes
+
 https://github.com/davidkbainbridge/k8s-playground
 Simple VM based Kubernetes cluster setup
 
