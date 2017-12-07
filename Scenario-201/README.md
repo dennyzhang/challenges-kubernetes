@@ -116,7 +116,7 @@ kubectl --namespace nginx-6node-test get services
 kubectl --namespace nginx-6node-test get pods
 ```
 
-List all pods with node info attached.
+- List all pods with node info attached.
 ```
 for pod in $(kubectl --namespace nginx-6node-test get pods -o jsonpath="{.items[*].metadata.name}"); do
     node_info=$(kubectl --namespace nginx-6node-test describe pod $pod | grep "Node:")
@@ -133,12 +133,12 @@ done
 ## Pod: nginx-deployment-668845bd79-zqqwc, Node:           k8s2/172.42.42.2
 ```
 
-- clean up: nginx deployment
+- Clean up: nginx deployment
 ```
 kubectl --namespace nginx-6node-test delete -f ./kubernetes.yaml
 ```
 
-- clean up: virtualbox env
+- Clean up: virtualbox env
 ```
 cd challenges-kubernetes/Scenario-201/k8s-playground
 vagrant destroy
