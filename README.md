@@ -20,11 +20,10 @@ Challenges Your Kubernetes Skills And Knowledge
       * [Scenario-101: 1-Node K8S Deployment I](#scenario-101-1-node-k8s-deployment-i)
       * [Scenario-102: 1-Node K8S Deployment II](#scenario-102-1-node-k8s-deployment-ii)
       * [Scenario-103: 1-Node K8S Deployment III](#scenario-103-1-node-k8s-deployment-iii)
-      * [Scenario-201: 2-Nodes K8S Deployment I](#scenario-201-2-nodes-k8s-deployment-i)
-      * [Scenario-202: 2-Nodes K8S Deployment II](#scenario-202-2-nodes-k8s-deployment-ii)
-      * [Scenario-301: 2-Nodes Elasticsearch Deployment I](#scenario-301-2-nodes-elasticsearch-deployment-i)
-      * [Scenario-401: 2-Nodes Jenkins Deployment I](#scenario-401-2-nodes-jenkins-deployment-i)
-      * [Scenario-402: 2-Nodes Jenkins Deployment II](#scenario-402-2-nodes-jenkins-deployment-ii)
+      * [Scenario-201: 3-Nodes K8S Deployment I](#scenario-201-3-nodes-k8s-deployment-i)
+      * [Scenario-202: 3-Nodes K8S Deployment II](#scenario-202-3-nodes-k8s-deployment-ii)
+      * [Scenario-301: 3-Nodes Jenkins Deployment I](#scenario-301-3-nodes-jenkins-deployment-i)
+      * [Scenario-302: 3-Nodes Jenkins Deployment II](#scenario-302-3-nodes-jenkins-deployment-ii)
    * [Highlights](#highlights)
    * [Contributors: Give People Credits](#contributors-give-people-credits)
    * [License](#license)
@@ -74,62 +73,52 @@ Challenges Your Kubernetes Skills And Knowledge
 - Main Tech: minikube, mysql, volume, Job
 - See more: [Scenario-103](./Scenario-103)
 
-## Scenario-201: 2-Nodes K8S Deployment I
-- Objective: Understand k8s cluster model
+## Scenario-201: 3-Nodes K8S Deployment I
+- Objective: Know how to deployment k8s cluster env
 - Requirements:
 ```
-1. Deploy 2 nodes k8s. One as k8s master and worker roles, another with worker role
-2. Create a nginx service with 4 instances.
-3. Visit nginx service by loadbalancer
+1. Deploy 3 nodes k8s. One as k8s master and worker, and the other two as worker
+2. Create a nginx service with 6 instances.
+3. Visit nginx service by loadbalancer. (Hint: Ingress)
 ```
 - Main Tech:
 - See more: [Scenario-201](./Scenario-201)
 - TODO
 
-## Scenario-202: 2-Nodes K8S Deployment II
+## Scenario-202: 3-Nodes K8S Deployment II
 - Objective: k8s cluster env with stateful service
 - Requirements:
 ```
-1. Deploy 2 nodes k8s
-2. Create a mysql service, with 3 instances. 1 master 2 slave
-3. Avoid SPOF: Shutdown one node, make sure nginx service is still up and running
+1. Deploy a 3node k8s. One as k8s master and worker, and the other two as worker
+2. Create an elasticsearch service with 6 instances. Configure replica count to 3
+3. Create a nightly job to backup elasticsearch cluster. (Hint: Cron Jobs)
 ```
 - Main Tech:
 - See more: [Scenario-202](./Scenario-202)
 - TODO
 
-## Scenario-301: 2-Nodes Elasticsearch Deployment I
-- Objective: Real service deployment for db service
+## Scenario-301: 3-Nodes Jenkins Deployment I
+- Objective: Real service deployment
 - Requirements:
 ```
-1. Deploy elasticsearch k8s cluster with 3 nodes. Configure the replica count to 3.
-2. Simulate node crash event and make sure no data loss. And no downtime.
+1. Deploy a 3node k8s. One as k8s master and worker, and the other two as worker
+1. Deploy jenkins service with 1 master 3 agents
+2. When Jenkins crash, get alerts
 ```
 - Main Tech:
 - See more: [Scenario-301](./Scenario-301)
 - TODO
 
-## Scenario-401: 2-Nodes Jenkins Deployment I
+## Scenario-302: 3-Nodes Jenkins Deployment II
 - Objective: Real service deployment
 - Requirements:
 ```
-1. Deploy 2 nodes Jenkins. 1 master 2 slaves
-2. When Jenkins crash, get alerts
-```
-- Main Tech:
-- See more: [Scenario-401](./Scenario-401)
-- TODO
-
-## Scenario-402: 2-Nodes Jenkins Deployment II
-- Objective: Real service deployment
-- Requirements:
-```
-1. Finish Scenario-401
-2. When jenkins master crash, make sure service doesn't crash
+1. Deploy a 3node k8s. One as k8s master and worker, and the other two as worker
+2. Deploy Jenkins service by helm
 3. Use nginx as an ingress for Jenkins master
 ```
 - Main Tech:
-- See more: [Scenario-402](./Scenario-402)
+- See more: [Scenario-302](./Scenario-302)
 - TODO
 
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>

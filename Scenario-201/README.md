@@ -11,9 +11,9 @@ Table of Contents
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
 ```
-1. Deploy 2 nodes k8s. One as k8s master and worker roles, another with worker role
-2. Create a nginx service with 4 instances.
-3. Visit nginx service by loadbalancer
+1. Deploy 3 nodes k8s. One as k8s master and worker, and the other two as worker
+2. Create a nginx service with 6 instances.
+3. Visit nginx service by loadbalancer. (Hint: Ingress)
 ```
 
 # 2. Procedures
