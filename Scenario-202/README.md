@@ -92,6 +92,9 @@ kubectl --namespace es-6node-test get nodes
 # List services
 kubectl --namespace es-6node-test get services
 
+# List deployment
+kubectl --namespace es-6node-test get deployment
+
 # List pods
 kubectl --namespace es-6node-test get pods
 ```
@@ -112,6 +115,25 @@ done
 ## Pod: elasticsearch-deployment-668845bd79-xb6mm, Node:           k8s2/172.42.42.2
 ## Pod: elasticsearch-deployment-668845bd79-zqqwc, Node:           k8s2/172.42.42.2
 ```
+
+- Login to one pod and check service
+```
+POD_NAME=$(kubectl --namespace es-6node-test get pods -l app="elasticsearch" -o jsonpath="{.items[0].metadata.name}")
+# Login to the first pod
+kubectl --namespace es-6node-test exec -ti $POD_NAME hostname
+
+kubectl --namespace es-6node-test exec -it $POD_NAME sh
+
+# Install curl
+apk add --update curl
+
+# List es nodes in the cluster
+curl localhost:9200/_cat/nodes?v
+```
+
+TODO: list all es nodes
+
+TODO: check es data
 
 - Clean up: es deployment
 ```
