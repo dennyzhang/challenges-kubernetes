@@ -1,6 +1,7 @@
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
 Table of Contents
 =================
-<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
    * [1. Requirements](#1-requirements)
    * [2. Procedures](#2-procedures)
@@ -15,6 +16,10 @@ Table of Contents
 2. Create a nginx service with 6 instances.
 3. Visit nginx service by loadbalancer. (Hint: Ingress)
 ```
+
+Two different domains:
+1. Setup a k8s cluster itself. Improve k8s availability and reliablity
+2. Deploy clustered services in k8s cluster. Improve services' availability and reliablity
 
 # 2. Procedures
 
