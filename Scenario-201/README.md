@@ -33,11 +33,11 @@ Table of Contents
 
 For Category #1, I have recommendations for two GitHub Repos.
 ```
-Start 3 nodes k8s cluster by vagrant. 1 controller 2 workers
 https://github.com/davidkbainbridge/k8s-playground
+Start 3 nodes k8s cluster by vagrant. 1 controller 2 workers
 
-Start 6 nodes k8s cluster in Google Cloud Platform. 3 controller 3 workers
 https://github.com/kelseyhightower/kubernetes-the-hard-way
+Start 6 nodes k8s cluster in Google Cloud Platform. 3 controller 3 workers
 ```
 
 - Dashboard is a web-based Kubernetes user interface. But it's not deployed by default. Check more: [here](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
