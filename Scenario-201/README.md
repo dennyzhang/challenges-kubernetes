@@ -6,8 +6,8 @@ Table of Contents
    * [Requirements](#requirements)
    * [Background &amp; Highlights](#background--highlights)
    * [Procedures](#procedures)
-      * [Start 3 nodes local env of k8s cluster](#start-3-nodes-local-env-of-k8s-cluster)
-      * [Deploy nginx service](#deploy-nginx-service)
+      * [Start k8s Cluster](#start-k8s-cluster)
+      * [Deploy Service](#deploy-service)
       * [Verify Deployment](#verify-deployment)
    * [More resources](#more-resources)
 
@@ -20,7 +20,9 @@ Table of Contents
 3. Visit nginx service by loadbalancer. (Hint: Ingress)
 ```
 
-Two different categories:
+# Background & Highlights
+
+Two different categories. They're different. And each would be big and complicated.
 1. Setup a k8s cluster itself. Improve k8s availability and reliablity
 2. Deploy clustered services in k8s cluster. Improve services' availability and reliablity
 
@@ -35,11 +37,9 @@ Start 6 nodes k8s cluster in Google Cloud Platform. 3 controller 3 workers
 https://github.com/kelseyhightower/kubernetes-the-hard-way
 ```
 
-# Background & Highlights
-
 # Procedures
 
-## Start 3 nodes local env of k8s cluster
+## Start k8s Cluster
 - Install virtualbox and vagrant
 
 Here we use davidkbainbridge's repo of [k8s-playground](https://github.com/davidkbainbridge/k8s-playground)
@@ -56,14 +56,14 @@ vagrant up -d
 
 TODO
 
-## Deploy nginx service
+## Deploy Service
 
 - Create namespace
 ```
 kubectl create namespace nginx-6node-test
 ```
 
-- Run deployment
+- Run Deployment
 ```
 kubectl --namespace nginx-6node-test create -f ./kubernetes.yaml
 ```
