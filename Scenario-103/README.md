@@ -16,7 +16,7 @@ Table of Contents
 1. Suppose your k8s/minikube have multiple cluster, how you can segrate them? (Hint: namespace)
 2. Make sure we can create no more than 1 pods for DB server. (Hint: ResourceQuota)
 3. Before we can start mysql server, make sure volume is ready. (Hint: livenessProbe)
-4. When we initialize mysql, pass mysql root password in a secured way. (Hint: secrets)
+4. When we initialize mysql via yaml, avoid store mysql root password in plain text. (Hint: secrets)
 5. Use StatefulSet to create one mysql db instance in yaml
 6. When db first started, create a dummy table and dummy records
 7. When db process has failed, make sure a new one will be started and no data loss
@@ -46,6 +46,12 @@ Here we have created a namespace of k8s-1node-test
 kubectl create namespace k8s-1node-test
 ```
 
+Specify mysql root password via k8s secrets, instead of storing the plain text password in yaml directly.
+```
+kubectl --namespace k8s-1node-test create secret generic mysecret --from-literal=mysql_root_password=my-secret-pw
+kubectl --namespace k8s-1node-test get secrets -o yaml
+```
+
 ```
 # Create k8s volume, deployment and service
 kubectl --namespace k8s-1node-test create -f ./resourcequota.yaml
@@ -53,7 +59,7 @@ kubectl --namespace k8s-1node-test create -f ./resourcequota.yaml
 
 ```
 # Create k8s volume, deployment and service
-kubectl --namespace k8s-1node-test create -f ./kubernetes.yaml
+kubectl --namespace k8s-1node-test create -f ./kubernetes.yaml --validate=false
 ```
 See [kubernetes.yaml](kubernetes.yaml)
 
