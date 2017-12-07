@@ -14,34 +14,20 @@ Table of Contents
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 ```
 1. In yaml, define a k8s namespace. Thus we can segreate different k8s envs
-2. Make sure we can create no more than 1 pods for DB server, by creating a ResourceQuota
-3. When we initialize mysql, pass mysql root password in a secured way
-4. Use StatefulSet to create one mysql db instance in yaml
-5. When db first started, create a dummy table and dummy records
-6. When db process has failed, make sure a new one will be started and no data loss
+2. Make sure we can create no more than 1 pods for DB server. (Hint: ResourceQuota)
+3. Before we can start mysql server, make sure volume is ready. (Hint: livenessProbe)
+4. When we initialize mysql, pass mysql root password in a secured way. (Hint: secrets)
+5. Use StatefulSet to create one mysql db instance in yaml
+6. When db first started, create a dummy table and dummy records
+7. When db process has failed, make sure a new one will be started and no data loss
 ```
 
 See [kubernetes.yaml](kubernetes.yaml)
 
 # Background Knowledge
 
-- Use persistent volumes in 3 steps
-```
-Creating and using a persistent volume is a three step process:
-
-1. Provision: Administrator provision a networked storage in the
-cluster, such as AWS ElasticBlockStore volumes. This is called as
-PersistentVolume.
-
-2. Request storage: User requests storage for pods by using
-claims. Claims can specify levels of resources (CPU and memory),
-specific sizes and access modes (e.g. can be mounted once read/write
-or many times write only).  This is called as PersistentVolumeClaim.
-
-3. Use claim: Claims are mounted as volumes and used in pods for storage.
-
-https://blog.couchbase.com/stateful-containers-kubernetes-amazon-ebs/
-```
+- What is StatefulSet? Why we need it?
+- ResourceQuota can apply to current namespace.
 
 # Procedure
 ## Deployment
