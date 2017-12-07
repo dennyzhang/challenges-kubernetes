@@ -131,4 +131,11 @@ TODO
 
 # More resources
 
+```
+https://github.com/davidkbainbridge/k8s-playground
+Simple VM based Kubernetes cluster setup
+
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+kubectl Cheat Sheet
+```
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>

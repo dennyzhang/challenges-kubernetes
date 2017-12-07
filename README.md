@@ -130,26 +130,26 @@ Challenges Your Kubernetes Skills And Knowledge
 
 - More resources
 ```
-Creating a Custom Cluster from Scratch
 https://kubernetes.io/docs/getting-started-guides/scratch/
+Creating a Custom Cluster from Scratch
 
-Kubernetes Example
 http://containertutorials.com/get_started_kubernetes/k8s_example.html
+Kubernetes Example
 
-kubernetes kubernetes
 https://kubernetes.io/docs/tutorials/
+kubernetes kubernetes
 
-Bootstrap Kubernetes the hard way on Google Cloud Platform. No scripts.
 https://github.com/kelseyhightower/kubernetes-the-hard-way
+Bootstrap Kubernetes the hard way on Google Cloud Platform. No scripts.
 
-Simple VM based Kubernetes cluster setup
 https://github.com/davidkbainbridge/k8s-playground
+Simple VM based Kubernetes cluster setup
 
-kubernetes examples in GitHub From Google
 https://github.com/kubernetes/examples
+kubernetes examples in GitHub From Google
 
-Configuration Best Practices
 https://kubernetes.io/docs/concepts/configuration/overview/
+Configuration Best Practices
 ```
 
 # Contributors: Give People Credits
