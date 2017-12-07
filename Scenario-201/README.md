@@ -25,7 +25,7 @@ Table of Contents
 
 # Background & Highlights
 
-Two different categories. They're different. And each would be big and complicated.
+- Two different categories. They're different. And each would be big and complicated.
 1. Setup a k8s cluster itself. Improve k8s availability and reliablity
 2. Deploy clustered services in k8s cluster. Improve services' availability and reliablity
 
@@ -39,6 +39,10 @@ https://github.com/davidkbainbridge/k8s-playground
 Start 6 nodes k8s cluster in Google Cloud Platform. 3 controller 3 workers
 https://github.com/kelseyhightower/kubernetes-the-hard-way
 ```
+
+- Dashboard is a web-based Kubernetes user interface. It is not deployed by default.
+
+Check more: [here](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
 
 # Procedures
 
