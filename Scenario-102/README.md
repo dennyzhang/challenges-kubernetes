@@ -101,6 +101,11 @@ We should see ReplicationController will start a new one.
 
 Confirm the database and table still persist, which were created in last step.
 
+- Delete k8s resources
+```
+kubectl delete -f ./kubernetes.yaml
+```
+
 - Destroy env
 ```
 minikube delete

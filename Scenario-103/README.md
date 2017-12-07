@@ -52,8 +52,12 @@ To setup mysql service, here we use mysql image in [docker hub](https://hub.dock
 # start a VM to host our deployment
 minikube start
 
+# Here we have created a namespace of k8s-1node-test
+# https://kubernetes.io/docs/tasks/administer-cluster/namespaces-walkthrough/
+kubectl create namespace k8s-1node-test
+
 # Create k8s volume, deployment and service
-kubectl create -f ./kubernetes.yaml
+kubectl create -f ./kubernetes.yaml --namespace k8s-1node-test
 ```
 See [kubernetes.yaml](kubernetes.yaml)
 
@@ -99,6 +103,14 @@ From Web UI, delete the mysql server Pod.
 We should see ReplicationController will start a new one.
 
 Confirm the database and table still persist, which were created in last step.
+
+- Delete k8s resources
+```
+kubectl delete -f ./kubernetes.yaml --namespace k8s-1node-test
+```
+
+- Delete namespace
+kubectl delete namespace k8s-1node-test
 
 - Destroy env
 ```
