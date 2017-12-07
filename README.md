@@ -67,9 +67,10 @@ Challenges Your Kubernetes Skills And Knowledge
 ```
 1. In yaml, define a k8s namespace. Thus we can segreate different k8s envs
 2. Use StatefulSet to create one mysql db instance in yaml
-3. Add livenessProbe for db server
-4. When db first started, create a dummy table and dummy records
-5. When db process has failed, make sure a new one will be started and no data loss
+3. When we initialize mysql, pass mysql root password in a secured way
+4. Add livenessProbe for db server
+5. When db first started, create a dummy table and dummy records
+6. When db process has failed, make sure a new one will be started and no data loss
 ```
 - See [kubernetes.yaml](Scenario-103/kubernetes.yaml)
 - Main Tech: minikube, mysql, volume, Job
