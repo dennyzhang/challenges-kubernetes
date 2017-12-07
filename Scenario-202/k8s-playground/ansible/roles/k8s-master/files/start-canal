@@ -1,0 +1,3 @@
+#!/bin/bash
+
+kubectl create -f https://raw.githubusercontent.com/tigera/canal/master/k8s-install/kubeadm/canal.yaml
