@@ -40,9 +40,7 @@ Start 6 nodes k8s cluster in Google Cloud Platform. 3 controller 3 workers
 https://github.com/kelseyhightower/kubernetes-the-hard-way
 ```
 
-- Dashboard is a web-based Kubernetes user interface. It is not deployed by default.
-
-Check more: [here](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
+- Dashboard is a web-based Kubernetes user interface. But it's not deployed by default. Check more: [here](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
 
 # Procedures
 
