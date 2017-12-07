@@ -67,11 +67,11 @@ Challenges Your Kubernetes Skills And Knowledge
 ```
 1. Suppose your k8s/minikube have multiple cluster, how you can segrate them? (Hint: namespace)
 2. Make sure we can create no more than 1 pods for DB server. (Hint: ResourceQuota)
-3. Before we can start mysql server, make sure volume is ready. (Hint: livenessProbe)
-4. When we initialize mysql via yaml, avoid store mysql root password in plain text. (Hint: secrets)
-5. Use StatefulSet to create one mysql db instance in yaml
-6. When db first started, create a dummy table and dummy records
-7. When db process has failed, make sure a new one will be started and no data loss
+3. When we initialize mysql via yaml, avoid store mysql root password in plain text. (Hint: secrets)
+4. Use StatefulSet to create one mysql db instance in yaml
+5. When db first started, create a dummy table and dummy records
+6. When db process has failed, make sure a new one will be started and no data loss
+7. Before we can start mysql server, make sure volume is ready. (Hint: livenessProbe)
 ```
 - See [kubernetes.yaml](Scenario-103/kubernetes.yaml)
 - Main Tech: minikube, mysql, volume, Job
