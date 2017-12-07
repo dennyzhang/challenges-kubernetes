@@ -126,33 +126,34 @@ Challenges Your Kubernetes Skills And Knowledge
 - See more: [Scenario-302](./Scenario-302)
 - TODO
 
-<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
-
 # Highlights
-- TODO
 
-- More resources
+- More resources: run services on k8s cluster
 ```
-https://kubernetes.io/docs/getting-started-guides/scratch/
-Creating a Custom Cluster from Scratch
-
 http://containertutorials.com/get_started_kubernetes/k8s_example.html
 Kubernetes Example
 
 https://kubernetes.io/docs/tutorials/
 kubernetes kubernetes
 
-https://github.com/kelseyhightower/kubernetes-the-hard-way
-Bootstrap Kubernetes the hard way on Google Cloud Platform. No scripts.
-
-https://github.com/davidkbainbridge/k8s-playground
-Simple VM based Kubernetes cluster setup
+https://kubernetes.io/docs/getting-started-guides/scratch/
+Creating a Custom Cluster from Scratch
 
 https://github.com/kubernetes/examples
 kubernetes examples in GitHub From Google
 
 https://kubernetes.io/docs/concepts/configuration/overview/
 Configuration Best Practices
+```
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+- More resources: k8s cluster itself
+```
+https://github.com/kelseyhightower/kubernetes-the-hard-way
+Bootstrap Kubernetes the hard way on Google Cloud Platform. No scripts.
+
+https://github.com/davidkbainbridge/k8s-playground
+Simple VM based Kubernetes cluster setup
 ```
 
 # Contributors: Give People Credits
