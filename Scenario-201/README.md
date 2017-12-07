@@ -50,7 +50,7 @@ Start 6 nodes k8s cluster in Google Cloud Platform. 3 controller 3 workers
 - Install virtualbox and vagrant
 
 ```
-Here we use **k8s-playground**: https://github.com/davidkbainbridge/k8s-playground
+Here we use k8s-playground: https://github.com/davidkbainbridge/k8s-playground
 
 It will setup 3 nodes k8s cluster in your local virtualbox.
 ```
