@@ -25,7 +25,7 @@ Table of Contents
 
 # Background & Highlights
 
-- Two different categories. They're different. And each would be big and complicated.
+- Two different categories. They're different. And both could be big and complicated.
 1. Setup a k8s cluster itself. Improve k8s availability and reliablity
 2. Deploy clustered services in k8s cluster. Improve services' availability and reliablity
 
