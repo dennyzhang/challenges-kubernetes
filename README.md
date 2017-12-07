@@ -78,10 +78,9 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: Understand k8s cluster model
 - Requirements:
 ```
-1. Deploy 2 nodes k8s
-2. Create a nginx service, with 3 instances
-3. Run performance test, meanwhile kill one or two nginx instace. Confirm the error rate is low.
-4. Avoid SPOF: Shutdown one node, make sure nginx service is still up and running
+1. Deploy 2 nodes k8s. One as k8s master and worker roles, another with worker role
+2. Create a nginx service with 4 instances.
+3. Visit nginx service by loadbalancer
 ```
 - Main Tech:
 - See more: [Scenario-201](./Scenario-201)

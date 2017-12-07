@@ -11,10 +11,9 @@ Table of Contents
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
 ```
-1. Deploy 2 nodes k8s
-2. Create a nginx service, with 3 instances
-3. Run performance test, meanwhile kill one or two nginx instace. Confirm the error rate is low.
-4. Avoid SPOF: Shutdown one node, make sure nginx service is still up and running
+1. Deploy 2 nodes k8s. One as k8s master and worker roles, another with worker role
+2. Create a nginx service with 4 instances.
+3. Visit nginx service by loadbalancer
 ```
 
 # 2. Procedures
