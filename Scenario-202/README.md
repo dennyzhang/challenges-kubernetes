@@ -16,7 +16,8 @@ Table of Contents
 
 ```
 1. Deploy 3 nodes k8s. One controller, others as worker
-2. Create an elasticsearch service with 6 instances. And ES indices replica as 3
+2. Create an elasticsearch service with 3 instances.
+   1 as master, 2 as data.
 3. Create a nightly job to backup elasticsearch cluster. (Hint: Cron Jobs)
 ```
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
@@ -75,54 +76,50 @@ TODO
 
 - Create namespace
 ```
-kubectl create namespace es-6node-test
+kubectl create namespace es-3node-test
 ```
 
 - Run Deployment
 ```
-kubectl --namespace es-6node-test create -f ./kubernetes.yaml
+kubectl --namespace es-3node-test create -f ./kubernetes.yaml
 ```
 See [kubernetes.yaml](kubernetes.yaml)
 
 ## Verify Deployment
 ```
 # List nodes
-kubectl --namespace es-6node-test get nodes
+kubectl --namespace es-3node-test get nodes
 
 # List services
-kubectl --namespace es-6node-test get services
+kubectl --namespace es-3node-test get services
 
 # List deployment
-kubectl --namespace es-6node-test get deployment
+kubectl --namespace es-3node-test get deployment
 
 # List pods
-kubectl --namespace es-6node-test get pods
+kubectl --namespace es-3node-test get pods
 ```
 
 - List all pods with node info attached.
 ```
-for pod in $(kubectl --namespace es-6node-test get pods -o jsonpath="{.items[*].metadata.name}"); do
-    node_info=$(kubectl --namespace es-6node-test describe pod $pod | grep "Node:")
+for pod in $(kubectl --namespace es-3node-test get pods -o jsonpath="{.items[*].metadata.name}"); do
+    node_info=$(kubectl --namespace es-3node-test describe pod $pod | grep "Node:")
     echo "Pod: $pod, $node_info"
 done
 
-# We shall see 6 es podes across two k8s worker nodes. (k8s2 and k8s3)
 # Sample output
-## Pod: elasticsearch-deployment-668845bd79-47d6w, Node:           k8s2/172.42.42.2
-## Pod: elasticsearch-deployment-668845bd79-bf2kh, Node:           k8s3/172.42.42.3
-## Pod: elasticsearch-deployment-668845bd79-k62q4, Node:           k8s3/172.42.42.3
-## Pod: elasticsearch-deployment-668845bd79-vz58b, Node:           k8s3/172.42.42.3
-## Pod: elasticsearch-deployment-668845bd79-xb6mm, Node:           k8s2/172.42.42.2
-## Pod: elasticsearch-deployment-668845bd79-zqqwc, Node:           k8s2/172.42.42.2
+Pod: elasticsearch-data-deployment-6cf4d97bbb-895tp, Node:           k8s2/172.42.42.2
+Pod: elasticsearch-data-deployment-6cf4d97bbb-nqxnw, Node:           k8s3/172.42.42.3
+Pod: elasticsearch-master-deployment-bbfd44b76-8zldd, Node:           k8s3/172.42.42.3
 ```
 
 - Login to one pod and check service
 ```
-POD_NAME=$(kubectl --namespace es-6node-test get pods -l app="elasticsearch" -o jsonpath="{.items[0].metadata.name}")
+POD_NAME=$(kubectl --namespace es-3node-test get pods -l app="elasticsearch-data" -o jsonpath="{.items[0].metadata.name}")
 # Login to the first pod
-kubectl --namespace es-6node-test exec -ti $POD_NAME hostname
+kubectl --namespace es-3node-test exec -ti $POD_NAME hostname
 
-kubectl --namespace es-6node-test exec -it $POD_NAME sh
+kubectl --namespace es-3node-test exec -it $POD_NAME sh
 
 # Install curl
 apk add --update curl
@@ -137,7 +134,7 @@ TODO: check es data
 
 - Clean up: es deployment
 ```
-kubectl --namespace es-6node-test delete -f ./kubernetes.yaml
+kubectl --namespace es-3node-test delete -f ./kubernetes.yaml
 ```
 
 - Clean up: virtualbox env
