@@ -1,60 +1,21 @@
 ################################################################################
-# https://github.com/kubernetes/examples/blob/master/guestbook/all-in-one/guestbook-all-in-one.yaml
-# https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
-apiVersion: apps/v1beta2 # for versions before 1.8.0 use apps/v1beta1
-kind: Deployment
+# https://github.com/kubernetes/examples/blob/master/staging/elasticsearch/service-account.yaml
+apiVersion: v1
+kind: ServiceAccount
 metadata:
-  name: elasticsearch-master-deployment
-  labels:
-    app: elasticsearch-master
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: elasticsearch-master
-  template:
-    metadata:
-      labels:
-        app: elasticsearch-master
-    spec:
-      # https://github.com/kubernetes/kubernetes/blob/master/examples/elasticsearch/production_cluster/es-client-rc.yaml
-      containers:
-      - name: elasticsearch
-        image: quay.io/pires/docker-elasticsearch-kubernetes:1.7.1-4
-        # https://kubernetes.io/docs/concepts/policy/resource-quotas/
-        resources:
-          requests:
-            cpu: 500m
-            memory: 600Mi
-        ports:
-        - containerPort: 9200
-        - containerPort: 9300
-        env:
-          - name: KUBERNETES_CA_CERTIFICATE_FILE
-            value: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
-          - name: NAMESPACE
-            valueFrom:
-              fieldRef:
-                fieldPath: metadata.namespace
-          - name: "CLUSTER_NAME"
-            value: "myesdb"
-          - name: NODE_MASTER
-            value: "true"
-          - name: NODE_DATA
-            value: "true"
-          - name: HTTP_ENABLE
-            value: "true"
----
-# Use services to export my app
-# https://github.com/kubernetes/kubernetes/blob/master/examples/elasticsearch/es-svc.yaml
+  name: elasticsearch
+################################################################################
+# https://github.com/kubernetes/examples/blob/master/staging/elasticsearch/es-svc.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-elasticsearch-master-service
+  name: elasticsearch
   labels:
-    app: elasticsearch-master
+    app: elasticsearch
 spec:
   type: LoadBalancer
+  selector:
+    app: elasticsearch
   ports:
   - name: http
     port: 9200
@@ -62,77 +23,159 @@ spec:
   - name: transport
     port: 9300
     protocol: TCP
-  selector:
-    app: elasticsearch-master
-################################################################################
+################################################################################    
+# https://github.com/kubernetes/examples/blob/master/staging/elasticsearch/es-rc.yaml
 apiVersion: apps/v1beta2 # for versions before 1.8.0 use apps/v1beta1
 kind: Deployment
 metadata:
-  name: elasticsearch-data-deployment
+  name: es-master-deployment
   labels:
-    app: elasticsearch-data
+    app: elasticsearch
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: elasticsearch-data
+      app: elasticsearch
   template:
     metadata:
       labels:
-        app: elasticsearch-data
+        app: elasticsearch
     spec:
-      # https://github.com/kubernetes/kubernetes/blob/data/examples/elasticsearch/production_cluster/es-client-rc.yaml
+      serviceAccount: elasticsearch
+      initContainers:
+      - name: init-sysctl
+        image: busybox
+        imagePullPolicy: IfNotPresent
+        command: ["sysctl", "-w", "vm.max_map_count=262144"]
+        securityContext:
+          privileged: true      
       containers:
-      - name: elasticsearch
-        image: quay.io/pires/docker-elasticsearch-kubernetes:1.7.1-4
-        # https://kubernetes.io/docs/concepts/policy/resource-quotas/
+      - name: es-master
+        securityContext:
+          capabilities:
+            add:
+              - IPC_LOCK
+        image: quay.io/pires/docker-elasticsearch-kubernetes:5.6.2
+        env:
+        - name: KUBERNETES_CA_CERTIFICATE_FILE
+          value: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+        - name: NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: "CLUSTER_NAME"
+          value: "myesdb"
+        - name: "DISCOVERY_SERVICE"
+          value: "elasticsearch"
+        - name: NODE_MASTER
+          value: "true"
+        - name: NODE_DATA
+          value: "false"
+        - name: HTTP_ENABLE
+          value: "true"
+        ports:
+        - containerPort: 9200
+          name: http
+          protocol: TCP
+        - containerPort: 9300
+          name: transport
+          protocol: TCP
         resources:
           requests:
             cpu: 500m
             memory: 600Mi
+################################################################################
+---
+apiVersion: apps/v1beta2 # for versions before 1.8.0 use apps/v1beta1
+kind: Deployment
+metadata:
+  name: es-data-deployment
+  labels:
+    app: elasticsearch
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: elasticsearch
+  template:
+    metadata:
+      labels:
+        app: elasticsearch
+    spec:
+      serviceAccount: elasticsearch
+      initContainers:
+      - name: init-sysctl
+        image: busybox
+        imagePullPolicy: IfNotPresent
+        command: ["sysctl", "-w", "vm.max_map_count=262144"]
+        securityContext:
+          privileged: true      
+      containers:
+      - name: es-master
+        securityContext:
+          capabilities:
+            add:
+              - IPC_LOCK
+        image: quay.io/pires/docker-elasticsearch-kubernetes:5.6.2
+        env:
+        - name: KUBERNETES_CA_CERTIFICATE_FILE
+          value: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+        - name: NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: "CLUSTER_NAME"
+          value: "myesdb"
+        - name: "DISCOVERY_SERVICE"
+          value: "elasticsearch"
+        - name: NODE_MASTER
+          value: "true"
+        - name: NODE_DATA
+          value: "false"
+        - name: HTTP_ENABLE
+          value: "true"
         ports:
         - containerPort: 9200
+          name: http
+          protocol: TCP
         - containerPort: 9300
-        env:
-          - name: KUBERNETES_CA_CERTIFICATE_FILE
-            value: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
-          - name: NAMESPACE
-            valueFrom:
-              fieldRef:
-                fieldPath: metadata.namespace
-          - name: "CLUSTER_NAME"
-            value: "myesdb"
-          - name: NODE_MASTER
-            value: "false"
-          - name: NODE_DATA
-            value: "true"
-          - name: HTTP_ENABLE
-            value: "true"
-        # TODO: make sure data folder persists
+          name: transport
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 500m
+            memory: 600Mi
         volumeMounts:
           - mountPath: /data
             name: storage
       volumes:
       - name: storage
         emptyDir: {}
+################################################################################
+# https://github.com/kubernetes/examples/blob/master/staging/elasticsearch/rbac.yaml
 ---
-# Use services to export my app
-# https://github.com/kubernetes/kubernetes/blob/data/examples/elasticsearch/es-svc.yaml
-apiVersion: v1
-kind: Service
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
 metadata:
-  name: my-elasticsearch-data-service
-  labels:
-    app: elasticsearch-data
-spec:
-  type: LoadBalancer
-  ports:
-  - name: http
-    port: 9200
-    protocol: TCP
-  - name: transport
-    port: 9300
-    protocol: TCP
-  selector:
-    app: elasticsearch-data
+  name: elasticsearch
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - endpoints
+  verbs:
+  - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: elasticsearch
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: elasticsearch
+subjects:
+- kind: ServiceAccount
+  name: elasticsearch
+  namespace: default
 ################################################################################

@@ -146,6 +146,9 @@ vagrant destroy
 # More resources
 
 ```
+https://github.com/kubernetes/examples/blob/master/staging/elasticsearch/README.md
+Elasticsearch for Kubernetes
+
 https://github.com/kubernetes/kubernetes/tree/master/examples/elasticsearch
 elasticsearch kubernetes
 
