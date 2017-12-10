@@ -17,7 +17,7 @@ Table of Contents
 ```
 1. Deploy 3 nodes k8s. One controller, others as worker
 2. Create an elasticsearch service with 3 instances.
-   1 as master, 2 as data.
+   2 as master, 4 as data.
 3. Create a nightly job to backup elasticsearch cluster. (Hint: Cron Jobs)
 ```
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
@@ -76,34 +76,36 @@ TODO
 
 - Create namespace
 ```
-kubectl create namespace es-3node-test
+kubectl create namespace es-6node-test
 ```
 
 - Run Deployment
 ```
-kubectl --namespace es-3node-test create -f ./kubernetes.yaml
+kubectl --namespace es-6node-test create -f ./service-account.yaml
+kubectl --namespace es-6node-test create -f ./es-svc.yaml
+kubectl --namespace es-6node-test create -f ./kubernetes.yaml
 ```
 See [kubernetes.yaml](kubernetes.yaml)
 
 ## Verify Deployment
 ```
-# List nodes
-kubectl --namespace es-3node-test get nodes
-
 # List services
-kubectl --namespace es-3node-test get services
+kubectl --namespace es-6node-test get services
 
 # List deployment
-kubectl --namespace es-3node-test get deployment
+kubectl --namespace es-6node-test get deployment
 
 # List pods
-kubectl --namespace es-3node-test get pods
+kubectl --namespace es-6node-test get pods
+
+# List nodes
+kubectl --namespace es-6node-test get nodes
 ```
 
 - List all pods with node info attached.
 ```
-for pod in $(kubectl --namespace es-3node-test get pods -o jsonpath="{.items[*].metadata.name}"); do
-    node_info=$(kubectl --namespace es-3node-test describe pod $pod | grep "Node:")
+for pod in $(kubectl --namespace es-6node-test get pods -o jsonpath="{.items[*].metadata.name}"); do
+    node_info=$(kubectl --namespace es-6node-test describe pod $pod | grep "Node:")
     echo "Pod: $pod, $node_info"
 done
 
@@ -115,11 +117,11 @@ Pod: elasticsearch-master-deployment-bbfd44b76-8zldd, Node:           k8s3/172.4
 
 - Login to one pod and check service
 ```
-POD_NAME=$(kubectl --namespace es-3node-test get pods -l app="elasticsearch-data" -o jsonpath="{.items[0].metadata.name}")
+POD_NAME=$(kubectl --namespace es-6node-test get pods -l app="elasticsearch" -o jsonpath="{.items[0].metadata.name}")
 # Login to the first pod
-kubectl --namespace es-3node-test exec -ti $POD_NAME hostname
+kubectl --namespace es-6node-test exec -ti $POD_NAME hostname
 
-kubectl --namespace es-3node-test exec -it $POD_NAME sh
+kubectl --namespace es-6node-test exec -it $POD_NAME sh
 
 # Install curl
 apk add --update curl
@@ -134,7 +136,10 @@ TODO: check es data
 
 - Clean up: es deployment
 ```
-kubectl --namespace es-3node-test delete -f ./kubernetes.yaml
+kubectl --namespace es-6node-test delete -f ./kubernetes.yaml
+kubectl --namespace es-6node-test delete -f ./es-svc.yaml
+kubectl --namespace es-6node-test delete -f ./service-account.yaml
+kubectl delete namespace es-6node-test
 ```
 
 - Clean up: virtualbox env
