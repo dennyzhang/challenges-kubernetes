@@ -117,7 +117,7 @@ Pod: elasticsearch-master-deployment-bbfd44b76-8zldd, Node:           k8s3/172.4
 
 - Login to one pod and check service
 ```
-POD_NAME=$(kubectl --namespace es-6node-test get pods -l app="elasticsearch" -o jsonpath="{.items[0].metadata.name}")
+POD_NAME=$(kubectl --namespace es-6node-test get pods -l component="elasticsearch" -o jsonpath="{.items[0].metadata.name}")
 # Login to the first pod
 kubectl --namespace es-6node-test exec -ti $POD_NAME hostname
 
