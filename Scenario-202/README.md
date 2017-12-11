@@ -17,7 +17,7 @@ Table of Contents
 ```
 1. Deploy 3 nodes k8s. One controller, others as worker
 2. Create an elasticsearch service with 3 instances.
-   2 as master, 4 as data.
+   2 as master, 3 as data.
 3. Create a nightly job to backup elasticsearch cluster. (Hint: Cron Jobs)
 ```
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>

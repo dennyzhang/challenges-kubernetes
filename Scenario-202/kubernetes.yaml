@@ -69,7 +69,7 @@ metadata:
   labels:
     component: elasticsearch
 spec:
-  replicas: 4
+  replicas: 2
   selector:
     matchLabels:
       component: elasticsearch

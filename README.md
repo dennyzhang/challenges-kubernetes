@@ -93,7 +93,7 @@ Challenges Your Kubernetes Skills And Knowledge
 ```
 1. Deploy 3 nodes k8s. One controller, others as worker
 2. Create an elasticsearch service with 6 instances.
-   2 as master, 4 as data.
+   2 as master, 3 as data.
 3. Create a nightly job to backup elasticsearch cluster. (Hint: Cron Jobs)
 ```
 - Main Tech:
