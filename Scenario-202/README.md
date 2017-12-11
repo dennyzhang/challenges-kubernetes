@@ -76,22 +76,22 @@ TODO
 
 - Create namespace
 ```
-kubectl create namespace es-6node-test
+kubectl create namespace es-4node-test
 ```
 
 - Run Deployment
 ```
-kubectl --namespace es-6node-test create -f ./service-account.yaml
-kubectl --namespace es-6node-test create -f ./es-svc.yaml
-kubectl --namespace es-6node-test create -f ./kubernetes.yaml
+kubectl --namespace es-4node-test create -f ./service-account.yaml
+kubectl --namespace es-4node-test create -f ./es-svc.yaml
+kubectl --namespace es-4node-test create -f ./kubernetes.yaml
 ```
 See [kubernetes.yaml](kubernetes.yaml)
 
 ## Verify Deployment
 - Check ES service
 ```
-kubectl --namespace es-6node-test get service
-# ubuntu@k8s1:~$ kubectl --namespace es-6node-test get service
+kubectl --namespace es-4node-test get service
+# ubuntu@k8s1:~$ kubectl --namespace es-4node-test get service
 # NAME            TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)                         AGE
 # elasticsearch   NodePort   10.103.51.185   <none>        9200:31459/TCP,9300:31309/TCP   1d
 
@@ -102,11 +102,11 @@ curl $es_ip:9200/_cluster/health?pretty
 
 - Login to one pod and check service
 ```
-POD_NAME=$(kubectl --namespace es-6node-test get pods -l component="elasticsearch" -o jsonpath="{.items[0].metadata.name}")
+POD_NAME=$(kubectl --namespace es-4node-test get pods -l component="elasticsearch" -o jsonpath="{.items[0].metadata.name}")
 # Login to the first pod
-kubectl --namespace es-6node-test exec -ti $POD_NAME hostname
+kubectl --namespace es-4node-test exec -ti $POD_NAME hostname
 
-kubectl --namespace es-6node-test exec -it $POD_NAME sh
+kubectl --namespace es-4node-test exec -it $POD_NAME sh
 
 # Install curl
 apk add --update curl
@@ -119,22 +119,22 @@ curl $es_ip:9200/_cluster/health?pretty
 
 ```
 # List services
-kubectl --namespace es-6node-test get services
+kubectl --namespace es-4node-test get services
 
 # List deployment
-kubectl --namespace es-6node-test get deployment
+kubectl --namespace es-4node-test get deployment
 
 # List pods
-kubectl --namespace es-6node-test get pods
+kubectl --namespace es-4node-test get pods
 
 # List nodes
-kubectl --namespace es-6node-test get nodes
+kubectl --namespace es-4node-test get nodes
 ```
 
 - List all pods with node info attached.
 ```
-for pod in $(kubectl --namespace es-6node-test get pods -o jsonpath="{.items[*].metadata.name}"); do
-    node_info=$(kubectl --namespace es-6node-test describe pod $pod | grep "Node:")
+for pod in $(kubectl --namespace es-4node-test get pods -o jsonpath="{.items[*].metadata.name}"); do
+    node_info=$(kubectl --namespace es-4node-test describe pod $pod | grep "Node:")
     echo "Pod: $pod, $node_info"
 done
 
@@ -150,10 +150,10 @@ TODO: check es data
 
 - Clean up: es deployment
 ```
-kubectl --namespace es-6node-test delete -f ./kubernetes.yaml
-kubectl --namespace es-6node-test delete -f ./es-svc.yaml
-kubectl --namespace es-6node-test delete -f ./service-account.yaml
-kubectl delete namespace es-6node-test
+kubectl --namespace es-4node-test delete -f ./kubernetes.yaml
+kubectl --namespace es-4node-test delete -f ./es-svc.yaml
+kubectl --namespace es-4node-test delete -f ./service-account.yaml
+kubectl delete namespace es-4node-test
 ```
 
 - Clean up: virtualbox env
