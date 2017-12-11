@@ -11,6 +11,7 @@ spec:
       template:
         spec:
           containers:
+          # TODO: backup es cluster
           - name: hello
             image: busybox
             args:
