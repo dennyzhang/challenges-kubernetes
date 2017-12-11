@@ -88,6 +88,35 @@ kubectl --namespace es-6node-test create -f ./kubernetes.yaml
 See [kubernetes.yaml](kubernetes.yaml)
 
 ## Verify Deployment
+- Check ES service
+```
+kubectl --namespace es-6node-test get service
+# ubuntu@k8s1:~$ kubectl --namespace es-6node-test get service
+# NAME            TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)                         AGE
+# elasticsearch   NodePort   10.103.51.185   <none>        9200:31459/TCP,9300:31309/TCP   1d
+
+es_ip="10.103.51.185"
+curl http://${es_ip}:9200/_cat/nodes?v
+curl $es_ip:9200/_cluster/health?pretty
+```
+
+- Login to one pod and check service
+```
+POD_NAME=$(kubectl --namespace es-6node-test get pods -l component="elasticsearch" -o jsonpath="{.items[0].metadata.name}")
+# Login to the first pod
+kubectl --namespace es-6node-test exec -ti $POD_NAME hostname
+
+kubectl --namespace es-6node-test exec -it $POD_NAME sh
+
+# Install curl
+apk add --update curl
+
+# List es nodes in the cluster
+es_ip=$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
+curl $es_ip:9200/_cat/nodes?v
+curl $es_ip:9200/_cluster/health?pretty
+```
+
 ```
 # List services
 kubectl --namespace es-6node-test get services
@@ -113,21 +142,6 @@ done
 Pod: elasticsearch-data-deployment-6cf4d97bbb-895tp, Node:           k8s2/172.42.42.2
 Pod: elasticsearch-data-deployment-6cf4d97bbb-nqxnw, Node:           k8s3/172.42.42.3
 Pod: elasticsearch-master-deployment-bbfd44b76-8zldd, Node:           k8s3/172.42.42.3
-```
-
-- Login to one pod and check service
-```
-POD_NAME=$(kubectl --namespace es-6node-test get pods -l component="elasticsearch" -o jsonpath="{.items[0].metadata.name}")
-# Login to the first pod
-kubectl --namespace es-6node-test exec -ti $POD_NAME hostname
-
-kubectl --namespace es-6node-test exec -it $POD_NAME sh
-
-# Install curl
-apk add --update curl
-
-# List es nodes in the cluster
-curl localhost:9200/_cat/nodes?v
 ```
 
 TODO: list all es nodes
