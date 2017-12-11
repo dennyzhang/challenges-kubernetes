@@ -84,6 +84,7 @@ kubectl create namespace es-4node-test
 kubectl --namespace es-4node-test create -f ./service-account.yaml
 kubectl --namespace es-4node-test create -f ./es-svc.yaml
 kubectl --namespace es-4node-test create -f ./kubernetes.yaml
+kubectl --namespace es-4node-test create -f ./cronjob-backup.yaml
 ```
 See [kubernetes.yaml](kubernetes.yaml)
 
@@ -98,6 +99,15 @@ kubectl --namespace es-4node-test get service
 es_ip="10.103.51.185"
 curl http://${es_ip}:9200/_cat/nodes?v
 curl $es_ip:9200/_cluster/health?pretty
+```
+
+TODO: Why list nodes api is inconsistent
+
+- Check jobs
+```
+kubectl --namespace es-4node-test get cronjob
+
+POD_NAME=$(kubectl --namespace es-4node-test get pods -l component="cronjob" -o jsonpath="{.items[0].metadata.name}")
 ```
 
 - Login to one pod and check service
@@ -150,6 +160,7 @@ TODO: check es data
 
 - Clean up: es deployment
 ```
+kubectl --namespace es-4node-test delete -f ./cronjob-backup.yaml
 kubectl --namespace es-4node-test delete -f ./kubernetes.yaml
 kubectl --namespace es-4node-test delete -f ./es-svc.yaml
 kubectl --namespace es-4node-test delete -f ./service-account.yaml
