@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: backup-es
   labels:
-    component: cronjob
+    component: backup-es
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:

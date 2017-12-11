@@ -107,7 +107,8 @@ TODO: Why list nodes api is inconsistent
 ```
 kubectl --namespace es-4node-test get cronjob
 
-POD_NAME=$(kubectl --namespace es-4node-test get pods -l component="cronjob" -o jsonpath="{.items[0].metadata.name}")
+POD_NAME=$(kubectl --namespace es-4node-test get cronjob -l component="backup-es" -o jsonpath="{.items[0].metadata.name}")
+kubectl --namespace es-4node-test exec -ti $POD_NAME hostname
 ```
 
 - Login to one pod and check service
