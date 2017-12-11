@@ -95,6 +95,7 @@ Challenges Your Kubernetes Skills And Knowledge
 2. Create an elasticsearch service with 4 instances.
    2 as master, 2 as data.
 3. Create a nightly job to backup elasticsearch cluster. (Hint: Cron Jobs)
+4. If any es instance has crashed, get alerts.
 ```
 - Main Tech:
 - See more: [Scenario-202](./Scenario-202)
