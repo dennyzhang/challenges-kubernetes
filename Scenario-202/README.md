@@ -24,7 +24,6 @@ Table of Contents
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
 
 # Background & Highlights
-
 - Here we assume you know how to use and deployment elasticsearch cluster
 
 # Procedures
