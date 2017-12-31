@@ -106,8 +106,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Requirements:
 ```
 1. Deploy 3 nodes k8s. One controller, others as worker
-1. Deploy jenkins service with 1 master 2 agents
-2. When Jenkins crash, get alerts
+2. Deploy Jenkins service by helm. 1 Jenkins master 2 agent
 ```
 - Main Tech:
 - See more: [Scenario-301](./Scenario-301)
@@ -118,7 +117,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Requirements:
 ```
 1. Deploy 3 nodes k8s. One controller, others as worker
-2. Deploy Jenkins service by helm
+2. Deploy Jenkins service by helm. 2 Jenkins master 2 agent
 3. Use nginx as an ingress for Jenkins master
 4. Simulate Jenkins slave crash events, and confirm service is fine
 5. Simulate Jenkins master crash events, and confirm service is fine
