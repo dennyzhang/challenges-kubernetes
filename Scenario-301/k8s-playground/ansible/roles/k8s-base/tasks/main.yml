@@ -1,0 +1,99 @@
+---
+- name: Ensure SSH Directories
+  become: yes
+  file:
+    path: /home/ubuntu/.ssh
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: 0700
+
+- name: Copy SSH Key Files
+  become: yes
+  copy:
+    src: files/{{ item }}
+    dest: /home/ubuntu/.ssh/{{ item }}
+    owner: ubuntu
+    group: ubuntu
+    mode: 0600
+  with_items:
+    - id_rsa
+    - id_rsa.pub
+    - config
+
+- name: Ensure Authorized SSH Key
+  become: yes
+  authorized_key:
+    user: ubuntu
+    key:  "{{ lookup('file', '/home/ubuntu/.ssh/id_rsa.pub') }}"
+    state: present
+
+- name: Remove Default Host Entry
+  become: yes
+  lineinfile:
+    dest: /etc/hosts
+    regexp: '^127\.0\.0\.1\s+k8s.*$'
+    state: absent
+
+- name: Ensure Hosts File
+  become: yes
+  lineinfile:
+    dest: /etc/hosts
+    line: "{{ item.ip }} {{ item.name }}"
+  with_items:
+    - { ip: "172.42.42.1", name: "k8s1" }
+    - { ip: "172.42.42.2", name: "k8s2" }
+    - { ip: "172.42.42.3", name: "k8s3" }
+
+- name: Ensure Google Cloud Apt Key
+  become: yes
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+  tags:
+    - k8s
+
+- name: Ensure Kubernetes Repository
+  become: yes
+  apt_repository:
+    repo: 'deb http://apt.kubernetes.io/ kubernetes-xenial main'
+    state: present
+    update_cache: yes
+  tags:
+    - k8s
+
+- name: Ensure Base Kubernetes
+  become: yes
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - apt-transport-https
+    - docker-engine
+    - kubelet
+    - kubeadm
+    - kubectl
+    - kubernetes-cni
+    - jq
+  tags:
+    - k8s
+
+- name: Ensure Docker Group
+  group:
+    name: docker
+    state: present
+
+- name: Ensure User in Docker Group
+  user:
+    name=ubuntu
+    groups=docker
+    append=yes
+
+- name: Ensure Kubernetes Cleanup
+  become:
+  copy:
+    src: files/clean-k8s
+    dest: /usr/local/bin
+    mode: 0755
+    owner: root
+    group: root

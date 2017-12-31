@@ -85,7 +85,6 @@ Challenges Your Kubernetes Skills And Knowledge
 ```
 - Main Tech:
 - See more: [Scenario-201](./Scenario-201)
-- TODO
 
 ## Scenario-202: 3-Nodes K8S Deployment II
 - Objective: k8s cluster env with stateful service
