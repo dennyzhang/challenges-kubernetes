@@ -16,15 +16,15 @@ Table of Contents
 
 ```
 1. Deploy 3 nodes k8s. One controller, others as worker
-2. Create an elasticsearch service with 4 instances.
-   2 as master, 2 as data.
-3. Create a nightly job to backup elasticsearch cluster. (Hint: Cron Jobs)
-4. If any es instance has crashed, get alerts.
+2. Deploy Jenkins service by helm
+3. Use nginx as an ingress for Jenkins master
+4. Simulate Jenkins slave crash events, and confirm service is fine
+5. Simulate Jenkins master crash events, and confirm service is fine
 ```
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
 
 # Background & Highlights
-- Here we assume you know how to use and deployment elasticsearch cluster
+- 
 
 # Procedures
 
@@ -39,13 +39,13 @@ It will setup 3 nodes k8s cluster in your local virtualbox.
 
 - Start k8s cluster by vagrant
 ```
-cd challenges-kubernetes/Scenario-202/k8s-playground
+cd challenges-kubernetes/Scenario-301/k8s-playground
 vagrant up -d
 ```
 
 - Verify k8s cluster env
 ```
-cd challenges-kubernetes/Scenario-202/k8s-playground
+cd challenges-kubernetes/Scenario-301/k8s-playground
 vagrant ssh k8s1
 kubectl -n kube-system get po -o wide
 
@@ -58,7 +58,7 @@ kubectl get services
 
 - Starting Networking
 ```
-cd challenges-kubernetes/Scenario-202/k8s-playground
+cd challenges-kubernetes/Scenario-301/k8s-playground
 vagrant ssh k8s1
 
 ubuntu@k8s1:~$ start-weave
@@ -168,7 +168,7 @@ kubectl delete namespace es-4node-test
 
 - Clean up: virtualbox env
 ```
-cd challenges-kubernetes/Scenario-202/k8s-playground
+cd challenges-kubernetes/Scenario-301/k8s-playground
 vagrant destroy
 ```
 
