@@ -33,8 +33,11 @@ Here we will use method #3: Local vagrant k8s cluster + ClusterIP + Ingress
 
 - Questions:
 ```
-1. For my on-premise env, when I specify service type as LoadBalancer, why EXTERNAL-IP remains in the pending state?
+1. In my on-premise env, I have specified service type to LoadBalancer.
+   But why EXTERNAL-IP remains in the pending state?
+
 2. How Does NodePort work behind the scene?
+
 3. How I configure Ingress?
 ```
 
@@ -155,10 +158,10 @@ vagrant destroy
 # More resources
 
 ```
+https://kubernetes.io/docs/tasks/access-application-cluster/load-balance-access-application-cluster/
+Provide Load-Balanced Access to an Application in a Cluster
+
 https://github.com/davidkbainbridge/k8s-playground
 Simple VM based Kubernetes cluster setup
-
-https://kubernetes.io/docs/reference/kubectl/cheatsheet/
-kubectl Cheat Sheet
 ```
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
