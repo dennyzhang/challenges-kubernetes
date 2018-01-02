@@ -26,7 +26,8 @@ Objective: Improve service availability by choosing service type wisely.
 
 ```
 1. For public cloud, we can choose service type as External Loadbalancer.
-   In AWS, it will create a ELB/ALB. And redirect the requests correctly. Similar things for Azure, GCE.
+   In AWS, it will create a ELB/ALB. And redirect the requests correctly.
+   Similar things for Azure, GCE.
 
 2. For on-premise env, we can create service with ClusterIP.
    Then we will need to create Ingress with reverse proxy enabled in the ClusterIP
@@ -48,8 +49,9 @@ Here we will use method #2: Local vagrant k8s cluster + ClusterIP + Ingress
 3. How I configure Ingress?
 ```
 
-- Publishing services - service typesi
+- Publishing services - service types
 ```
+https://kubernetes.io/docs/concepts/services-networking/service/
 
 For some parts of your application (e.g. frontends) you may want to
 expose a Service onto an external (outside of your cluster) IP
