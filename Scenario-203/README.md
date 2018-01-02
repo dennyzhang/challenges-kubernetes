@@ -15,7 +15,7 @@ Table of Contents
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
 ```
-1. Deploy 3 nodes k8s. One controller, others as worker
+1. Deploy 3 nodes k8s. One controller, others as workers
 2. Create an elasticsearch service with 4 instances.
    2 as master, 2 as data.
 3. Create a nightly job to backup elasticsearch cluster. (Hint: Cron Jobs)

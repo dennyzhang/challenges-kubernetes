@@ -87,7 +87,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: Improve service availability by choosing service type wisely.
 - Requirements:
 ```
-1. Deploy 3 nodes k8s. One controller, others as worker
+1. Deploy 3 nodes k8s. One controller, others as workers
 2. Create a nginx service with 6 instances.
    They should be balanced across worker nodes.
 3. Make sure nginx requests will be balanced across 6 instances.
@@ -102,7 +102,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: k8s cluster env with stateful service
 - Requirements:
 ```
-1. Deploy 3 nodes k8s. One controller, others as worker
+1. Deploy 3 nodes k8s. One controller, others as workers
 2. Create an elasticsearch service with 4 instances.
    2 as master, 2 as data.
 3. Create a nightly job to backup elasticsearch cluster. (Hint: Cron Jobs)
@@ -117,7 +117,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: Real service deployment
 - Requirements:
 ```
-1. Deploy 3 nodes k8s. One controller, others as worker
+1. Deploy 3 nodes k8s. One controller, others as workers
 2. Deploy Jenkins service by helm. 1 Jenkins master 2 agent
 ```
 - Main Tech:
@@ -128,8 +128,8 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: Real service deployment
 - Requirements:
 ```
-1. Deploy 3 nodes k8s. One controller, others as worker
-2. Deploy Jenkins service by helm. 2 Jenkins master and 2 Jenkins agent
+1. Deploy 3 nodes k8s. One controller, others as workers
+2. Deploy Jenkins service by helm. 2 Jenkins master and 2 Jenkins agents
 3. Use nginx as an ingress for Jenkins master
 4. Simulate Jenkins slave crash events, and confirm service is fine
 5. Simulate Jenkins master crash events, and confirm service is fine

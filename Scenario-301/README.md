@@ -15,8 +15,8 @@ Table of Contents
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
 ```
-1. Deploy 3 nodes k8s. One controller, others as worker
-2. Deploy Jenkins service by helm. 1 Jenkins master and 2 Jenkins agent
+1. Deploy 3 nodes k8s. One controller, others as workers
+2. Deploy Jenkins service by helm. 1 Jenkins master and 2 Jenkins agents
 ```
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
 
