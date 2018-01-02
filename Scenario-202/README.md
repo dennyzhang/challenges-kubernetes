@@ -18,18 +18,25 @@ Objective: Improve service availability by choosing service type wisely.
 ```
 1. Deploy 3 nodes k8s. One controller, others as workers
 2. Create a nginx service with 6 instances.
-   They should be balanced across worker nodes.
 3. Make sure nginx requests will be balanced across 6 instances.
    (Hint: ClusterIP + Ingress, or External Loadbalancer)
 ```
 
 # Background & Highlights
 
-1. Service type of External Loadbalancer will only work for public Cloud.
-2. For on-premise env, we can create service of NodePort. Then we will need a reverse proxy to balance the requests. Like [this](https://blog.oestrich.org/2016/01/nodeport-kubernetes-load-balancer/)
-3. For on-premise env, we can create service of ClusterIP. Then we will need to create Ingress with reverse proxy enabled in the ClusterIP
+```
+1. For public cloud, we can choose service type as External Loadbalancer.
+   In AWS, it will create a ELB/ALB. And redirect the requests correctly. Similar things for Azure, GCE.
 
-Here we will use method #3: Local vagrant k8s cluster + ClusterIP + Ingress
+2. For on-premise env, we can create service with ClusterIP.
+   Then we will need to create Ingress with reverse proxy enabled in the ClusterIP
+
+3. For on-premise env, we can create service with NodePort.
+   Then we will need a reverse proxy to balance the requests.
+   Example: https://blog.oestrich.org/2016/01/nodeport-kubernetes-load-balancer/
+```
+
+Here we will use method #2: Local vagrant k8s cluster + ClusterIP + Ingress
 
 - Questions:
 ```
