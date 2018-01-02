@@ -2,4 +2,4 @@
 *.pyc
 *.log
 .vagrant
-*/k8s-playground/ansible/k8s-worker.retry
+*/k8s-playground/.gitignore
