@@ -1,0 +1,3 @@
+#!/bin/bash
+
+kubectl create -f http://docs.projectcalico.org/v1.5/getting-started/kubernetes/installation/hosted/calico.yaml

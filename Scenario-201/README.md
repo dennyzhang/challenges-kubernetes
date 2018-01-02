@@ -18,9 +18,6 @@ Table of Contents
 1. Deploy 3 nodes k8s env in your virtualbox.
    One as controller, the other two as worker
 2. Deploy k8s web UI, which is missing by default.
-3. Create a nginx service with 6 instances.
-   They should be balanced across worker nodes.
-4. Visit nginx service by loadbalancer. (Hint: Ingress)
 ```
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
 

@@ -15,16 +15,32 @@ Table of Contents
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
 ```
-1. Deploy 3 nodes k8s. One controller, others as worker
-2. Create an elasticsearch service with 4 instances.
-   2 as master, 2 as data.
-3. Create a nightly job to backup elasticsearch cluster. (Hint: Cron Jobs)
-4. If any es instance has crashed, get alerts.
+1. Deploy 3 nodes k8s env in your virtualbox.
+   One as controller, the other two as worker
+2. Deploy k8s web UI, which is missing by default.
 ```
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
 
 # Background & Highlights
-- Here we assume you know how to use and deployment elasticsearch cluster
+
+- Two different categories. They're different. And both could be big and complicated.
+```
+1. Setup a k8s cluster itself. Improve k8s availability and reliablity
+2. Deploy clustered services in k8s cluster. Improve services' availability and reliablity
+```
+
+**Our focus is more about category #2.**
+
+For Category #1, I have recommendations for two GitHub Repos.
+```
+https://github.com/davidkbainbridge/k8s-playground
+Start 3 nodes k8s cluster by vagrant. 1 controller 2 workers
+
+https://github.com/kelseyhightower/kubernetes-the-hard-way
+Start 6 nodes k8s cluster in Google Cloud Platform. 3 controller 3 workers
+```
+
+- Dashboard is a web-based Kubernetes user interface. But it's not deployed by default. Check more: [here](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
 
 # Procedures
 
@@ -76,94 +92,47 @@ TODO
 
 - Create namespace
 ```
-kubectl create namespace es-4node-test
+kubectl create namespace nginx-6node-test
 ```
 
 - Run Deployment
 ```
-kubectl --namespace es-4node-test create -f ./service-account.yaml
-kubectl --namespace es-4node-test create -f ./es-svc.yaml
-kubectl --namespace es-4node-test create -f ./kubernetes.yaml
-kubectl --namespace es-4node-test create -f ./cronjob-backup.yaml
+kubectl --namespace nginx-6node-test create -f ./kubernetes.yaml
 ```
 See [kubernetes.yaml](kubernetes.yaml)
 
 ## Verify Deployment
-- Check ES service
 ```
-kubectl --namespace es-4node-test get service
-# ubuntu@k8s1:~$ kubectl --namespace es-4node-test get service
-# NAME            TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)                         AGE
-# elasticsearch   NodePort   10.103.51.185   <none>        9200:31459/TCP,9300:31309/TCP   1d
+# List nodes
+kubectl --namespace nginx-6node-test get nodes
 
-es_ip="10.103.51.185"
-curl http://${es_ip}:9200/_cat/nodes?v
-curl $es_ip:9200/_cluster/health?pretty
-```
-
-TODO: Why list nodes api is inconsistent
-
-- Check jobs
-```
-kubectl --namespace es-4node-test get cronjob
-kubectl --namespace es-4node-test get jobs --watch
-```
-
-- Login to one pod and check service
-```
-POD_NAME=$(kubectl --namespace es-4node-test get pods -l component="elasticsearch" -o jsonpath="{.items[0].metadata.name}")
-# Login to the first pod
-kubectl --namespace es-4node-test exec -ti $POD_NAME hostname
-
-kubectl --namespace es-4node-test exec -it $POD_NAME sh
-
-# Install curl
-apk add --update curl
-
-# List es nodes in the cluster
-es_ip=$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
-curl $es_ip:9200/_cat/nodes?v
-curl $es_ip:9200/_cluster/health?pretty
-```
-
-```
 # List services
-kubectl --namespace es-4node-test get services
-
-# List deployment
-kubectl --namespace es-4node-test get deployment
+kubectl --namespace nginx-6node-test get services
 
 # List pods
-kubectl --namespace es-4node-test get pods
-
-# List nodes
-kubectl --namespace es-4node-test get nodes
+kubectl --namespace nginx-6node-test get pods
 ```
 
 - List all pods with node info attached.
 ```
-for pod in $(kubectl --namespace es-4node-test get pods -o jsonpath="{.items[*].metadata.name}"); do
-    node_info=$(kubectl --namespace es-4node-test describe pod $pod | grep "Node:")
+for pod in $(kubectl --namespace nginx-6node-test get pods -o jsonpath="{.items[*].metadata.name}"); do
+    node_info=$(kubectl --namespace nginx-6node-test describe pod $pod | grep "Node:")
     echo "Pod: $pod, $node_info"
 done
 
+# We shall see 6 nginx podes across two k8s worker nodes. (k8s2 and k8s3)
 # Sample output
-Pod: elasticsearch-data-deployment-6cf4d97bbb-895tp, Node:           k8s2/172.42.42.2
-Pod: elasticsearch-data-deployment-6cf4d97bbb-nqxnw, Node:           k8s3/172.42.42.3
-Pod: elasticsearch-master-deployment-bbfd44b76-8zldd, Node:           k8s3/172.42.42.3
+## Pod: nginx-deployment-668845bd79-47d6w, Node:           k8s2/172.42.42.2
+## Pod: nginx-deployment-668845bd79-bf2kh, Node:           k8s3/172.42.42.3
+## Pod: nginx-deployment-668845bd79-k62q4, Node:           k8s3/172.42.42.3
+## Pod: nginx-deployment-668845bd79-vz58b, Node:           k8s3/172.42.42.3
+## Pod: nginx-deployment-668845bd79-xb6mm, Node:           k8s2/172.42.42.2
+## Pod: nginx-deployment-668845bd79-zqqwc, Node:           k8s2/172.42.42.2
 ```
 
-TODO: list all es nodes
-
-TODO: check es data
-
-- Clean up: es deployment
+- Clean up: nginx deployment
 ```
-kubectl --namespace es-4node-test delete -f ./cronjob-backup.yaml
-kubectl --namespace es-4node-test delete -f ./kubernetes.yaml
-kubectl --namespace es-4node-test delete -f ./es-svc.yaml
-kubectl --namespace es-4node-test delete -f ./service-account.yaml
-kubectl delete namespace es-4node-test
+kubectl --namespace nginx-6node-test delete -f ./kubernetes.yaml
 ```
 
 - Clean up: virtualbox env
@@ -175,12 +144,6 @@ vagrant destroy
 # More resources
 
 ```
-https://github.com/kubernetes/examples/blob/master/staging/elasticsearch/README.md
-Elasticsearch for Kubernetes
-
-https://github.com/kubernetes/kubernetes/tree/master/examples/elasticsearch
-elasticsearch kubernetes
-
 https://github.com/davidkbainbridge/k8s-playground
 Simple VM based Kubernetes cluster setup
 

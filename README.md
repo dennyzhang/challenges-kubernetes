@@ -79,14 +79,25 @@ Challenges Your Kubernetes Skills And Knowledge
 1. Deploy 3 nodes k8s env in your virtualbox.
    One as controller, the other two as worker
 2. Deploy k8s web UI, which is missing by default.
-3. Create a nginx service with 6 instances.
-   They should be balanced across worker nodes.
-4. Visit nginx service by loadbalancer. (Hint: Ingress)
 ```
 - Main Tech:
 - See more: [Scenario-201](./Scenario-201)
 
 ## Scenario-202: 3-Nodes K8S Deployment II
+- Objective: k8s cluster env with high availability
+- Requirements:
+```
+1. Deploy 3 nodes k8s. One controller, others as worker
+2. Create a nginx service with 6 instances.
+   They should be balanced across worker nodes.
+3. Make sure nginx requests will be balanced across 6 instances. (Hint: ClusterIP + Ingress, or External Loadbalancer)
+```
+- Main Tech:
+- See more: [Scenario-202](./Scenario-202)
+- TODO
+<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
+
+## Scenario-203: 3-Nodes K8S Deployment II
 - Objective: k8s cluster env with stateful service
 - Requirements:
 ```
@@ -97,7 +108,7 @@ Challenges Your Kubernetes Skills And Knowledge
 4. If any es instance has crashed, get alerts.
 ```
 - Main Tech:
-- See more: [Scenario-202](./Scenario-202)
+- See more: [Scenario-203](./Scenario-203)
 - TODO
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
 
