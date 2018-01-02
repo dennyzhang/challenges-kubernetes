@@ -84,7 +84,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - See more: [Scenario-201](./Scenario-201)
 
 ## Scenario-202: 3-Nodes K8S Deployment II
-- Objective: Improve service availability by using 3 different service types wisely.
+- Objective: Improve service availability by choosing service type wisely.
 - Requirements:
 ```
 1. Deploy 3 nodes k8s. One controller, others as worker

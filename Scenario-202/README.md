@@ -14,7 +14,7 @@ Table of Contents
 # Requirements
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
-Improve service availability by using 3 different service types wisely.
+Objective: Improve service availability by choosing service type wisely.
 ```
 1. Deploy 3 nodes k8s. One controller, others as worker
 2. Create a nginx service with 6 instances.
