@@ -15,36 +15,26 @@ Table of Contents
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
 ```
-1. Deploy 3 nodes k8s env in your virtualbox.
-   One as controller, the other two as worker
-2. Deploy k8s web UI, which is missing by default.
+1. Deploy 3 nodes k8s. One controller, others as worker
+2. Create a nginx service with 6 instances.
+   They should be balanced across worker nodes.
+3. Make sure nginx requests will be balanced across 6 instances.
+   (Hint: ClusterIP + Ingress, or External Loadbalancer)
 ```
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
 
 # Background & Highlights
 
-- Two different categories. They're different. And both could be big and complicated.
-```
-1. Setup a k8s cluster itself. Improve k8s availability and reliablity
-2. Deploy clustered services in k8s cluster. Improve services' availability and reliablity
-```
+1. External Loadbalancer of k8s will only work for public Cloud.
+- For on-premise env, we can create service of NodePort. Then we will need a reverse proxy to balance the requests. Like [this](https://blog.oestrich.org/2016/01/nodeport-kubernetes-load-balancer/)
+- For on-premise env, we can create service of ClusterIP. Then we will need to prepare config reverse proxy service in the ClusterIP
 
-**Our focus is more about category #2.**
-
-For Category #1, I have recommendations for two GitHub Repos.
-```
-https://github.com/davidkbainbridge/k8s-playground
-Start 3 nodes k8s cluster by vagrant. 1 controller 2 workers
-
-https://github.com/kelseyhightower/kubernetes-the-hard-way
-Start 6 nodes k8s cluster in Google Cloud Platform. 3 controller 3 workers
-```
-
-- Dashboard is a web-based Kubernetes user interface. But it's not deployed by default. Check more: [here](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
+Here we will use method #3: Local vagrant k8s cluster + ClusterIP
 
 # Procedures
 
 ## Start k8s Cluster
+
 - Install virtualbox and vagrant
 
 ```

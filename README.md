@@ -90,7 +90,8 @@ Challenges Your Kubernetes Skills And Knowledge
 1. Deploy 3 nodes k8s. One controller, others as worker
 2. Create a nginx service with 6 instances.
    They should be balanced across worker nodes.
-3. Make sure nginx requests will be balanced across 6 instances. (Hint: ClusterIP + Ingress, or External Loadbalancer)
+3. Make sure nginx requests will be balanced across 6 instances.
+   (Hint: ClusterIP + Ingress, or External Loadbalancer)
 ```
 - Main Tech:
 - See more: [Scenario-202](./Scenario-202)
