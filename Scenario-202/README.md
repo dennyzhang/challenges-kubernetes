@@ -31,6 +31,27 @@ Improve service availability by using 3 different service types wisely.
 
 Here we will use method #3: Local vagrant k8s cluster + ClusterIP + Ingress
 
+- Questions:
+```
+1. For my on-premise env, when I specify service type as LoadBalancer, why EXTERNAL-IP remains in the pending state?
+2. How Does NodePort work behind the scene?
+3. How I configure Ingress?
+```
+
+- Publishing services - service types
+```
+For some parts of your application (e.g. frontends) you may want to expose a Service onto an external (outside of your cluster) IP address.
+
+Kubernetes ServiceTypes allow you to specify what kind of service you want. The default is ClusterIP.
+
+Type values and their behaviors are:
+
+ClusterIP: Exposes the service on a cluster-internal IP. Choosing this value makes the service only reachable from within the cluster. This is the default ServiceType.
+NodePort: Exposes the service on each Node’s IP at a static port (the NodePort). A ClusterIP service, to which the NodePort service will route, is automatically created. You’ll be able to contact the NodePort service, from outside the cluster, by requesting <NodeIP>:<NodePort>.
+LoadBalancer: Exposes the service externally using a cloud provider’s load balancer. NodePort and ClusterIP services, to which the external load balancer will route, are automatically created.
+ExternalName: Maps the service to the contents of the externalName field (e.g. foo.bar.example.com), by returning a CNAME record with its value. No proxying of any kind is set up. This requires version 1.7 or higher of kube-dns.
+```
+
 # Procedures
 
 ## Start k8s Cluster
