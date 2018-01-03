@@ -30,7 +30,7 @@ Objective: Improve service availability by choosing service type wisely.
    Similar things for Azure, GCE.
 
 2. For on-premise env, we can create service with ClusterIP.
-   Then we will need to create Ingress with reverse proxy enabled in the ClusterIP
+   Then we will need to create Ingress resource for routing rules
 
 3. For on-premise env, we can create service with NodePort.
    Then we will need a reverse proxy to balance the requests.
