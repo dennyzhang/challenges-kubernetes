@@ -132,8 +132,8 @@ Challenges Your Kubernetes Skills And Knowledge
 ```
 1. Deploy a single instance wordpress service with helm
 2. Scale frontend to 2 instance
-3. Enforce daily volume backup
-4. Enforce daily db backup
+3. Enforce daily db backup
+4. Enforce daily volume backup
 ```
 - Main Tech: minikube, helm, volume
 - See more: [Scenario-302](./Scenario-302)
