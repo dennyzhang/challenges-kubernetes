@@ -17,8 +17,9 @@ Table of Contents
 
 ```
 1. Deploy a single instance wordpress service with helm
-2. Enforce daily db backup
-3. Scale frontend to 2 instance
+2. Scale frontend to 2 instance
+3. Enforce daily volume backup
+4. Enforce daily db backup
 ```
 
 # Background & Highlights
