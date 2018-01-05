@@ -117,10 +117,11 @@ Challenges Your Kubernetes Skills And Knowledge
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
 
 ## Scenario-301: Use helm To Deploy Service I
-- Objective: Understand and know basic of helm
+- Objective: Know the basic usage of helm
 - Requirements:
 ```
 1. Use helm to deploy a mysql service with single instance
+2. Customize the deployment
 ```
 - Main Tech: minikube, helm, volume
 - See more: [Scenario-301](./Scenario-301)
@@ -141,8 +142,8 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: HA deployemnt with helm
 - Requirements: helm, volume
 ```
-1. Deploy wordpress service with no SPOF by using helm
-2. Customize the deployment
+1. Create wordpress helm by yourself
+2. Deploy a HA wordpress service with your helm chart
 ```
 - Main Tech:
 - See more: [Scenario-303](./Scenario-303)
