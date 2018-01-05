@@ -1,0 +1,29 @@
+# volume to hold backup
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: my-wordpress-mariadb-backup
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: my-wordpress-mariadb-backup
+            image: mysql
+            args:
+            - /bin/bash
+            - -xe
+            - /backup_mysql.sh
+          restartPolicy: OnFailure
+          # TODO: how to trigger this
+          {{- if .Values.usePassword }}
+          env:
+            - name: MARIADB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "mariadb.fullname" . }}
+                  key: mariadb-password
+          {{- end }}

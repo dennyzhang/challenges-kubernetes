@@ -91,7 +91,7 @@ show databases;
 Press Ctrl+D to exit
 
 ## ,----------- Example
-## | macs-MBP:~ mac$ kubectl run -i --tty --rm mysql-client  --image=mysql --restart=Never -- mysql -hmysql-release-mysql -uroot -psecretpassword
+## | macs-MBP:~ mac$ kubectl run -i --tty --rm mysql-client --image=mysql --restart=Never -- mysql -hmysql-release-mysql -uroot -psecretpassword
 ## | If you don't see a command prompt, try pressing enter.
 ## | 
 ## | mysql> show databases;
