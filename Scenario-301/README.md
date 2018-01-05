@@ -19,7 +19,6 @@ Table of Contents
 1. Use helm to deploy a mysql service with single instance
 2. Customize helm deployment: configure mysql root password
 ```
-<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
 
 # Background & Highlights
 - Helm is the Kubernetes Package Manager. Community provides well-organized deployment solutions for typical services
@@ -46,7 +45,7 @@ helm repo update
 
 - Create volume for mysql
 
-Create folder for persist volume
+Create folder to hold the data
 ```
 minikube ssh
 
@@ -55,7 +54,7 @@ sudo chmod 777 /data
 exit
 ```
 
-Create pv:
+Create pv
 ```
 cat > /tmp/pv.yaml <<EOF
 kind: PersistentVolume

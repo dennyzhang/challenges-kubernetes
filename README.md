@@ -125,7 +125,6 @@ Challenges Your Kubernetes Skills And Knowledge
 ```
 - Main Tech: minikube, helm, volume
 - See more: [Scenario-301](./Scenario-301)
-- TODO
 
 ## Scenario-302: Use helm To Deploy Service II
 - Objective: Advanced usage of helm
