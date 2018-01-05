@@ -122,7 +122,7 @@ Challenges Your Kubernetes Skills And Knowledge
 ```
 1. Use helm to deploy a mysql service with single instance
 ```
-- Main Tech:
+- Main Tech: minikube, helm, volume
 - See more: [Scenario-301](./Scenario-301)
 - TODO
 
@@ -133,13 +133,13 @@ Challenges Your Kubernetes Skills And Knowledge
 1. Deploy a single instance wordpress service with helm
 2. Customize the deployment
 ```
-- Main Tech:
+- Main Tech: minikube, helm, volume
 - See more: [Scenario-302](./Scenario-302)
 - TODO
 
 ## Scenario-303: Use helm To Deploy Service III
 - Objective: HA deployemnt with helm
-- Requirements:
+- Requirements: helm, volume
 ```
 1. Deploy wordpress service with no SPOF by using helm
 2. Customize the deployment
