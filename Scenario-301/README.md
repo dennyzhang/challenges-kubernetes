@@ -23,7 +23,8 @@ Table of Contents
 # Background & Highlights
 - What's Helm? Why we need Helm?
 ```
-Helm is the Kubernetes Package Manager. Community provides well-organized deployment solutions for typical services
+Helm is the Kubernetes Package Manager.
+Community provides well-organized deployment solutions for typical services
 ```
 - Our focus is helm, thus we use mninikube for this study
 
