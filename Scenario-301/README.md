@@ -6,9 +6,10 @@ Table of Contents
    * [Requirements](#requirements)
    * [Background &amp; Highlights](#background--highlights)
    * [Procedures](#procedures)
-      * [Start k8s Cluster](#start-k8s-cluster)
-      * [Deploy Service](#deploy-service)
+      * [Start minikube env](#start-minikube-env)
+      * [Install and run helm](#install-and-run-helm)
       * [Verify Deployment](#verify-deployment)
+      * [Clean up](#clean-up)
    * [More resources](#more-resources)
 
 # Requirements
@@ -16,7 +17,7 @@ Table of Contents
 
 ```
 1. Use helm to deploy a mysql service with single instance
-2. Customize the deployment
+2. Customize helm deployment: configure mysql root password
 ```
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
 
@@ -28,6 +29,10 @@ Table of Contents
 
 ## Start minikube env
 
+```
+minikube start
+```
+
 ## Install and run helm
 
 https://github.com/kubernetes/helm
@@ -36,6 +41,7 @@ https://github.com/kubernetes/helm
 ```
 cd challenges-kubernetes/Scenario-301/
 helm init
+helm repo update
 ```
 
 - Create volume for mysql
@@ -46,11 +52,12 @@ minikube ssh
 
 sudo mkdir -p /data
 sudo chmod 777 /data
+exit
 ```
 
 Create pv:
 ```
-cat > pv.yaml <<EOF
+cat > /tmp/pv.yaml <<EOF
 kind: PersistentVolume
 apiVersion: v1
 metadata:
@@ -66,114 +73,55 @@ spec:
     path: "/data/mydata"
 EOF
 
-kubectl apply -f ./pv.yaml
+kubectl apply -f /tmp/pv.yaml
 ```
-- Run Deployment
+
+- Run helm Deployment
 ```
-kubectl --namespace es-4node-test create -f ./service-account.yaml
-kubectl --namespace es-4node-test create -f ./es-svc.yaml
-kubectl --namespace es-4node-test create -f ./kubernetes.yaml
-kubectl --namespace es-4node-test create -f ./cronjob-backup.yaml
+export mysqlRootPassword="secretpassword"
+helm install --name mysql-release \
+  --set mysqlRootPassword=${mysqlRootPassword},mysqlUser=my-user,mysqlPassword=my-password,mysqlDatabase=my-database \
+    stable/mysql
 ```
-See [kubernetes.yaml](kubernetes.yaml)
 
 ## Verify Deployment
-- Check ES service
-```
-kubectl --namespace es-4node-test get service
-# ubuntu@k8s1:~$ kubectl --namespace es-4node-test get service
-# NAME            TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)                         AGE
-# elasticsearch   NodePort   10.103.51.185   <none>        9200:31459/TCP,9300:31309/TCP   1d
-
-es_ip="10.103.51.185"
-curl http://${es_ip}:9200/_cat/nodes?v
-curl $es_ip:9200/_cluster/health?pretty
-```
-
-TODO: Why list nodes api is inconsistent
-
-- Check jobs
-```
-kubectl --namespace es-4node-test get cronjob
-kubectl --namespace es-4node-test get jobs --watch
-```
-
-- Login to one pod and check service
-```
-POD_NAME=$(kubectl --namespace es-4node-test get pods -l component="elasticsearch" -o jsonpath="{.items[0].metadata.name}")
-# Login to the first pod
-kubectl --namespace es-4node-test exec -ti $POD_NAME hostname
-
-kubectl --namespace es-4node-test exec -it $POD_NAME sh
-
-# Install curl
-apk add --update curl
-
-# List es nodes in the cluster
-es_ip=$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
-curl $es_ip:9200/_cat/nodes?v
-curl $es_ip:9200/_cluster/health?pretty
-```
 
 ```
-# List services
-kubectl --namespace es-4node-test get services
+export mysqlRootPassword="secretpassword"
+kubectl run -i --tty --rm mysql-client  --image=mysql --restart=Never -- mysql -hmysql-release-mysql -uroot -p${mysqlRootPassword}
+show databases;
 
-# List deployment
-kubectl --namespace es-4node-test get deployment
+Press Ctrl+D to exit
 
-# List pods
-kubectl --namespace es-4node-test get pods
-
-# List nodes
-kubectl --namespace es-4node-test get nodes
+## ,----------- Example
+## | macs-MBP:~ mac$ kubectl run -i --tty --rm mysql-client  --image=mysql --restart=Never -- mysql -hmysql-release-mysql -uroot -psecretpassword
+## | If you don't see a command prompt, try pressing enter.
+## | 
+## | mysql> show databases;
+## | +--------------------+
+## | | Database           |
+## | +--------------------+
+## | | information_schema |
+## | | my-database        |
+## | | mysql              |
+## | | performance_schema |
+## | | sys                |
+## | +--------------------+
+## | 5 rows in set (0.00 sec)
+## `-----------
 ```
 
-- List all pods with node info attached.
-```
-for pod in $(kubectl --namespace es-4node-test get pods -o jsonpath="{.items[*].metadata.name}"); do
-    node_info=$(kubectl --namespace es-4node-test describe pod $pod | grep "Node:")
-    echo "Pod: $pod, $node_info"
-done
+## Clean up
 
-# Sample output
-Pod: elasticsearch-data-deployment-6cf4d97bbb-895tp, Node:           k8s2/172.42.42.2
-Pod: elasticsearch-data-deployment-6cf4d97bbb-nqxnw, Node:           k8s3/172.42.42.3
-Pod: elasticsearch-master-deployment-bbfd44b76-8zldd, Node:           k8s3/172.42.42.3
 ```
-
-TODO: list all es nodes
-
-TODO: check es data
-
-- Clean up: es deployment
-```
-kubectl --namespace es-4node-test delete -f ./cronjob-backup.yaml
-kubectl --namespace es-4node-test delete -f ./kubernetes.yaml
-kubectl --namespace es-4node-test delete -f ./es-svc.yaml
-kubectl --namespace es-4node-test delete -f ./service-account.yaml
-kubectl delete namespace es-4node-test
-```
-
-- Clean up: virtualbox env
-```
-cd challenges-kubernetes/Scenario-301/k8s-playground
-vagrant destroy
+helm delete --purge mysql-release
+kubectl delete pod mysql-release-mysql
+minikube delete
 ```
 
 # More resources
 
 ```
-https://github.com/kubernetes/examples/blob/master/staging/elasticsearch/README.md
-Elasticsearch for Kubernetes
-
-https://github.com/kubernetes/kubernetes/tree/master/examples/elasticsearch
-elasticsearch kubernetes
-
-https://github.com/davidkbainbridge/k8s-playground
-Simple VM based Kubernetes cluster setup
-
-https://kubernetes.io/docs/reference/kubectl/cheatsheet/
-kubectl Cheat Sheet
+https://github.com/kubernetes/helm
 ```
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
