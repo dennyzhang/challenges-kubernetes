@@ -90,6 +90,10 @@ helm install --name mysql-release \
 ## Verify Deployment
 
 ```
+helm status mysql-release
+```
+
+```
 export mysqlRootPassword="secretpassword"
 kubectl run -i --tty --rm mysql-client  --image=mysql --restart=Never -- mysql -hmysql-release-mysql -uroot -p${mysqlRootPassword}
 show databases;
