@@ -15,61 +15,22 @@ Table of Contents
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
 ```
-1. Deploy 3 nodes k8s. One controller, others as workers
-2. Deploy Jenkins service by helm. 1 Jenkins master and 2 Jenkins agents
+1. Use helm to deploy a mysql service with single instance
+2. Customize the deployment
 ```
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
 
 # Background & Highlights
-- 
+- Helm is the Kubernetes Package Manager. Community provides well-organized deployment solutions for typical services
+- Our focus is helm, thus we use mninikube for this study
 
 # Procedures
 
-## Start k8s Cluster
-- Install virtualbox and vagrant
+## Start minikube env
 
-```
-Here we use k8s-playground: https://github.com/davidkbainbridge/k8s-playground
+## Install and run helm
 
-It will setup 3 nodes k8s cluster in your local virtualbox.
-```
-
-- Start k8s cluster by vagrant
-```
-cd challenges-kubernetes/Scenario-301/k8s-playground
-vagrant up -d
-```
-
-- Verify k8s cluster env
-```
-cd challenges-kubernetes/Scenario-301/k8s-playground
-vagrant ssh k8s1
-kubectl -n kube-system get po -o wide
-
-# List nodes
-kubectl get nodes
-
-# List built-in services
-kubectl get services
-```
-
-- Starting Networking
-```
-cd challenges-kubernetes/Scenario-301/k8s-playground
-vagrant ssh k8s1
-
-ubuntu@k8s1:~$ start-weave
-serviceaccount "weave-net" created
-clusterrole "weave-net" created
-clusterrolebinding "weave-net" created
-role "weave-net-kube-peer" created
-rolebinding "weave-net-kube-peer" created
-daemonset "weave-net" created
-```
-
-TODO
-
-## Deploy Service
+https://github.com/kubernetes/helm
 
 - Start Helm
 ```
@@ -77,6 +38,36 @@ cd challenges-kubernetes/Scenario-301/
 helm init
 ```
 
+- Create volume for mysql
+
+Create folder for persist volume
+```
+minikube ssh
+
+sudo mkdir -p /data
+sudo chmod 777 /data
+```
+
+Create pv:
+```
+cat > pv.yaml <<EOF
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: mydata
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/mydata"
+EOF
+
+kubectl apply -f ./pv.yaml
+```
 - Run Deployment
 ```
 kubectl --namespace es-4node-test create -f ./service-account.yaml
