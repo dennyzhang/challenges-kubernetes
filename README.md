@@ -22,8 +22,12 @@ Challenges Your Kubernetes Skills And Knowledge
       * [Scenario-103: 1-Node K8S Deployment III](#scenario-103-1-node-k8s-deployment-iii)
       * [Scenario-201: 3-Nodes K8S Deployment I](#scenario-201-3-nodes-k8s-deployment-i)
       * [Scenario-202: 3-Nodes K8S Deployment II](#scenario-202-3-nodes-k8s-deployment-ii)
-      * [Scenario-301: 3-Nodes Jenkins Deployment I](#scenario-301-3-nodes-jenkins-deployment-i)
-      * [Scenario-302: 3-Nodes Jenkins Deployment II](#scenario-302-3-nodes-jenkins-deployment-ii)
+      * [Scenario-203: 3-Nodes K8S Deployment II](#scenario-203-3-nodes-k8s-deployment-ii)
+      * [Scenario-301: Use helm To Deploy Service I](#scenario-301-use-helm-to-deploy-service-i)
+      * [Scenario-302: Use helm To Deploy Service II](#scenario-302-use-helm-to-deploy-service-ii)
+      * [Scenario-303: Use helm To Deploy Service III](#scenario-303-use-helm-to-deploy-service-iii)
+      * [Scenario-401: Deploy a stateful service I](#scenario-401-deploy-a-stateful-service-i)
+      * [Scenario-402: Deploy a stateful service II](#scenario-402-deploy-a-stateful-service-ii)
    * [Highlights](#highlights)
    * [Contributors: Give People Credits](#contributors-give-people-credits)
    * [License](#license)
@@ -112,19 +116,51 @@ Challenges Your Kubernetes Skills And Knowledge
 - TODO
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
 
-## Scenario-301: 3-Nodes Jenkins Deployment I
-- Objective: Real service deployment
+## Scenario-301: Use helm To Deploy Service I
+- Objective: Understand and know basic of helm
+- Requirements:
+```
+1. Use helm to deploy a mysql service with single instance
+```
+- Main Tech:
+- See more: [Scenario-301](./Scenario-301)
+- TODO
+
+## Scenario-302: Use helm To Deploy Service II
+- Objective: Advanced usage of helm
+- Requirements:
+```
+1. Deploy a single instance wordpress service with helm
+2. Customize the deployment
+```
+- Main Tech:
+- See more: [Scenario-302](./Scenario-302)
+- TODO
+
+## Scenario-303: Use helm To Deploy Service III
+- Objective: HA deployemnt with helm
+- Requirements:
+```
+1. Deploy wordpress service with no SPOF by using helm
+2. Customize the deployment
+```
+- Main Tech:
+- See more: [Scenario-303](./Scenario-303)
+- TODO
+
+## Scenario-401: Deploy a stateful service I
+- Objective: Deploy Jenkins in k8s
 - Requirements:
 ```
 1. Deploy 3 nodes k8s. One controller, others as workers
 2. Deploy Jenkins service by helm. 1 Jenkins master 2 agent
 ```
 - Main Tech:
-- See more: [Scenario-301](./Scenario-301)
+- See more: [Scenario-401](./Scenario-401)
 - TODO
 
-## Scenario-302: 3-Nodes Jenkins Deployment II
-- Objective: Real service deployment
+## Scenario-402: Deploy a stateful service II
+- Objective: Deploy Jenkins in k8s
 - Requirements:
 ```
 1. Deploy 3 nodes k8s. One controller, others as workers
@@ -134,7 +170,7 @@ Challenges Your Kubernetes Skills And Knowledge
 5. Simulate Jenkins master crash events, and confirm service is fine
 ```
 - Main Tech:
-- See more: [Scenario-302](./Scenario-302)
+- See more: [Scenario-402](./Scenario-402)
 - TODO
 
 # Highlights
