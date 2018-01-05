@@ -58,8 +58,7 @@ sudo chmod 777 /data
 exit
 ```
 
-Create pv
-[pv.yaml](pv.yaml)
+Create pv with [pv.yaml](pv.yaml)
 ```
 kubectl apply -f ./pv.yaml
 ```
