@@ -8,7 +8,8 @@ Table of Contents
    * [Procedures](#procedures)
       * [Start minikube env](#start-minikube-env)
       * [Install and run helm](#install-and-run-helm)
-      * [Verify Deployment](#verify-deployment)
+      * [Initialize Wordpress](#initialize-wordpress)
+      * [Advanced Setup](#advanced-setup)
       * [Clean up](#clean-up)
    * [More resources](#more-resources)
 
@@ -117,7 +118,7 @@ NOTES:
   open http://$NODE_IP:$NODE_PORT/admin
 ```
 
-# More setup
+## Advanced Setup
 - Scale wordpress frontend
 ```
 kubectl get deployments
