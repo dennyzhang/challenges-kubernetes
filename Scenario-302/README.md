@@ -22,6 +22,7 @@ Table of Contents
 ```
 
 # Background & Highlights
+- Here we use minikube to host our k8s env. Thus we set the service type to NodePort, instead of loadbalancer
 
 # Procedures
 
@@ -33,7 +34,9 @@ minikube start
 
 ## Install and run helm
 
-https://deliciousbrains.com/running-wordpress-kubernetes-cluster/
+https://github.com/kubernetes/charts/tree/master/stable/wordpress
+
+https://deliciousbrains.com/running-wordpress-kubernetes-cluster
 
 - Start Helm
 ```
@@ -74,13 +77,13 @@ helm status my-wordpress
 
 ```
 export mysqlRootPassword="secretpassword"
-kubectl run -i --tty --rm mysql-client  --image=mysql --restart=Never -- mysql -hmysql-release-mysql -uroot -p${mysqlRootPassword}
+kubectl run -i --tty --rm mysql-client  --image=mysql --restart=Never -- mysql -hmy-wordpress-mysql -uroot -p${mysqlRootPassword}
 show databases;
 
 Press Ctrl+D to exit
 
 ## ,----------- Example
-## | macs-MBP:~ mac$ kubectl run -i --tty --rm mysql-client  --image=mysql --restart=Never -- mysql -hmysql-release-mysql -uroot -psecretpassword
+## | macs-MBP:~ mac$ kubectl run -i --tty --rm mysql-client  --image=mysql --restart=Never -- mysql -hmy-wordpress-mysql -uroot -psecretpassword
 ## | If you don't see a command prompt, try pressing enter.
 ## | 
 ## | mysql> show databases;
@@ -100,8 +103,8 @@ Press Ctrl+D to exit
 ## Clean up
 
 ```
-helm delete --purge mysql-release
-kubectl delete pod mysql-release-mysql
+helm delete --purge my-wordpress
+kubectl delete pod my-wordpress-mysql
 minikube delete
 ```
 

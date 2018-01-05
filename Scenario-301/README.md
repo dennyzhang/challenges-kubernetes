@@ -59,24 +59,9 @@ exit
 ```
 
 Create pv
+[pv.yaml](pv.yaml)
 ```
-cat > /tmp/pv.yaml <<EOF
-kind: PersistentVolume
-apiVersion: v1
-metadata:
-  name: mydata
-  labels:
-    type: local
-spec:
-  capacity:
-    storage: 10Gi
-  accessModes:
-    - ReadWriteOnce
-  hostPath:
-    path: "/data/mydata"
-EOF
-
-kubectl apply -f /tmp/pv.yaml
+kubectl apply -f ./pv.yaml
 ```
 
 - Run helm Deployment
