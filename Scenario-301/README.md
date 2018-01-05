@@ -112,6 +112,7 @@ Press Ctrl+D to exit
 
 ```
 helm delete --purge mysql-release
+kubectl delete -f ./pv.yaml
 minikube delete
 ```
 

@@ -47,18 +47,37 @@ helm repo update
 
 - Create volume
 
+Workaround for minikube bug: https://github.com/kubernetes/minikube/issues/2256
+
+```
+minikube ssh
+ls -lth /tmp/ | grep hostpath
+sudo chmod 777 /tmp/hostpath*
+ls -lth /tmp/ | grep hostpath
+```
+
 Create folder to hold the data
 ```
 minikube ssh
 
-sudo mkdir -p /data
-sudo chmod 777 /data
+sudo mkdir -p /data/mariadb /data/wordpress
+sudo chmod 777 /data/mariadb /data/wordpress
+ls -lth /data
+
 exit
+
+## ,----------- Example
+## | $ ls -lth /data
+## | total 8.0K
+## | drwxrwxrwx 2 root root 4.0K Jan  5 22:40 wordpress
+## | drwxrwxrwx 2 root root 4.0K Jan  5 22:38 mariadb
+## `-----------
 ```
 
 Create pv with [pv.yaml](pv.yaml)
 ```
 kubectl apply -f ./pv.yaml
+kubectl get pv
 ```
 
 - Run helm Deployment
@@ -70,40 +89,34 @@ helm install --name my-wordpress -f values.yaml stable/wordpress
 
 ## Verify Deployment
 
+- Check status
 ```
 helm status my-wordpress
+kubectl get pod
 ```
 
+- Initialize wordpress
 ```
-export mysqlRootPassword="secretpassword"
-kubectl run -i --tty --rm mysql-client  --image=mysql --restart=Never -- mysql -hmy-wordpress-mysql -uroot -p${mysqlRootPassword}
-show databases;
+NOTES:
+1. Get the WordPress URL:
 
-Press Ctrl+D to exit
+  Or running:
 
-## ,----------- Example
-## | macs-MBP:~ mac$ kubectl run -i --tty --rm mysql-client  --image=mysql --restart=Never -- mysql -hmy-wordpress-mysql -uroot -psecretpassword
-## | If you don't see a command prompt, try pressing enter.
-## | 
-## | mysql> show databases;
-## | +--------------------+
-## | | Database           |
-## | +--------------------+
-## | | information_schema |
-## | | my-database        |
-## | | mysql              |
-## | | performance_schema |
-## | | sys                |
-## | +--------------------+
-## | 5 rows in set (0.00 sec)
-## `-----------
+  export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services my-wordpress-wordpress)
+  export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+  echo http://$NODE_IP:$NODE_PORT/admin
+
+2. Login with the following credentials to see your blog
+
+  echo Username: admin
+  echo Password: $(kubectl get secret --namespace default my-wordpress-wordpress -o jsonpath="{.data.wordpress-password}" | base64 --decode)
 ```
 
 ## Clean up
 
 ```
 helm delete --purge my-wordpress
-kubectl delete pod my-wordpress-mysql
+kubectl delete -f ./pv.yaml
 minikube delete
 ```
 

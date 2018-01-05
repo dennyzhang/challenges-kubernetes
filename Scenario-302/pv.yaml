@@ -1,7 +1,7 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: config
+  name: mariadb
   labels:
     type: local
 spec:
@@ -9,13 +9,14 @@ spec:
     storage: 20Gi
   accessModes:
     - ReadWriteOnce
+  storageClassName: standard
   hostPath:
-    path: "/data/mariadb_config"
+    path: "/data/mariadb"
 ---
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: data
+  name: wordpress
   labels:
     type: local
 spec:
@@ -23,5 +24,6 @@ spec:
     storage: 20Gi
   accessModes:
     - ReadWriteOnce
+  storageClassName: standard
   hostPath:
-    path: "/data/mariadb_data"
+    path: "/data/wordpress"
