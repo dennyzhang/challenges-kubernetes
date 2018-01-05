@@ -1,13 +1,27 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: mydata
+  name: config
   labels:
     type: local
 spec:
   capacity:
-    storage: 30Gi
+    storage: 20Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/data/mydata"
+    path: "/data/mariadb_config"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: data
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/mariadb_data"

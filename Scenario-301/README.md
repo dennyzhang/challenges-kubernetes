@@ -40,6 +40,8 @@ minikube start
 
 https://github.com/kubernetes/helm
 
+https://github.com/kubernetes/charts/tree/master/stable/mysql
+
 - Start Helm
 ```
 cd challenges-kubernetes/Scenario-301/
@@ -75,6 +77,10 @@ helm install --name mysql-release \
 
 ```
 helm status mysql-release
+
+kubectl get pvc
+kubectl get pv
+kubectl get pod
 ```
 
 ```
@@ -106,7 +112,6 @@ Press Ctrl+D to exit
 
 ```
 helm delete --purge mysql-release
-kubectl delete pod mysql-release-mysql
 minikube delete
 ```
 
@@ -114,5 +119,6 @@ minikube delete
 
 ```
 https://github.com/kubernetes/helm
+https://github.com/kubernetes/charts/tree/master/stable/mysql
 ```
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>

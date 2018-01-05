@@ -62,9 +62,10 @@ kubectl apply -f ./pv.yaml
 ```
 
 - Run helm Deployment
+
+[values.yaml](values.yaml)
 ```
-helm install --name my-wordpress \
-  --set serviceType=NodePort stable/wordpress
+helm install --name my-wordpress -f values.yaml stable/wordpress
 ```
 
 ## Verify Deployment
@@ -109,6 +110,9 @@ minikube delete
 # More resources
 
 ```
+https://github.com/kubernetes/charts/tree/master/stable/wordpress
+https://github.com/bitnami/bitnami-docker-wordpress
+https://deliciousbrains.com/running-wordpress-kubernetes-cluster
 https://github.com/kubernetes/helm
 ```
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>

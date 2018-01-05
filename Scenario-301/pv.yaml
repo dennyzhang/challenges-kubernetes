@@ -2,12 +2,11 @@ kind: PersistentVolume
 apiVersion: v1
 metadata:
   name: mydata
-  labels:
-    type: local
 spec:
   capacity:
     storage: 30Gi
   accessModes:
     - ReadWriteOnce
+  storageClassName: standard
   hostPath:
     path: "/data/mydata"
