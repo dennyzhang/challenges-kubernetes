@@ -168,8 +168,18 @@ kubectl delete pod my-wordpress-wordpress-df987548d-t6fxg
 ## | my-wordpress-wordpress-df987548d-t6fxg   0/1       Terminating   0          23m
 ## | my-wordpress-wordpress-df987548d-xc8tf   1/1       Running       0          3m
 ## `-----------
-
 ```
+
+## Enforce Backup
+- Create cronjob to run mysql backup
+```
+kubectl apply -f ./cronjob.yaml --validate=false
+kubectl get cronjob my-wordpress-mariadb-backup
+kubectl get cronjob my-wordpress-mariadb-backup --watch
+
+kubectl get pod | grep backup
+```
+
 ## Clean up
 
 ```

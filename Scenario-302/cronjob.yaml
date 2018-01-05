@@ -1,3 +1,10 @@
+# https://stackoverflow.com/questions/33415913/whats-the-best-way-to-share-mount-one-file-into-a-pod
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backup-facility-cfgmap
+data:
+  file-from-cfgmap: file data
 # volume to hold backup
 ---
 apiVersion: batch/v1beta1
@@ -17,13 +24,29 @@ spec:
             - /bin/bash
             - -xe
             - /backup_mysql.sh
+          # https://stackoverflow.com/questions/33415913/whats-the-best-way-to-share-mount-one-file-into-a-pod
+          volumeMounts:
+            - name: backup-cfgmap
+              mountPath: "/backup_mysql.sh"
+              subPath: "backup_mysql.sh"
+              readOnly: true
           restartPolicy: OnFailure
-          # TODO: how to trigger this
-          {{- if .Values.usePassword }}
-          env:
-            - name: MARIADB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: {{ template "mariadb.fullname" . }}
-                  key: mariadb-password
-          {{- end }}
+          concurrencyPolicy: Forbid
+          volumes:
+            - name: backup-cfgmap
+              configMap:
+                name: backup-facility-cfgmap
+#          # TODO: how to trigger this
+#          {{- if .Values.usePassword }}
+#          env:
+#            - name: MARIADB_PASSWORD
+#              valueFrom:
+#                secretKeyRef:
+#                  name: {{ template "wordpressPassword" . }}
+#                  key: mariadb-password
+#            - name: MARIADB_USERNAME
+#              valueFrom:
+#                secretKeyRef:
+#                  name: {{ template "wordpressUsername" . }}
+#                  key: mariadb-username
+#          {{- end }}
