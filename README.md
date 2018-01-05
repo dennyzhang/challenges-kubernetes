@@ -131,8 +131,8 @@ Challenges Your Kubernetes Skills And Knowledge
 - Requirements:
 ```
 1. Deploy a single instance wordpress service with helm
-2. Scale frontend to 2 instance
-3. Enforce daily db backup
+2. Scale frontend to 2 instance (Hint: kubectl scale)
+3. Enforce daily db backup (Hint: CronJob)
 4. Enforce daily volume backup
 ```
 - Main Tech: minikube, helm, volume
