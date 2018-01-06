@@ -63,8 +63,8 @@ Create folder to hold the data
 ```
 minikube ssh
 
-sudo mkdir -p /data/mariadb /data/mariadb_backup /data/wordpress
-sudo chmod 777 /data/mariadb /data/mariadb_backup /data/wordpress
+sudo mkdir -p /data/mariadb/data /data/mariadb/conf /data/mariadb_backup /data/wordpress
+sudo chmod 777 -R /data/mariadb /data/mariadb_backup /data/wordpress
 ls -lth /data
 
 exit
@@ -72,8 +72,9 @@ exit
 ## ,----------- Example
 ## | $ ls -lth /data
 ## | total 8.0K
-## | drwxrwxrwx 2 root root 4.0K Jan  5 22:40 wordpress
+## | drwxrwxrwx 2 root root 4.0K Jan  5 22:38 wordpress
 ## | drwxrwxrwx 2 root root 4.0K Jan  5 22:38 mariadb
+## | drwxrwxrwx 2 root root 4.0K Jan  5 22:38 mariadb_backup
 ## `-----------
 ```
 
@@ -96,6 +97,9 @@ helm install --name my-wordpress -f values.yaml stable/wordpress
 ```
 helm status my-wordpress
 kubectl get pod
+
+# Get lof of mariadb initContainer
+kubectl log ${mariadb_pod_name} -c copy-custom-config
 ```
 
 - Initialize wordpress
@@ -197,6 +201,8 @@ ls -lth /data/mariadb_backup
 
 ```
 helm delete --purge my-wordpress
+kubectl delete -f ./cronjob.yaml
+kubectl delete -f ./backup-storage.yaml
 kubectl delete -f ./pv.yaml
 minikube delete
 ```
