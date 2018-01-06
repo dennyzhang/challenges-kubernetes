@@ -9,13 +9,13 @@
 ## Description :
 ## --
 ## Created : <2018-01-06>
-## Updated: Time-stamp: <2018-01-06 10:05:54>
+## Updated: Time-stamp: <2018-01-06 12:24:53>
 ##-------------------------------------------------------------------
 set -ex
 
+db_password=${1?"DB password"}
 date_timestamp=$(date +'%Y%m%d_%H%M%S')
 db_username="bn_wordpress"
-db_password="8fwWcgBn5V"
 db_host="my-wordpress-mariadb"
 db_name="bitnami_wordpress"
 db_port="3306"

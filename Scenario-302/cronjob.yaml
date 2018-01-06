@@ -12,7 +12,9 @@ spec:
           containers:
           - name: my-wordpress-mariadb-backup
             image: mysql
-            command: ["bash", "-ex", "/git-code/challenges-kubernetes/Scenario-302/backup_db.sh"]
+            command: ["bash", "-ex", 
+                      "/git-code/challenges-kubernetes/Scenario-302/backup_db.sh"
+                      "8fwWcgBn5V"]
             volumeMounts:
               - mountPath: /backup
                 name: backup
