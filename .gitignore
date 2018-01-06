@@ -3,3 +3,4 @@
 *.log
 .vagrant
 */k8s-playground/.gitignore
+password.txt

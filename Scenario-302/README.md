@@ -186,6 +186,28 @@ kubectl delete pod my-wordpress-wordpress-df987548d-t6fxg
 ```
 
 ## Enforce Backup
+- Find DB password from volume
+```
+minikube ssh
+grep -i DB_PASSWORD /data/wordpress/wordpress/wp-config.php
+
+## ,----------- Example
+## | $ grep -i DB_PASSWORD /data/wordpress/wordpress/wp-config.php
+## | define('DB_PASSWORD', 'SUuQeB5pPX');
+## `-----------
+
+export DB_PASSWORD=$(grep -i DB_PASSWORD /data/wordpress/wordpress/wp-config.php | awk -F"'" '{print $4}')
+```
+
+- Inject db password as secret
+```
+# Get it from the previous step: find DB password from volume
+DB_PASSWORD="CHANGETHIS"
+echo -n "$DB_PASSWORD" > ./password.txt
+kubectl create secret generic db-user-pass --from-file=./password.txt
+kubectl describe secret db-user-pass
+```
+
 - Create cronjob to run mysql backup
 ```
 kubectl apply -f ./backup-storage.yaml
