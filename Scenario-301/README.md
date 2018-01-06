@@ -47,6 +47,7 @@ https://github.com/kubernetes/charts/tree/master/stable/mysql
 cd challenges-kubernetes/Scenario-301/
 helm init
 helm repo update
+helm list
 ```
 
 - Create volume for mysql

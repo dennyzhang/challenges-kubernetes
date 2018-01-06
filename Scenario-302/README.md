@@ -45,6 +45,7 @@ https://deliciousbrains.com/running-wordpress-kubernetes-cluster
 cd challenges-kubernetes/Scenario-302/
 helm init
 helm repo update
+helm list
 ```
 
 - Create volume
@@ -175,12 +176,22 @@ kubectl delete pod my-wordpress-wordpress-df987548d-t6fxg
 ```
 kubectl apply -f ./cronjob.yaml --validate=false
 kubectl get pvc
+kubectl get pv
+
 kubectl get cronjob my-wordpress-mariadb-backup
 kubectl get cronjob my-wordpress-mariadb-backup --watch
 
 kubectl get pod | grep backup
 ```
 
+- Confirm db backup
+```
+# In our test, we have enabled db backup every minute. See top of cronjob.yaml
+
+minikube ssh
+ls -lth /data/mariadb_backup
+
+```
 ## Clean up
 
 ```
