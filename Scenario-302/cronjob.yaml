@@ -14,14 +14,17 @@ spec:
           containers:
           - name: my-wordpress-mariadb-backup
             image: mysql
-            command: ["/usr/bin/mysqldump", "-ubn_wordpress", "-p8fwWcgBn5V", 
-                      "-P3306", "-hmy-wordpress-mariadb",
-                      "bitnami_wordpress", "--result-file=/backup/db_backup.sql"]
+            command: ["bash", "-ex", "/challenges-kubernetes/Scenario-302/backup_db.sh"]
             volumeMounts:
               - mountPath: /backup
                 name: backup
+              - mountPath: /challenges-kubernetes
+                name: git-volume                
           volumes:
             - name: backup
               persistentVolumeClaim:
                 claimName: mariadb-backup
           restartPolicy: OnFailure
+            - name: git-volume
+              gitRepo:
+                repository: "https://github.com/DennyZhang/challenges-kubernetes.git"
