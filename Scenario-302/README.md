@@ -16,6 +16,9 @@ Table of Contents
 # Requirements
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
+Scenario-302: Use helm To Deploy Service II
+- Objective: Advanced usage of helm
+- Requirements:
 ```
 1. Deploy a single instance wordpress service with helm
 2. Scale frontend to 2 instance (Hint: kubectl scale)
