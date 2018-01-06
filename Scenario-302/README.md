@@ -64,8 +64,8 @@ Create folder to hold the data
 ```
 minikube ssh
 
-sudo mkdir -p /data/mariadb/data /data/mariadb/conf /data/mariadb_backup /data/wordpress
-sudo chmod 777 -R /data/mariadb /data/mariadb_backup /data/wordpress
+sudo mkdir -p /data/mariadb/data /data/mariadb/conf /data/wordpress
+sudo chmod 777 -R /data/mariadb/data /data/mariadb/conf /data/wordpress
 ls -lth /data
 
 exit
@@ -75,7 +75,6 @@ exit
 ## | total 8.0K
 ## | drwxrwxrwx 2 root root 4.0K Jan  5 22:38 wordpress
 ## | drwxrwxrwx 2 root root 4.0K Jan  5 22:38 mariadb
-## | drwxrwxrwx 2 root root 4.0K Jan  5 22:38 mariadb_backup
 ## `-----------
 ```
 
@@ -203,7 +202,7 @@ kubectl get pod | grep backup
 # In our test, we have enabled db backup every minute. See top of cronjob.yaml
 
 minikube ssh
-ls -lth /data/mariadb_backup
+ls -lth /data/mariadb-backup
 
 ```
 ## Clean up

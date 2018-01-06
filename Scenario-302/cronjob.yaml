@@ -14,10 +14,9 @@ spec:
           containers:
           - name: my-wordpress-mariadb-backup
             image: mysql
-            command: ["/usr/bin/mysqldump", "-ubn_wordpress", "-pSUuQeB5pPX", "-P3306", "-hmy-wordpress-mariadb", "bitnami_wordpress", "--result-file=/backup.sql"]
-#            args:
-#            - ls
-#            - -lth
+            command: ["/usr/bin/mysqldump", "-ubn_wordpress", "-p8fwWcgBn5V", 
+                      "-P3306", "-hmy-wordpress-mariadb",
+                      "bitnami_wordpress", "--result-file=/backup/db_backup.sql"]
             volumeMounts:
               - mountPath: /backup
                 name: backup
