@@ -1,21 +1,12 @@
 ---
-kind: PersistentVolumeClaim
-apiVersion: v1
-metadata:
-  name: mariadb-backup
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
----
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: my-wordpress-mariadb-backup
 spec:
   schedule: "*/1 * * * *"
+  # TODO: ideally we need to create daily or weekly backup, instead of every minute
+  # schedule: "*/1 * * * *"
   jobTemplate:
     spec:
       template:
@@ -23,29 +14,15 @@ spec:
           containers:
           - name: my-wordpress-mariadb-backup
             image: mysql
-            # command: ["/usr/bin/mysqldump", "-ubn_wordpress", "-pSUuQeB5pPX", "-P3306", "-hmy-wordpress-mariadb", "bitnami_wordpress", "--result-file=/backup.sql"]
-            command: ["ls", "-lth"]
-          # restartPolicy: OnFailure
-          restartPolicy: Never
-          concurrencyPolicy: Forbid
-          volumeMounts:
-            - mountPath: "/backup"
-              name: backup
-        volumes:
-          - name: backup
-            persistentVolumeClaim:
-              claimName: db-backup
-#          # TODO: how to trigger this
-#          {{- if .Values.usePassword }}
-#          env:
-#            - name: MARIADB_PASSWORD
-#              valueFrom:
-#                secretKeyRef:
-#                  name: {{ template "wordpressPassword" . }}
-#                  key: mariadb-password
-#            - name: MARIADB_USERNAME
-#              valueFrom:
-#                secretKeyRef:
-#                  name: {{ template "wordpressUsername" . }}
-#                  key: mariadb-username
-#          {{- end }}
+            command: ["/usr/bin/mysqldump", "-ubn_wordpress", "-pSUuQeB5pPX", "-P3306", "-hmy-wordpress-mariadb", "bitnami_wordpress", "--result-file=/backup.sql"]
+#            args:
+#            - ls
+#            - -lth
+            volumeMounts:
+              - mountPath: /backup
+                name: backup
+          volumes:
+            - name: backup
+              persistentVolumeClaim:
+                claimName: mariadb-backup
+          restartPolicy: OnFailure

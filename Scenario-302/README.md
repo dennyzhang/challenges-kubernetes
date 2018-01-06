@@ -174,7 +174,8 @@ kubectl delete pod my-wordpress-wordpress-df987548d-t6fxg
 ## Enforce Backup
 - Create cronjob to run mysql backup
 ```
-kubectl apply -f ./cronjob.yaml --validate=false
+kubectl apply -f ./backup-storage.yaml
+kubectl apply -f ./cronjob.yaml
 kubectl get pvc
 kubectl get pv
 
