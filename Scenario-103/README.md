@@ -13,6 +13,10 @@ Table of Contents
 
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 # Requirements
+
+Scenario-103: 1-Node K8S Deployment III
+- Objective: Advanced k8s deployment for one single db service
+- Requirements:
 ```
 1. Suppose your k8s/minikube have multiple cluster, how you can segrate them? (Hint: namespace)
 2. When we initialize mysql via yaml, avoid store mysql root password in plain text. (Hint: secrets)

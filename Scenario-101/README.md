@@ -12,6 +12,9 @@ Table of Contents
 # Requirements
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
+Scenario-101: 1-Node K8S Deployment I
+- Objective: Get familiar with K8S concept. Here K8S stands for Kubernetes.
+- Requirements:
 ```
 1. Start one node of k8s in your laptop. Mac or Linux
 2. Start a nginx webserver with one instance

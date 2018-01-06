@@ -14,7 +14,9 @@ Table of Contents
 # Requirements
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
-Objective: Improve service availability by choosing service type wisely.
+Scenario-202: 3-Nodes K8S Deployment II
+- Objective: Improve service availability by choosing service type wisely.
+- Requirements:
 ```
 1. Deploy 3 nodes k8s. One controller, others as workers
 2. Create a nginx service with 6 instances.

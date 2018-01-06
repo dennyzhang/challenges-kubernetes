@@ -14,6 +14,9 @@ Table of Contents
 # Requirements
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
+Scenario-201: 3-Nodes K8S Deployment I
+- Objective: Know how to deployment k8s cluster env
+- Requirements:
 ```
 1. Deploy 3 nodes k8s env in your virtualbox.
    One as controller, the other two as worker

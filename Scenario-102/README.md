@@ -11,6 +11,10 @@ Table of Contents
 
 # Requirements
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+
+Scenario-102: 1-Node K8S Deployment II
+- Objective: Single node deployment for stateful service
+- Requirements:
 ```
 1. Use yaml to start one mysql server service with 1 instance.
 2. Use yaml to start one mysql client service with 2 instances.

@@ -14,6 +14,9 @@ Table of Contents
 # Requirements
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
+Scenario-203: 3-Nodes K8S Deployment II
+- Objective: k8s cluster env with stateful service
+- Requirements:
 ```
 1. Deploy 3 nodes k8s. One controller, others as workers
 2. Create an elasticsearch service with 4 instances.

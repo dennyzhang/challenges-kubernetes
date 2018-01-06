@@ -15,6 +15,9 @@ Table of Contents
 # Requirements
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
+Scenario-301: Use helm To Deploy Service I
+- Objective: Know the basic usage of helm
+- Requirements:
 ```
 1. Use helm to deploy a mysql service with single instance
 2. Customize helm deployment: configure mysql root password
