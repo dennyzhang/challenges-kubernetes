@@ -14,17 +14,18 @@ spec:
           containers:
           - name: my-wordpress-mariadb-backup
             image: mysql
-            command: ["bash", "-ex", "/challenges-kubernetes/Scenario-302/backup_db.sh"]
+            command: ["bash", "-ex", "/git-code/challenges-kubernetes/Scenario-302/backup_db.sh"]
+            # command: ["ls", "-lth", "/git-code"]
             volumeMounts:
               - mountPath: /backup
                 name: backup
-              - mountPath: /challenges-kubernetes
+              - mountPath: /git-code
                 name: git-volume                
           volumes:
             - name: backup
               persistentVolumeClaim:
                 claimName: mariadb-backup
-          restartPolicy: OnFailure
             - name: git-volume
               gitRepo:
                 repository: "https://github.com/DennyZhang/challenges-kubernetes.git"
+          restartPolicy: OnFailure
