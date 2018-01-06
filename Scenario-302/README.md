@@ -199,11 +199,19 @@ kubectl get pod | grep backup
 
 - Confirm db backup
 ```
-# In our test, we have enabled db backup every minute. See top of cronjob.yaml
+# In our test, we have enabled db backup every minute. Thus we can check the status much faster
+# See the schedule line of cronjob.yaml
+# In real case, we definitely shouldn't run db backup this often.
 
 minikube ssh
 ls -lth /data/mariadb-backup
 
+## ,----------- Example
+## | $ ls -lth /data/mariadb-backup
+## | total 3.0M
+## | -rw-r--r-- 1 root root 600K Jan  6 15:58  db_backup_20180106_155806.sql
+## | -rw-r--r-- 1 root root 600K Jan  6 15:57  db_backup_20180106_155706.sql
+## `-----------
 ```
 ## Clean up
 

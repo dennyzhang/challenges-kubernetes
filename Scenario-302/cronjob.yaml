@@ -5,8 +5,6 @@ metadata:
   name: my-wordpress-mariadb-backup
 spec:
   schedule: "*/1 * * * *"
-  # TODO: ideally we need to create daily or weekly backup, instead of every minute
-  # schedule: "*/1 * * * *"
   jobTemplate:
     spec:
       template:
