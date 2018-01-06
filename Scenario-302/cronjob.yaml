@@ -9,6 +9,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           containers:
           - name: my-wordpress-mariadb-backup
             image: mysql
@@ -24,7 +25,10 @@ spec:
               - mountPath: /backup
                 name: backup
               - mountPath: /git-code
-                name: git-volume                
+                name: git-volume
+              - name: foo
+                mountPath: "/etc/credential"
+                readOnly: true                
           volumes:
             - name: backup
               persistentVolumeClaim:
@@ -32,4 +36,9 @@ spec:
             - name: git-volume
               gitRepo:
                 repository: "https://github.com/DennyZhang/challenges-kubernetes.git"
-          restartPolicy: OnFailure
+            - name: db-secret
+              secret:
+                secretName: mysecret
+                items:
+                  - key: db-user-pass
+                    path: db-password

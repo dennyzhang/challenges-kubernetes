@@ -9,12 +9,12 @@
 ## Description :
 ## --
 ## Created : <2018-01-06>
-## Updated: Time-stamp: <2018-01-06 13:02:11>
+## Updated: Time-stamp: <2018-01-06 13:16:09>
 ##-------------------------------------------------------------------
 set -ex
 
-if [ -n "$DB_PASSWORD" ]; then
-    db_password="$DB_PASSWORD"
+if [ -f /etc/credential/db-password ]; then
+    db_password=$(cat /etc/credential/db-password)
 else
     db_password=${1?"DB password"}
 fi
