@@ -1,11 +1,14 @@
-# https://stackoverflow.com/questions/33415913/whats-the-best-way-to-share-mount-one-file-into-a-pod
+---
+kind: PersistentVolumeClaim
 apiVersion: v1
-kind: ConfigMap
 metadata:
-  name: backup-facility-cfgmap
-data:
-  file-from-cfgmap: file data
-# volume to hold backup
+  name: mariadb-backup
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
 ---
 apiVersion: batch/v1beta1
 kind: CronJob
@@ -20,22 +23,16 @@ spec:
           containers:
           - name: my-wordpress-mariadb-backup
             image: mysql
-            args:
-            - /bin/bash
-            - -xe
-            - /backup_mysql.sh
-          # https://stackoverflow.com/questions/33415913/whats-the-best-way-to-share-mount-one-file-into-a-pod
-          volumeMounts:
-            - name: backup-cfgmap
-              mountPath: "/backup_mysql.sh"
-              subPath: "backup_mysql.sh"
-              readOnly: true
+            command: ["/usr/bin/mysqldump", "-ubn_wordpress", "-pjZtObMoFH4", "-P3306", "-hmy-wordpress-mariadb", "bitnami_wordpress", "--result-file=/data/backup/backup.sql"]
           restartPolicy: OnFailure
           concurrencyPolicy: Forbid
-          volumes:
-            - name: backup-cfgmap
-              configMap:
-                name: backup-facility-cfgmap
+          volumeMounts:
+            - mountPath: "/data/backup/"
+              name: mariadbbackup
+        volumes:
+          - name: mariadbbackup
+            persistentVolumeClaim:
+              claimName: db-backup
 #          # TODO: how to trigger this
 #          {{- if .Values.usePassword }}
 #          env:

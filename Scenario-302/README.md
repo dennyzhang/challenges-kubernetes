@@ -62,8 +62,8 @@ Create folder to hold the data
 ```
 minikube ssh
 
-sudo mkdir -p /data/mariadb /data/wordpress
-sudo chmod 777 /data/mariadb /data/wordpress
+sudo mkdir -p /data/mariadb /data/mariadb_backup /data/wordpress
+sudo chmod 777 /data/mariadb /data/mariadb_backup /data/wordpress
 ls -lth /data
 
 exit
@@ -174,6 +174,7 @@ kubectl delete pod my-wordpress-wordpress-df987548d-t6fxg
 - Create cronjob to run mysql backup
 ```
 kubectl apply -f ./cronjob.yaml --validate=false
+kubectl get pvc
 kubectl get cronjob my-wordpress-mariadb-backup
 kubectl get cronjob my-wordpress-mariadb-backup --watch
 
