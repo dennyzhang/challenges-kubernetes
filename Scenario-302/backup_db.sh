@@ -9,11 +9,11 @@
 ## Description :
 ## --
 ## Created : <2018-01-06>
-## Updated: Time-stamp: <2018-01-06 10:03:33>
+## Updated: Time-stamp: <2018-01-06 10:05:54>
 ##-------------------------------------------------------------------
 set -ex
 
-date_timestamp=$(date +['%Y-%m-%d_%H%M%S'])
+date_timestamp=$(date +'%Y%m%d_%H%M%S')
 db_username="bn_wordpress"
 db_password="8fwWcgBn5V"
 db_host="my-wordpress-mariadb"
