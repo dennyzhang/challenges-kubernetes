@@ -55,7 +55,8 @@ Workaround for minikube bug: https://github.com/kubernetes/minikube/issues/2256
 ```
 minikube ssh
 ls -lth /tmp/ | grep hostpath
-sudo chmod 777 /tmp/hostpath*
+sudo chmod 777 -R /tmp/hostpath-provisioner
+sudo chmod 777 -R /tmp/hostpath_pv
 ls -lth /tmp/ | grep hostpath
 ```
 
@@ -82,6 +83,13 @@ Create pv with [pv.yaml](pv.yaml)
 ```
 kubectl apply -f ./pv.yaml
 kubectl get pv
+
+## ,-----------
+## | macs-MBP:Scenario-302 mac$ kubectl get pv
+## | NAME        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM     STORAGECLASS   REASON    AGE
+## | mariadb     20Gi       RWO            Retain           Available             standard                 0s
+## | wordpress   20Gi       RWO            Retain           Available             standard                 0s
+## `-----------
 ```
 
 - Run helm Deployment
@@ -179,9 +187,10 @@ kubectl delete pod my-wordpress-wordpress-df987548d-t6fxg
 - Create cronjob to run mysql backup
 ```
 kubectl apply -f ./backup-storage.yaml
-kubectl apply -f ./cronjob.yaml
-kubectl get pvc
 kubectl get pv
+kubectl get pvc
+
+kubectl apply -f ./cronjob.yaml
 
 kubectl get cronjob my-wordpress-mariadb-backup
 kubectl get cronjob my-wordpress-mariadb-backup --watch
