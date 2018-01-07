@@ -94,6 +94,36 @@ kubectl get pod
 kubectl logs ${jenkins_master_pod_name} -c copy-default-config
 ```
 
+- Check saved JENKINS_HOME directory
+```
+minikube ssh
+ls -lth /data/jenkins-home
+
+## ,----------- Example
+## | $ ls -lth /data/jenkins-home
+## | total 80K
+## | drwxr-xr-x  2 root root 4.0K Jan  7 14:22 updates
+## | drwxr-xr-x  2 root root 4.0K Jan  7 14:22 workflow-libs
+## | -rw-r--r--  1 root root 4.0K Jan  7 14:22 config.xml
+## | drwxr-xr-x  3 root root 4.0K Jan  7 14:22 logs
+## | -rw-r--r--  1 root root  907 Jan  7 14:22 nodeMonitors.xml
+## | drwxr-xr-x  2 root root 4.0K Jan  7 14:22 userContent
+## | drwxr-xr-x  2 root root 4.0K Jan  7 14:22 nodes
+## | -rw-r--r--  1 root root  370 Jan  7 14:22 hudson.plugins.git.GitTool.xml
+## | -rw-------  1 root root 1.7K Jan  7 14:22 identity.key.enc
+## | drwxr-xr-x  4 root root 4.0K Jan  7 14:22 secrets
+## | -rw-r--r--  1 root root  156 Jan  7 14:22 hudson.model.UpdateCenter.xml
+## | drwxr-xr-x 54 root root  12K Jan  7 14:22 plugins
+## | drwxr-xr-x  2 root root 4.0K Jan  7 14:22 jobs
+## | -rw-r--r--  1 root root    0 Jan  7 14:22 secret.key.not-so-secret
+## | -rw-r--r--  1 root root   64 Jan  7 14:22 secret.key
+## | drwxr-xr-x 10 root root 4.0K Jan  7 14:22 war
+## | -rw-r--r--  1 root root 2.5K Jan  7 14:22 copy_reference_file.log
+## | drwxr-xr-x  2 root root 4.0K Jan  7 14:22 init.groovy.d
+## | -rw-r--r--  1 root root   91 Jan  7 14:21 plugins.txt
+## `-----------
+```
+
 - Initialize jenkins
 ```
 NOTES:

@@ -4,11 +4,3 @@ Master:
 # Persist JENKINS_HOME directory
 Persistence:
   StorageClass: "standard"
-  volumes:
-    - name: jenkinshome
-      persistentVolumeClaim:
-        claimName: jenkins-home
-  volumeMounts:
-    - mountPath: "/var/jenkins_home"
-      name: jenkinshome
-      readOnly: false

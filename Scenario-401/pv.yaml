@@ -12,14 +12,3 @@ spec:
   storageClassName: standard
   hostPath:
     path: "/data/jenkins-home"
----
-kind: PersistentVolumeClaim
-apiVersion: v1
-metadata:
-  name: jenkins-home
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 10Gi
