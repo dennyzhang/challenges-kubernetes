@@ -15,19 +15,13 @@ spec:
             image: mysql
             command: ["bash", "-ex",
                       "/git-code/challenges-kubernetes/Scenario-302/backup_db.sh"]
-            env:
-              - name: DB_PASSWORD
-                valueFrom:
-                  secretKeyRef:
-                    name: db-user-pass
-                    key: password
             volumeMounts:
               - mountPath: /backup
                 name: backup
               - mountPath: /git-code
                 name: git-volume
-              - name: db-secret
-                mountPath: "/etc/credential"
+              - mountPath: "/etc/credential"
+                name: db-secret
                 readOnly: true
           volumes:
             - name: backup
@@ -38,7 +32,4 @@ spec:
                 repository: "https://github.com/DennyZhang/challenges-kubernetes.git"
             - name: db-secret
               secret:
-                secretName: mysecret
-                items:
-                  - key: db-user-pass
-                    path: db-password
+                secretName: db-user-pass
