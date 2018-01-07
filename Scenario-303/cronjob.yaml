@@ -1,0 +1,35 @@
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: my-wordpress-mariadb-backup
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: my-wordpress-mariadb-backup
+            image: mysql
+            command: ["bash", "-ex",
+                      "/git-code/challenges-kubernetes/Scenario-302/backup_db.sh"]
+            volumeMounts:
+              - mountPath: /backup
+                name: backup
+              - mountPath: /git-code
+                name: git-volume
+              - mountPath: "/etc/credential"
+                name: db-secret
+                readOnly: true
+          volumes:
+            - name: backup
+              persistentVolumeClaim:
+                claimName: mariadb-backup
+            - name: git-volume
+              gitRepo:
+                repository: "https://github.com/DennyZhang/challenges-kubernetes.git"
+            - name: db-secret
+              secret:
+                secretName: db-user-pass

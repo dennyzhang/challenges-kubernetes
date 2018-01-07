@@ -1,0 +1,9 @@
+## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
+
+wordpressUsername: admin
+wordpressPassword: password
+mariadb:
+  mariadbRootPassword: secretpassword
+wordpressEmail: contact@dennyzhang.com
+wordpressBlogName: My DevOps Blog!
+serviceType: NodePort
