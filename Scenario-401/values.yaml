@@ -1,3 +1,14 @@
 ## ref: https://github.com/kubernetes/charts/blob/master/stable/jenkins/values.yaml
 Master:
   ServiceType: NodePort
+# Persist JENKINS_HOME directory
+Persistence:
+  StorageClass: "-"
+  volumes:
+    - name: jenkinshome
+      persistentVolumeClaim:
+        claimName: jenkins-home
+  volumeMounts:
+    - mountPath: "/var/jenkins_home"
+      name: jenkinshome
+      readOnly: false

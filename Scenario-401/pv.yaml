@@ -1,29 +1,25 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: mariadb
+  name: jenkins-home
   labels:
     type: local
 spec:
   capacity:
-    storage: 20Gi
+    storage: 5Gi
   accessModes:
     - ReadWriteOnce
   storageClassName: standard
   hostPath:
-    path: "/data/mariadb"
+    path: "/data/jenkins-home"
 ---
-kind: PersistentVolume
+kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: wordpress
-  labels:
-    type: local
+  name: jenkins-home
 spec:
-  capacity:
-    storage: 20Gi
   accessModes:
     - ReadWriteOnce
-  storageClassName: standard
-  hostPath:
-    path: "/data/wordpress"
+  resources:
+    requests:
+      storage: 1Gi

@@ -50,8 +50,8 @@ Create folder to hold the data
 ```
 minikube ssh
 
-sudo mkdir -p /data/mariadb/data /data/mariadb/conf /data/jenkins
-sudo chmod 777 -R /data/mariadb/data /data/mariadb/conf /data/jenkins
+sudo mkdir -p /data/jenkins-home
+sudo chmod 777 -R /data/jenkins-home
 ls -lth /data
 
 exit
@@ -59,8 +59,7 @@ exit
 ## ,----------- Example
 ## | $ ls -lth /data
 ## | total 8.0K
-## | drwxrwxrwx 2 root root 4.0K Jan  5 22:38 jenkins
-## | drwxrwxrwx 2 root root 4.0K Jan  5 22:38 mariadb
+## | drwxrwxrwx 2 root root 4.0K Jan  5 22:38 jenkins_home
 ## `-----------
 ```
 
@@ -72,8 +71,7 @@ kubectl get pv
 ## ,-----------
 ## | macs-MBP:Scenario-401 mac$ kubectl get pv
 ## | NAME        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM     STORAGECLASS   REASON    AGE
-## | mariadb     20Gi       RWO            Retain           Available             standard                 0s
-## | jenkins   20Gi       RWO            Retain           Available             standard                 0s
+## | jenkins-home     5Gi        RWO            Retain           Bound      default/jenkins-home             standard                 2s
 ## `-----------
 ```
 
@@ -98,22 +96,17 @@ kubectl log ${mariadb_pod_name} -c copy-custom-config
 - Initialize jenkins
 ```
 NOTES:
-1. Get the Jenkins URL:
-
-  Or running:
-
+1. Get your 'admin' user password by running:
+  printf $(kubectl get secret --namespace default my-jenkins-jenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode);echo
+2. Get the Jenkins URL to visit by running these commands in the same shell:
   export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services my-jenkins-jenkins)
   export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
-  echo http://$NODE_IP:$NODE_PORT/admin
+  echo http://$NODE_IP:$NODE_PORT/login
 
-2. Login with the following credentials to see your blog
+3. Login with the password from step 1 and the username: admin
 
-  echo Username: admin
-  echo Password: $(kubectl get secret --namespace default my-jenkins-jenkins -o jsonpath="{.data.jenkins-password}" | base64 --decode)
-
-3. Try the blog in web browse
-
-  open http://$NODE_IP:$NODE_PORT/admin
+For more information on running Jenkins on Kubernetes, visit:
+https://cloud.google.com/solutions/jenkins-on-container-engine
 ```
 
 ## Advanced Setup
