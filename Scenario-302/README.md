@@ -108,7 +108,7 @@ helm status my-wordpress
 kubectl get pod
 
 # Get lof of mariadb initContainer
-kubectl log ${mariadb_pod_name} -c copy-custom-config
+kubectl logs ${mariadb_pod_name} -c copy-custom-config
 ```
 
 - Initialize wordpress

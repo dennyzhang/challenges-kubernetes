@@ -3,7 +3,7 @@ Master:
   ServiceType: NodePort
 # Persist JENKINS_HOME directory
 Persistence:
-  StorageClass: "-"
+  StorageClass: "standard"
   volumes:
     - name: jenkinshome
       persistentVolumeClaim:

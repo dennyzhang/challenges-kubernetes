@@ -67,6 +67,7 @@ Create pv with [pv.yaml](pv.yaml)
 ```
 kubectl apply -f ./pv.yaml
 kubectl get pv
+kubectl get pvc
 
 ## ,-----------
 ## | macs-MBP:Scenario-401 mac$ kubectl get pv
@@ -90,7 +91,7 @@ helm status my-jenkins
 kubectl get pod
 
 # Get lof of mariadb initContainer
-kubectl log ${mariadb_pod_name} -c copy-custom-config
+kubectl logs ${jenkins_master_pod_name} -c copy-default-config
 ```
 
 - Initialize jenkins
@@ -218,8 +219,6 @@ ls -lth /data/mariadb-backup
 
 ```
 helm delete --purge my-jenkins
-kubectl delete -f ./cronjob.yaml
-kubectl delete -f ./backup-storage.yaml
 kubectl delete -f ./pv.yaml
 minikube delete
 ```
