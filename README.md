@@ -140,9 +140,8 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: HA deployemnt with helm
 - Requirements:
 ```
-1. Create wordpress helm by yourself
+1. Create wordpress by using helm Chart created by yourself
 2. Deploy a HA wordpress service with your helm chart
-3. Enforce daily volume backup
 ```
 - Main Tech: helm, volume
 - See more: [Scenario-303](./Scenario-303)

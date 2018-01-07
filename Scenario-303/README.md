@@ -20,9 +20,8 @@ Scenario-303: Use helm To Deploy Service III
 - Objective: HA deployemnt with helm
 - Requirements:
 ```
-1. Create wordpress helm by yourself
+1. Create wordpress by using helm Chart created by yourself
 2. Deploy a HA wordpress service with your helm chart
-3. Enforce daily volume backup
 ```
 
 # Background & Highlights
