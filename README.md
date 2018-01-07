@@ -140,7 +140,7 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: HA deployemnt with helm
 - Requirements:
 ```
-1. Create wordpress by using helm Chart created by yourself
+1. Create a wordpress Chart by yourself
 2. Deploy a HA wordpress service with your helm chart
 ```
 - Main Tech: helm, volume
