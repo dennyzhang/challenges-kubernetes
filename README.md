@@ -154,8 +154,11 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: Deploy Jenkins in k8s
 - Requirements:
 ```
-1. Deploy 3 nodes k8s. One controller, others as workers
-2. Deploy Jenkins service by helm. 1 Jenkins master 2 agent
+1. Deploy Jenkins service by helm.
+2. Make sure JENKINS_HOME directory persist
+3. Install slack and git Jenkins plugins
+4. Enable Jenkins slave agents during helm install
+5. Start 2 Jenkins masters.
 ```
 - Main Tech:
 - See more: [Scenario-401](./Scenario-401)
