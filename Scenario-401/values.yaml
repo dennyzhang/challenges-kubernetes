@@ -1,6 +1,14 @@
 ## ref: https://github.com/kubernetes/charts/blob/master/stable/jenkins/values.yaml
 Master:
   ServiceType: NodePort
+  InstallPlugins:
+    - kubernetes:1.1
+    - workflow-aggregator:2.5
+    - workflow-job:2.15
+    - credentials-binding:1.13
+    - git:3.6.4
+    # https://plugins.jenkins.io/slack
+    - slack:2.3    
 # Persist JENKINS_HOME directory
 Persistence:
   StorageClass: "standard"

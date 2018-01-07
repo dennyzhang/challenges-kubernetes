@@ -20,7 +20,7 @@ Scenario-401: Deploy a stateful service I
 ```
 1. Deploy Jenkins service by helm.
 2. Make sure JENKINS_HOME directory persist
-3. Install slack and git Jenkins plugins
+3. Install slack and git Jenkins plugins during helm install
 4. Enable Jenkins slave agents during helm install
 5. Start 2 Jenkins masters.
 ```
