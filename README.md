@@ -99,7 +99,6 @@ Challenges Your Kubernetes Skills And Knowledge
 - Main Tech:
 - See more: [Scenario-202](./Scenario-202)
 - TODO
-<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
 
 ## Scenario-203: 3-Nodes K8S Deployment II
 - Objective: k8s cluster env with stateful service
