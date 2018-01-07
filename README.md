@@ -86,6 +86,7 @@ Challenges Your Kubernetes Skills And Knowledge
 ```
 - Main Tech:
 - See more: [Scenario-201](./Scenario-201)
+<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
 
 ## Scenario-202: 3-Nodes K8S Deployment II
 - Objective: Improve service availability by choosing service type wisely.
@@ -113,7 +114,6 @@ Challenges Your Kubernetes Skills And Knowledge
 - Main Tech:
 - See more: [Scenario-203](./Scenario-203)
 - TODO
-<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
 
 ## Scenario-301: Use helm To Deploy Service I
 - Objective: Know the basic usage of helm
