@@ -26,11 +26,11 @@ Scenario-303: Use helm To Deploy Service III
 ```
 
 # Background & Highlights
-- Here we use minikube to host our k8s env. Thus we set the service type to NodePort, instead of loadbalancer
+- 
 
 # Procedures
 
-## Start minikube env
+## Start k8s cluster
 
 ```
 minikube start
