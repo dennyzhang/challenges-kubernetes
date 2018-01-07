@@ -8,7 +8,7 @@ Table of Contents
    * [Procedures](#procedures)
       * [Start minikube env](#start-minikube-env)
       * [Install and run helm](#install-and-run-helm)
-      * [Initialize Wordpress](#initialize-wordpress)
+      * [Initialize Jenkins](#initialize-jenkins)
       * [Advanced Setup](#advanced-setup)
       * [Clean up](#clean-up)
    * [More resources](#more-resources)
@@ -28,6 +28,7 @@ Scenario-401: Deploy a stateful service I
 # Procedures
 
 ## Start k8s cluster
+TODO
 
 ## Install and run helm
 
@@ -43,22 +44,14 @@ helm list
 
 - Create volume
 
-Workaround for minikube bug: https://github.com/kubernetes/minikube/issues/2256
-
-```
-minikube ssh
-ls -lth /tmp/ | grep hostpath
-sudo chmod 777 -R /tmp/hostpath-provisioner
-sudo chmod 777 -R /tmp/hostpath_pv
-ls -lth /tmp/ | grep hostpath
-```
+TODO
 
 Create folder to hold the data
 ```
 minikube ssh
 
-sudo mkdir -p /data/mariadb/data /data/mariadb/conf /data/wordpress
-sudo chmod 777 -R /data/mariadb/data /data/mariadb/conf /data/wordpress
+sudo mkdir -p /data/mariadb/data /data/mariadb/conf /data/jenkins
+sudo chmod 777 -R /data/mariadb/data /data/mariadb/conf /data/jenkins
 ls -lth /data
 
 exit
@@ -66,7 +59,7 @@ exit
 ## ,----------- Example
 ## | $ ls -lth /data
 ## | total 8.0K
-## | drwxrwxrwx 2 root root 4.0K Jan  5 22:38 wordpress
+## | drwxrwxrwx 2 root root 4.0K Jan  5 22:38 jenkins
 ## | drwxrwxrwx 2 root root 4.0K Jan  5 22:38 mariadb
 ## `-----------
 ```
@@ -80,7 +73,7 @@ kubectl get pv
 ## | macs-MBP:Scenario-401 mac$ kubectl get pv
 ## | NAME        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM     STORAGECLASS   REASON    AGE
 ## | mariadb     20Gi       RWO            Retain           Available             standard                 0s
-## | wordpress   20Gi       RWO            Retain           Available             standard                 0s
+## | jenkins   20Gi       RWO            Retain           Available             standard                 0s
 ## `-----------
 ```
 
@@ -88,35 +81,35 @@ kubectl get pv
 
 [values.yaml](values.yaml)
 ```
-helm install --name my-wordpress -f values.yaml stable/wordpress
+helm install --name my-jenkins -f values.yaml stable/jenkins
 ```
 
-## Initialize Wordpress
+## Initialize Jenkins
 
 - Check status
 ```
-helm status my-wordpress
+helm status my-jenkins
 kubectl get pod
 
 # Get lof of mariadb initContainer
 kubectl log ${mariadb_pod_name} -c copy-custom-config
 ```
 
-- Initialize wordpress
+- Initialize jenkins
 ```
 NOTES:
-1. Get the WordPress URL:
+1. Get the Jenkins URL:
 
   Or running:
 
-  export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services my-wordpress-wordpress)
+  export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services my-jenkins-jenkins)
   export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
   echo http://$NODE_IP:$NODE_PORT/admin
 
 2. Login with the following credentials to see your blog
 
   echo Username: admin
-  echo Password: $(kubectl get secret --namespace default my-wordpress-wordpress -o jsonpath="{.data.wordpress-password}" | base64 --decode)
+  echo Password: $(kubectl get secret --namespace default my-jenkins-jenkins -o jsonpath="{.data.jenkins-password}" | base64 --decode)
 
 3. Try the blog in web browse
 
@@ -124,18 +117,18 @@ NOTES:
 ```
 
 ## Advanced Setup
-- Scale wordpress frontend
+- Scale jenkins frontend
 ```
 kubectl get deployments
 
 ## ,----------- Example
 ## | macs-MacBook-Pro:Scenario-401 mac$ kubectl get deployments
 ## | NAME                     DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-## | my-wordpress-mariadb     1         1         1            1           18m
-## | my-wordpress-wordpress   1         1         1            1           18m
+## | my-jenkins-mariadb     1         1         1            1           18m
+## | my-jenkins-jenkins   1         1         1            1           18m
 ## `-----------
 
-kubectl scale --replicas=2 deployment my-wordpress-wordpress
+kubectl scale --replicas=2 deployment my-jenkins-jenkins
 
 kubectl get deployments
 kubectl get pod
@@ -143,7 +136,7 @@ kubectl get pod
 
 - Verify functionality after deployment
 ```
-export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services my-wordpress-wordpress)
+export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services my-jenkins-jenkins)
 export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
 curl -I http://$NODE_IP:$NODE_PORT/
 ```
@@ -155,23 +148,23 @@ kubectl get pod
 ## ,----------- Example
 ## | macs-MacBook-Pro:Scenario-401 mac$ kubectl get pod
 ## | NAME                                     READY     STATUS    RESTARTS   AGE
-## | my-wordpress-mariadb-8647d4cff7-cvm9k    1/1       Running   0          21m
-## | my-wordpress-wordpress-df987548d-t6fxg   1/1       Running   0          21m
-## | my-wordpress-wordpress-df987548d-xc8tf   1/1       Running   0          2m
+## | my-jenkins-mariadb-8647d4cff7-cvm9k    1/1       Running   0          21m
+## | my-jenkins-jenkins-df987548d-t6fxg   1/1       Running   0          21m
+## | my-jenkins-jenkins-df987548d-xc8tf   1/1       Running   0          2m
 ## `-----------
 
 # Choose one pod and delete it
-kubectl delete pod my-wordpress-wordpress-df987548d-t6fxg
+kubectl delete pod my-jenkins-jenkins-df987548d-t6fxg
 
-# Check again, we will see another wordpress frontend pod up and running.
+# Check again, we will see another jenkins frontend pod up and running.
 
 ## ,----------- Example
 ## | macs-MacBook-Pro:Scenario-401 mac$ kubectl get pod
 ## | NAME                                     READY     STATUS        RESTARTS   AGE
-## | my-wordpress-mariadb-8647d4cff7-cvm9k    1/1       Running       0          23m
-## | my-wordpress-wordpress-df987548d-7798d   0/1       Pending       0          26s
-## | my-wordpress-wordpress-df987548d-t6fxg   0/1       Terminating   0          23m
-## | my-wordpress-wordpress-df987548d-xc8tf   1/1       Running       0          3m
+## | my-jenkins-mariadb-8647d4cff7-cvm9k    1/1       Running       0          23m
+## | my-jenkins-jenkins-df987548d-7798d   0/1       Pending       0          26s
+## | my-jenkins-jenkins-df987548d-t6fxg   0/1       Terminating   0          23m
+## | my-jenkins-jenkins-df987548d-xc8tf   1/1       Running       0          3m
 ## `-----------
 ```
 
@@ -179,14 +172,14 @@ kubectl delete pod my-wordpress-wordpress-df987548d-t6fxg
 - Find DB password from volume
 ```
 minikube ssh
-grep -i DB_PASSWORD /data/wordpress/wordpress/wp-config.php
+grep -i DB_PASSWORD /data/jenkins/jenkins/wp-config.php
 
 ## ,----------- Example
-## | $ grep -i DB_PASSWORD /data/wordpress/wordpress/wp-config.php
+## | $ grep -i DB_PASSWORD /data/jenkins/jenkins/wp-config.php
 ## | define('DB_PASSWORD', 'SUuQeB5pPX');
 ## `-----------
 
-export DB_PASSWORD=$(grep -i DB_PASSWORD /data/wordpress/wordpress/wp-config.php | awk -F"'" '{print $4}')
+export DB_PASSWORD=$(grep -i DB_PASSWORD /data/jenkins/jenkins/wp-config.php | awk -F"'" '{print $4}')
 ```
 
 - Inject db password as secret
@@ -206,8 +199,8 @@ kubectl get pvc
 
 kubectl apply -f ./cronjob.yaml
 
-kubectl get cronjob my-wordpress-mariadb-backup
-kubectl get cronjob my-wordpress-mariadb-backup --watch
+kubectl get cronjob my-jenkins-mariadb-backup
+kubectl get cronjob my-jenkins-mariadb-backup --watch
 
 kubectl get pod | grep backup
 ```
@@ -231,7 +224,7 @@ ls -lth /data/mariadb-backup
 ## Clean up
 
 ```
-helm delete --purge my-wordpress
+helm delete --purge my-jenkins
 kubectl delete -f ./cronjob.yaml
 kubectl delete -f ./backup-storage.yaml
 kubectl delete -f ./pv.yaml
@@ -241,9 +234,7 @@ minikube delete
 # More resources
 
 ```
-https://github.com/kubernetes/charts/tree/master/stable/wordpress
-https://github.com/bitnami/bitnami-docker-wordpress
-https://deliciousbrains.com/running-wordpress-kubernetes-cluster
+https://github.com/kubernetes/charts/tree/master/stable/jenkins
 https://github.com/kubernetes/helm
 ```
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
