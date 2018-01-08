@@ -85,7 +85,7 @@ kubectl apply -f ./pv.yaml
 kubectl get pv
 
 ## ,-----------
-## | macs-MBP:Scenario-303 mac$ kubectl get pv
+## | Denny-Laptop:Scenario-303 mac$ kubectl get pv
 ## | NAME        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM     STORAGECLASS   REASON    AGE
 ## | mariadb     20Gi       RWO            Retain           Available             standard                 0s
 ## | wordpress   20Gi       RWO            Retain           Available             standard                 0s

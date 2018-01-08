@@ -74,7 +74,7 @@ kubectl get pv
 kubectl get pvc
 
 ## ,-----------
-## | macs-MBP:Scenario-401 mac$ kubectl get pv
+## | Denny-Laptop:Scenario-401 mac$ kubectl get pv
 ## | NAME        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM     STORAGECLASS   REASON    AGE
 ## | jenkins-home     20Gi        RWO            Retain           Bound      default/jenkins-home             standard                 2s
 ## `-----------
