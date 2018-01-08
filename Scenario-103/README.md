@@ -54,10 +54,24 @@ kubectl --namespace k8s-1node-test create secret generic mysecret \
 
 kubectl --namespace k8s-1node-test get secrets
 kubectl --namespace k8s-1node-test describe secret mysecret
+
+# ,----------- Example
+# | macs-MacBook-Pro:Scenario-103 mac$ kubectl --namespace k8s-1node-test describe secret mysecret
+# | Name:         mysecret
+# | Namespace:    k8s-1node-test
+# | Labels:       <none>
+# | Annotations:  <none>
+# | 
+# | Type:  Opaque
+# | 
+# | Data
+# | ====
+# | mysql_root_password:  12 bytes
+# `-----------
 ```
 
 ```
-# Create k8s volume, deployment and service
+# Create resourcequota
 kubectl --namespace k8s-1node-test create -f ./resourcequota.yaml
 kubectl --namespace k8s-1node-test --namespace=k8s-1node-test get resourcequota
 ```
