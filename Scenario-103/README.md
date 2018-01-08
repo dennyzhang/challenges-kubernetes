@@ -8,6 +8,7 @@ Table of Contents
    * [Procedure](#procedure)
       * [Deployment](#deployment)
       * [Verify Deployment](#verify-deployment)
+      * [Cleanup](#cleanup)
    * [Highlights](#highlights)
    * [More resources](#more-resources)
 
@@ -96,11 +97,19 @@ kubectl --namespace k8s-1node-test get deployment
 # list service
 kubectl --namespace k8s-1node-test get services
 
+# List ResourceQuota
+kubectl --namespace k8s-1node-test --namespace=k8s-1node-test get resourcequota
+
 # list pods
 kubectl --namespace k8s-1node-test get pods
 
-# List ResourceQuota
-kubectl --namespace k8s-1node-test --namespace=k8s-1node-test get resourcequota
+# ,----------- Example
+# | macs-MacBook-Pro:Scenario-103 mac$ kubectl --namespace k8s-1node-test get pods
+# | NAME                                   READY     STATUS    RESTARTS   AGE
+# | dbclient-deployment-69844df475-nwkvg   1/1       Running   0          3m
+# | dbclient-deployment-69844df475-vp2g2   1/1       Running   0          3m
+# | dbserver-deployment-6d9bdbfbf4-9x7nv   1/1       Running   0          3m
+# `-----------
 ```
 - Run functional test
 
@@ -127,6 +136,8 @@ From Web UI, delete the mysql server Pod.
 We should see ReplicationController will start a new one.
 
 Confirm the database and table still persist, which were created in last step.
+
+## Cleanup
 
 - Delete k8s resources
 ```
