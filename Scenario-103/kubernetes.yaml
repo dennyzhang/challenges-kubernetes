@@ -49,8 +49,7 @@ spec:
     spec:
       containers:
       - name: dbserver
-        # Docker Image: https://hub.docker.com/_/mysql/
-        image: mysql
+        image: mariadb
         # https://kubernetes.io/docs/concepts/policy/resource-quotas/
         resources:
           requests:

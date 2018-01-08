@@ -49,8 +49,7 @@ spec:
     spec:
       containers:
       - name: dbserver
-        # Docker Image: https://hub.docker.com/_/mysql/
-        image: mysql
+        image: mariadb
         resources:
           requests:
             cpu: 400m
