@@ -116,13 +116,23 @@ kubectl --namespace k8s-1node-test get pods
 Open mysql client to access the mysql server
 
 Use phpmyadmin, create a database and a table 
-TODO
 
-phpmyadmin url:
-```minikube service my-dbclient-service --url```
+Find endpoint of phpmyadmin and dbserver
+```
+minikube service list
 
-dbserver_url:
-```"$(minikube service my-dbserver-service --url)"```
+# ,----------- Example
+# | macs-MacBook-Pro:Scenario-103 mac$ minikube service list
+# | |----------------|----------------------|-----------------------------|
+# | |   NAMESPACE    |         NAME         |             URL             |
+# | |----------------|----------------------|-----------------------------|
+# | | default        | kubernetes           | No node port                |
+# | | k8s-1node-test | my-dbclient-service  | http://192.168.99.103:32452 |
+# | | k8s-1node-test | my-dbserver-service  | http://192.168.99.103:31049 |
+# | | kube-system    | heapster             | No node port                |
+# | | kube-system    | kube-dns             | No node port                |
+# `-----------
+```
 
 TODO: remove http, add screenshot
 
