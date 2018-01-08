@@ -167,8 +167,8 @@ Challenges Your Kubernetes Skills And Knowledge
 - Objective: Deploy Jenkins in k8s
 - Requirements:
 ```
-1. Deploy 3 nodes k8s. One controller, others as workers
-2. Deploy Jenkins service by helm. 2 Jenkins master and 2 Jenkins agents
+1. Deploy Jenkins service by helm. 2 Jenkins master and 2 Jenkins agents
+2. Add health check for Jenkins agents (Hint: livenessProbe)
 3. Use nginx as an ingress for Jenkins master
 4. Simulate Jenkins slave crash events, and confirm service is fine
 5. Simulate Jenkins master crash events, and confirm service is fine

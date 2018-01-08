@@ -251,6 +251,7 @@ minikube delete
 ```
 https://github.com/kubernetes/charts/tree/master/stable/wordpress
 https://github.com/bitnami/bitnami-docker-wordpress
+https://kubernetes.io/docs/tasks/access-application-cluster/connecting-frontend-backend/
 https://deliciousbrains.com/running-wordpress-kubernetes-cluster
 https://github.com/kubernetes/helm
 ```
