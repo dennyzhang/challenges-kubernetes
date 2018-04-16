@@ -215,6 +215,8 @@ Challenges Your Kubernetes Skills And Knowledge
 - See more: [Scenario-502](./Scenario-502)
 - TODO
 
+<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_operator.png"/> </a>
+
 # Highlights
 
 - More resources: run services on k8s cluster
