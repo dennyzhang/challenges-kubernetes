@@ -1,9 +1,6 @@
-## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
+## ref: https://github.com/kubernetes/charts/blob/master/incubator/elasticsearch/values.yaml
 
-wordpressUsername: admin
-wordpressPassword: password
-mariadb:
-  mariadbRootPassword: secretpassword
-wordpressEmail: contact@dennyzhang.com
-wordpressBlogName: My DevOps Blog!
-serviceType: NodePort
+client:
+  name: client
+  replicas: 1
+  serviceType: NodePort

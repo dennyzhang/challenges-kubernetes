@@ -28,6 +28,7 @@ Challenges Your Kubernetes Skills And Knowledge
       * [Scenario-301: Use helm To Deploy Service I](#scenario-301-use-helm-to-deploy-service-i)
       * [Scenario-302: Use helm To Deploy Service II](#scenario-302-use-helm-to-deploy-service-ii)
       * [Scenario-303: Use helm To Deploy Service III](#scenario-303-use-helm-to-deploy-service-iii)
+      * [Scenario-304: Use helm To Deploy Service IV](#scenario-304-use-helm-to-deploy-service-iv)
       * [Scenario-401: Deploy a stateful service I](#scenario-401-deploy-a-stateful-service-i)
       * [Scenario-402: Deploy a stateful service II](#scenario-402-deploy-a-stateful-service-ii)
    * [Highlights](#highlights)

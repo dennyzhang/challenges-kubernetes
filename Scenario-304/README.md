@@ -33,6 +33,7 @@ Scenario-304: Use helm To Deploy Service IV
 
 ```
 minikube start
+eval $(minikube docker-env)
 ```
 
 ## Install and run helm
@@ -49,57 +50,15 @@ kubectl get pods --namespace kube-system
 tiller_name=$(kubectl get pods --namespace kube-system | grep "tiller.*Running" | awk -F" " '{print $1}')
 kubectl --namespace kube-system describe pod $tiller_name
 helm repo update
+# check whether the helm backend(tiller) is up and running
 helm list
-```
-
-- Create volume
-
-Workaround for minikube bug: https://github.com/kubernetes/minikube/issues/2256
-
-```
-minikube ssh
-ls -lth /tmp/ | grep hostpath
-sudo chmod 777 -R /tmp/hostpath-provisioner
-sudo chmod 777 -R /tmp/hostpath_pv
-ls -lth /tmp/ | grep hostpath
-```
-
-Create folder to hold the data
-```
-minikube ssh
-
-sudo mkdir -p /data/mariadb/data /data/mariadb/conf /data/wordpress
-sudo chmod 777 -R /data/mariadb/data /data/mariadb/conf /data/wordpress
-ls -lth /data
-
-exit
-
-## ,----------- Example
-## | $ ls -lth /data
-## | total 8.0K
-## | drwxrwxrwx 2 root root 4.0K Jan  5 22:38 wordpress
-## | drwxrwxrwx 2 root root 4.0K Jan  5 22:38 mariadb
-## `-----------
-```
-
-Create pv with [pv.yaml](pv.yaml)
-```
-kubectl apply -f ./pv.yaml
-kubectl get pv
-
-## ,-----------
-## | Denny-Laptop:Scenario-304 mac$ kubectl get pv
-## | NAME        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM     STORAGECLASS   REASON    AGE
-## | mariadb     20Gi       RWO            Retain           Available             standard                 0s
-## | wordpress   20Gi       RWO            Retain           Available             standard                 0s
-## `-----------
 ```
 
 - Run helm Deployment
 
 [values.yaml](values.yaml)
 ```
-helm install --name my-wordpress -f values.yaml stable/wordpress
+helm install --name my-es -f values.yaml incubator/elasticsearch
 ```
 
 ## Initialize Wordpress
