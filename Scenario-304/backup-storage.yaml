@@ -1,0 +1,25 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: mariadb-backup
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: standard
+  hostPath:
+    path: "/data/mariadb-backup"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: mariadb-backup
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

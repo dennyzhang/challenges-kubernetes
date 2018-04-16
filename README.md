@@ -6,6 +6,8 @@
 
 File me [tickets](https://github.com/DennyZhang/challenges-kubernetes/issues) or star [the repo](https://github.com/DennyZhang/challenges-kubernetes).
 
+See More in: [denny-challenges](https://github.com/topics/denny-challenges)
+
 **Similar Challenges**: https://www.dennyzhang.com/battle
 
 <a href="https://github.com/DennyZhang?tab=followers"><img align="right" width="200" height="183" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/fork_github.png" /></a>
@@ -145,6 +147,19 @@ Challenges Your Kubernetes Skills And Knowledge
 ```
 - Main Tech: helm, volume
 - See more: [Scenario-303](./Scenario-303)
+- TODO
+
+<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_helm_intro.png"/> </a>
+
+## Scenario-304: Use helm To Deploy Service IV
+- Objective: Deploy elasticsearch cluster with 5 instances
+- Requirements:
+```
+1. Create an elasticsearch cluster
+2. Scale the env to 5 instances
+```
+- Main Tech: helm, volume
+- See more: [Scenario-304](./Scenario-304)
 - TODO
 
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_helm_intro.png"/> </a>
