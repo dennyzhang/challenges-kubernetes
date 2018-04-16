@@ -31,6 +31,8 @@ Challenges Your Kubernetes Skills And Knowledge
       * [Scenario-304: Use helm To Deploy Service IV](#scenario-304-use-helm-to-deploy-service-iv)
       * [Scenario-401: Deploy a stateful service I](#scenario-401-deploy-a-stateful-service-i)
       * [Scenario-402: Deploy a stateful service II](#scenario-402-deploy-a-stateful-service-ii)
+      * [Scenario-501: Day2 Mission: Setup Prometheus monitoring](#scenario-501-day2-mission-setup-prometheus-monitoring)
+      * [Scenario-502: Day2 Mission: Prometheus Operator](#scenario-502-day2-mission-prometheus-operator)
    * [Highlights](#highlights)
    * [Contributors: Give People Credits](#contributors-give-people-credits)
    * [License](#license)
@@ -191,6 +193,28 @@ Challenges Your Kubernetes Skills And Knowledge
 ```
 - Main Tech:
 - See more: [Scenario-402](./Scenario-402)
+- TODO
+
+## Scenario-501: Day2 Mission: Setup Prometheus monitoring
+- Objective: Setup k8s monitoring
+- Requirements:
+```
+1. Setup prometheus monitoring for infra level
+2. Setup prometheus monitoring for application level
+```
+- Main Tech:
+- See more: [Scenario-501](./Scenario-501)
+- TODO
+
+## Scenario-502: Day2 Mission: Prometheus Operator
+- Objective: Learn more about k8s operator concept
+- Requirements:
+```
+1. Enable prometheus operator
+2. AIOps: Use operator to respond to repetitive issues from monitoring system
+```
+- Main Tech:
+- See more: [Scenario-502](./Scenario-502)
 - TODO
 
 # Highlights
