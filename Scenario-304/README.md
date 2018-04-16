@@ -45,6 +45,9 @@ https://deliciousbrains.com/running-wordpress-kubernetes-cluster
 ```
 cd challenges-kubernetes/Scenario-304/
 helm init
+kubectl get pods --namespace kube-system
+tiller_name=$(kubectl get pods --namespace kube-system | grep "tiller.*Running" | awk -F" " '{print $1}')
+kubectl --namespace kube-system describe pod $tiller_name
 helm repo update
 helm list
 ```
