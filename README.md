@@ -152,8 +152,6 @@ Challenges Your Kubernetes Skills And Knowledge
 - See more: [Scenario-303](./Scenario-303)
 - TODO
 
-<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_helm_intro.png"/> </a>
-
 ## Scenario-304: Use helm To Deploy Service IV
 - Objective: Deploy elasticsearch cluster with 5 instances
 - Requirements:
