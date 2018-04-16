@@ -130,6 +130,8 @@ Challenges Your Kubernetes Skills And Knowledge
 - Main Tech: minikube, helm, volume
 - See more: [Scenario-301](./Scenario-301)
 
+<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+
 ## Scenario-302: Use helm To Deploy Service II
 - Objective: Advanced usage of helm
 - Requirements:
@@ -178,6 +180,8 @@ Challenges Your Kubernetes Skills And Knowledge
 - Main Tech:
 - See more: [Scenario-401](./Scenario-401)
 - TODO
+
+<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
 ## Scenario-402: Deploy a stateful service II
 - Objective: Deploy Jenkins in k8s
