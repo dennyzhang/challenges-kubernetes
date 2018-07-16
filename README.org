@@ -25,14 +25,14 @@ https://kubernetes.io/docs/concepts/cluster-administration/logging/
 ** Tell k8s yur estimation for resource usage(CPU/RAM) per Pod
 https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
 
-```
+#+BEGIN_EXAMPLE
 Each Container of a Pod can specify one or more of the following:
 
 spec.containers[].resources.limits.cpu
 spec.containers[].resources.limits.memory
 spec.containers[].resources.requests.cpu
 spec.containers[].resources.requests.memory
-```
+#+END_EXAMPLE
 
 #+BEGIN_EXAMPLE
 apiVersion: v1
