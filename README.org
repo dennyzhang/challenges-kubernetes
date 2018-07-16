@@ -1,0 +1,24 @@
+-*- mode:org; fill-column:70; coding:utf-8; -*-
+* org-mode configuration
+#+STARTUP: overview customtime noalign logdone hidestars
+#+TAGS: ARCHIVE(a) WORK(w) LIFE(l) EMACS(e) IMPORTANT(i) Difficult(d) Communication(c) RECOMMENDATE(r) Tool(t) Habit(h) noexport(n) Share (s) BLOG(b)
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+DRAWERS: HIDDEN CODE CONF EMAIL WEBPAGE SNIP
+#+PRIORITIES: A D C
+#+ARCHIVE: %s_done::** Finished Tasks
+#+AUTHOR: dennyzhang.com (denny@dennyzhang.com)
+#+OPTIONS: toc:2 \n:t ^:nil creator:nil d:nil
+* Kubernetes Performance
+** Maximum Pods Per node Assumption: 110
+https://medium.com/@brendanrius/scaling-kubernetes-for-25m-users-a7937e3536a0?mkt_tok=eyJpIjoiWWpRMU5UbGtZekptTVRWaCIsInQiOiI4MFZWUEpLa1wvZE0xUkE2eWZNOVExUGNXU3ZOcXRNeDk5OGprbkNrSXdtQkFxUGR1WTU3dEJuWEJOdnpXcTk4a08zOUlrdlZMXC9LZklGK1lPeTc5N1FsVW1WSUJkT09hS1Ard0ptbnp1RDRXNkphRFp4NXhsUkwyWWwrMnZBMFFNIn0%3D
+
+Right now, Kubernetes will by default schedule at most 110 pods per node. 
+
+#+BEGIN_EXAMPLE
+Right now, Kubernetes will by default schedule at most 110 pods per node. This is something you can configure if you have a direct access to your kubelet configuration. See documentation here (search for --max-pods).
+
+Also, if you try to schedule more pods, you will quickly run into some inotify limits (namely max_user_instances and max_user_watches). 
+#+End_example
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* CRD: challenges-k8s-crd
+* istio: challenges-k8s-istio
