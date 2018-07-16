@@ -19,6 +19,9 @@ Right now, Kubernetes will by default schedule at most 110 pods per node. This i
 
 Also, if you try to schedule more pods, you will quickly run into some inotify limits (namely max_user_instances and max_user_watches). 
 #+End_example
+* k8s Logging Architecture
+https://kubernetes.io/docs/concepts/cluster-administration/logging/
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * CRD: challenges-k8s-crd
 * istio: challenges-k8s-istio
+* k8s DaemonSet
