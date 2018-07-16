@@ -21,6 +21,48 @@ Also, if you try to schedule more pods, you will quickly run into some inotify l
 #+End_example
 * k8s Logging Architecture
 https://kubernetes.io/docs/concepts/cluster-administration/logging/
+* k8s scheduling
+** Tell k8s yur estimation for resource usage(CPU/RAM) per Pod
+https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
+
+```
+Each Container of a Pod can specify one or more of the following:
+
+spec.containers[].resources.limits.cpu
+spec.containers[].resources.limits.memory
+spec.containers[].resources.requests.cpu
+spec.containers[].resources.requests.memory
+```
+
+#+BEGIN_EXAMPLE
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend
+spec:
+  containers:
+  - name: db
+    image: mysql
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: "password"
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+  - name: wp
+    image: wordpress
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+#+END_EXAMPLE
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * CRD: challenges-k8s-crd
 * istio: challenges-k8s-istio
