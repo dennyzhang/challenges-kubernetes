@@ -1,230 +1,242 @@
-# challenges-kubernetes
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone hidestars
+#+TITLE:  Challenges Your Kubernetes Skills
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:   
+#+LINK_HOME: 
+* Summary
+#+BEGIN_HTML
+<a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
+<a href="https://github.com/DennyZhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
+<a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="http://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
+<a href="https://github.com/DennyZhang"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 
-[![Build Status](https://travis-ci.org/dennyzhang/challenges-kubernetes.svg?branch=master)](https://travis-ci.org/dennyzhang/challenges-kubernetes) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+<br/><br/>
 
-[![LinkedIn](https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/linkedin_icon.png)](https://www.linkedin.com/in/dennyzhang001) <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="http://slack.dennyzhang.com/badge.svg" alt="slack"/></a> [![Github](https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/github.png)](https://github.com/DennyZhang)
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+* CheatSheet
+File me [[https://github.com/DennyZhang/challenges-kubernetes/issues][Issues]] or star [[https://github.com/DennyZhang/challenges-kubernetes][this repo]].
 
-File me [tickets](https://github.com/DennyZhang/challenges-kubernetes/issues) or star [the repo](https://github.com/DennyZhang/challenges-kubernetes).
-
-See More in: [denny-challenges](https://github.com/topics/denny-challenges)
-
-**Similar Challenges**: https://www.dennyzhang.com/battle
-
-<a href="https://github.com/DennyZhang?tab=followers"><img align="right" width="200" height="183" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/fork_github.png" /></a>
-
-<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/kubernetes.png"/> </a>
-
-Table of Contents
-=================
-Challenges Your Kubernetes Skills And Knowledge
-
-   * [Scenarios](#scenarios)
-      * [Scenario-101: 1-Node K8S Deployment I](#scenario-101-1-node-k8s-deployment-i)
-      * [Scenario-102: 1-Node K8S Deployment II](#scenario-102-1-node-k8s-deployment-ii)
-      * [Scenario-103: 1-Node K8S Deployment III](#scenario-103-1-node-k8s-deployment-iii)
-      * [Scenario-201: 3-Nodes K8S Deployment I](#scenario-201-3-nodes-k8s-deployment-i)
-      * [Scenario-202: 3-Nodes K8S Deployment II](#scenario-202-3-nodes-k8s-deployment-ii)
-      * [Scenario-203: 3-Nodes K8S Deployment II](#scenario-203-3-nodes-k8s-deployment-ii)
-      * [Scenario-301: Use helm To Deploy Service I](#scenario-301-use-helm-to-deploy-service-i)
-      * [Scenario-302: Use helm To Deploy Service II](#scenario-302-use-helm-to-deploy-service-ii)
-      * [Scenario-303: Use helm To Deploy Service III](#scenario-303-use-helm-to-deploy-service-iii)
-      * [Scenario-304: Use helm To Deploy Service IV](#scenario-304-use-helm-to-deploy-service-iv)
-      * [Scenario-401: Deploy a stateful service I](#scenario-401-deploy-a-stateful-service-i)
-      * [Scenario-402: Deploy a stateful service II](#scenario-402-deploy-a-stateful-service-ii)
-      * [Scenario-501: Day2 Mission: Setup Prometheus monitoring](#scenario-501-day2-mission-setup-prometheus-monitoring)
-      * [Scenario-502: Day2 Mission: Prometheus Operator](#scenario-502-day2-mission-prometheus-operator)
-   * [Highlights](#highlights)
-   * [Contributors: Give People Credits](#contributors-give-people-credits)
-   * [License](#license)
-
-<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
-
-# Scenarios
-
-## Scenario-101: 1-Node K8S Deployment I
+See more Kubernetes from Denny: [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
+** Scenario-101: 1-Node K8S Deployment I
 - Objective: Get familiar with K8S concept. Here K8S stands for Kubernetes.
 - Requirements:
-```
+#+BEGIN_EXAMPLE
 1. Start one node of k8s in your laptop. Mac or Linux
 2. Start a nginx webserver with one instance
 3. Scale nginx service into 2 instances.
 4. Get familiar with k8s dashboard. Find pods from GUI, check nginx log.
-```
+#+END_EXAMPLE
+
 - See [kubernetes.yaml](Scenario-101/kubernetes.yaml)
 - Main Tech: minikube, nginx, dashboard
-- See more: [Scenario-101](./Scenario-101)
+- See more: [[Scenario-101][Scenario-101]]
 
-## Scenario-102: 1-Node K8S Deployment II
+** Scenario-102: 1-Node K8S Deployment II
 - Objective: Single node deployment for stateful service
 - Requirements:
-```
+#+BEGIN_EXAMPLE
 1. Use yaml to start one mysql server service with 1 instance.
 2. Use yaml to start one mysql client service with 2 instances.
 3. Delete the db server instance, make sure a new one will be created automatically.
 4. When db server is recreated, make sure no data loss.
-```
+#+END_EXAMPLE
+
 - See [kubernetes.yaml](Scenario-102/kubernetes.yaml)
 - Main Tech: minikube, mysql, volume
-- See more: [Scenario-102](./Scenario-102)
+- See more: [[Scenario-102][Scenario-102]]
 
+#+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
 
-## Scenario-103: 1-Node K8S Deployment III
+** Scenario-103: 1-Node K8S Deployment III
 - Objective: Advanced k8s deployment for one single db service
 - Requirements:
-```
+#+BEGIN_EXAMPLE
 1. Suppose your k8s/minikube have multiple cluster, how you can segrate them? (Hint: namespace)
 2. When we initialize mysql via yaml, avoid store mysql root password in plain text. (Hint: secrets)
 3. Make sure we can create no more than 1 pods for DB server. (Hint: ResourceQuota)
-```
+#+END_EXAMPLE
+
 - See [kubernetes.yaml](Scenario-103/kubernetes.yaml)
 - Main Tech: minikube, mysql, volume, Job
-- See more: [Scenario-103](./Scenario-103)
+- See more: [[Scenario-103][Scenario-103]]
 
-## Scenario-201: 3-Nodes K8S Deployment I
+** Scenario-201: 3-Nodes K8S Deployment I
 - Objective: Know how to deployment k8s cluster env
 - Requirements:
-```
+#+BEGIN_EXAMPLE
 1. Deploy 3 nodes k8s env in your virtualbox.
    One as controller, the other two as worker
 2. Deploy k8s web UI, which is missing by default.
-```
-- Main Tech:
-- See more: [Scenario-201](./Scenario-201)
-<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
+#+END_EXAMPLE
 
-## Scenario-202: 3-Nodes K8S Deployment II
+- Main Tech:
+- See more: [[Scenario-201][Scenario-201]]
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
+
+** Scenario-202: 3-Nodes K8S Deployment II
 - Objective: Improve service availability by choosing service type wisely.
 - Requirements:
-```
+#+BEGIN_EXAMPLE
 1. Deploy 3 nodes k8s. One controller, others as workers
 2. Create a nginx service with 6 instances.
 3. Make sure nginx requests will be balanced across 6 instances.
    (Hint: ClusterIP + Ingress, or External Loadbalancer)
-```
+#+END_EXAMPLE
+
 - Main Tech:
-- See more: [Scenario-202](./Scenario-202)
+- See more: [[Scenario-202][Scenario-202]]
 - TODO
 
-## Scenario-203: 3-Nodes K8S Deployment II
+** Scenario-203: 3-Nodes K8S Deployment II
 - Objective: k8s cluster env with stateful service
 - Requirements:
-```
+#+BEGIN_EXAMPLE
 1. Deploy 3 nodes k8s. One controller, others as workers
 2. Create an elasticsearch service with 4 instances.
    2 as master, 2 as data.
 3. Create a nightly job to backup elasticsearch cluster. (Hint: Cron Jobs)
 4. If any es instance has crashed, get alerts.
-```
+#+END_EXAMPLE
+
 - Main Tech:
-- See more: [Scenario-203](./Scenario-203)
+- See more: [[Scenario-203][Scenario-203]]
 - TODO
 
-## Scenario-301: Use helm To Deploy Service I
+** Scenario-301: Use helm To Deploy Service I
 - Objective: Know the basic usage of helm
 - Requirements:
-```
+#+BEGIN_EXAMPLE
 1. Use helm to deploy a mysql service with single instance
 2. Customize the deployment
-```
+#+END_EXAMPLE
+
 - Main Tech: minikube, helm, volume
-- See more: [Scenario-301](./Scenario-301)
+- See more: [[Scenario-301][Scenario-301]]
 
+#+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
 
-## Scenario-302: Use helm To Deploy Service II
+** Scenario-302: Use helm To Deploy Service II
 - Objective: Advanced usage of helm
 - Requirements:
-```
+#+BEGIN_EXAMPLE
 1. Deploy a single instance wordpress service with helm
 2. Scale frontend to 2 instance (Hint: kubectl scale)
 3. Enforce daily db backup (Hint: CronJob)
-```
-- Main Tech: minikube, helm, volume
-- See more: [Scenario-302](./Scenario-302)
+#+END_EXAMPLE
 
-## Scenario-303: Use helm To Deploy Service III
+- Main Tech: minikube, helm, volume
+- See more: [[Scenario-302][Scenario-302]]
+
+** Scenario-303: Use helm To Deploy Service III
 - Objective: HA deployemnt with helm
 - Requirements:
-```
+#+BEGIN_EXAMPLE
 1. Create a wordpress Chart by yourself
 2. Deploy a HA wordpress service with your helm chart
-```
+#+END_EXAMPLE
+
 - Main Tech: helm, volume
-- See more: [Scenario-303](./Scenario-303)
+- See more: [[Scenario-303][Scenario-303]]
 - TODO
 
-## Scenario-304: Use helm To Deploy Service IV
+** Scenario-304: Use helm To Deploy Service IV
 - Objective: Deploy elasticsearch cluster with 5 instances
 - Requirements:
-```
+#+BEGIN_EXAMPLE
 1. Create an elasticsearch cluster
 2. Scale the env to 5 instances
-```
+#+END_EXAMPLE
+
 - Main Tech: helm, volume
-- See more: [Scenario-304](./Scenario-304)
+- See more: [[Scenario-304][Scenario-304]]
 - TODO
 
-<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_helm_intro.png"/> </a>
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
 
-## Scenario-401: Deploy a stateful service I
+** Scenario-401: Deploy a stateful service I
 - Objective: Deploy Jenkins in k8s
 - Requirements:
-```
+#+BEGIN_EXAMPLE
 1. Deploy Jenkins service by helm.
 2. Make sure JENKINS_HOME directory persist
 3. Install slack and git Jenkins plugins during helm install
 4. Enable Jenkins slave agents during helm install
 5. Start 2 Jenkins masters.
-```
+#+END_EXAMPLE
+
 - Main Tech:
-- See more: [Scenario-401](./Scenario-401)
+- See more: [[Scenario-401][Scenario-401]]
 - TODO
 
+#+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
 
-## Scenario-402: Deploy a stateful service II
+** Scenario-402: Deploy a stateful service II
 - Objective: Deploy Jenkins in k8s
 - Requirements:
-```
+#+BEGIN_EXAMPLE
 1. Deploy Jenkins service by helm. 2 Jenkins master and 2 Jenkins agents
 2. Add health check for Jenkins agents (Hint: livenessProbe)
 3. Use nginx as an ingress for Jenkins master
 4. Simulate Jenkins slave crash events, and confirm service is fine
 5. Simulate Jenkins master crash events, and confirm service is fine
-```
+#+END_EXAMPLE
+
 - Main Tech:
-- See more: [Scenario-402](./Scenario-402)
+- See more: [[Scenario-402][Scenario-402]]
 - TODO
 
-## Scenario-501: Day2 Mission: Setup Prometheus monitoring
+** Scenario-501: Day2 Mission: Setup Prometheus monitoring
 - Objective: Setup k8s monitoring
 - Requirements:
-```
+#+BEGIN_EXAMPLE
 1. Setup prometheus monitoring for infra level
 2. Setup prometheus monitoring for application level
-```
+#+END_EXAMPLE
+
 - Main Tech:
-- See more: [Scenario-501](./Scenario-501)
+- See more: [[Scenario-501][Scenario-501]]
 - TODO
 
-## Scenario-502: Day2 Mission: Prometheus Operator
+** Scenario-502: Day2 Mission: Prometheus Operator
 - Objective: Learn more about k8s operator concept
 - Requirements:
-```
+#+BEGIN_EXAMPLE
 1. Enable prometheus operator
 2. AIOps: Use operator to respond to repetitive issues from monitoring system
-```
+#+END_EXAMPLE
+
 - Main Tech:
-- See more: [Scenario-502](./Scenario-502)
+- See more: [[Scenario-502][Scenario-502]]
 - TODO
-
+#+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_operator.png"/> </a>
-
-# Highlights
+#+END_HTML
+* More Resources
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
 - More resources: run services on k8s cluster
-```
+#+BEGIN_EXAMPLE
 http://containertutorials.com/get_started_kubernetes/k8s_example.html
 Kubernetes Example
 
@@ -239,22 +251,19 @@ kubernetes examples in GitHub From Google
 
 https://kubernetes.io/docs/concepts/configuration/overview/
 Configuration Best Practices
-```
-<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+#+END_EXAMPLE
 
 - More resources: k8s cluster itself
-```
+#+BEGIN_EXAMPLE
 https://github.com/kelseyhightower/kubernetes-the-hard-way
 Bootstrap Kubernetes the hard way on Google Cloud Platform. No scripts.
 
 https://github.com/davidkbainbridge/k8s-playground
 Simple VM based Kubernetes cluster setup
-```
+#+END_EXAMPLE
 
-# Contributors: Give People Credits
-Below are folks who have contributed via GitHub!
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
-# License
-- Code is licensed under [MIT License](https://www.dennyzhang.com/wp-content/mit_license.txt).
-
-<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
