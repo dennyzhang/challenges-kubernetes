@@ -40,7 +40,7 @@ See more Kubernetes from Denny: [[https://github.com/topics/denny-kubernetes][#d
 
 - See [kubernetes.yaml](Workshop/Scenario-101/kubernetes.yaml)
 - Main Tech: minikube, nginx, dashboard
-- See more: [[Scenario-101][Scenario-101]]
+- See more: [[Workshop/Scenario-101][Workshop/Scenario-101]]
 
 ** Scenario-102: 1-Node K8S Deployment II
 - Objective: Single node deployment for stateful service
@@ -54,7 +54,7 @@ See more Kubernetes from Denny: [[https://github.com/topics/denny-kubernetes][#d
 
 - See [kubernetes.yaml](Scenario-102/kubernetes.yaml)
 - Main Tech: minikube, mysql, volume
-- See more: [[Scenario-102][Scenario-102]]
+- See more: [[Workshop/Scenario-102][Workshop/Scenario-102]]
 
 #+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
@@ -71,7 +71,7 @@ See more Kubernetes from Denny: [[https://github.com/topics/denny-kubernetes][#d
 
 - See [kubernetes.yaml](Scenario-103/kubernetes.yaml)
 - Main Tech: minikube, mysql, volume, Job
-- See more: [[Scenario-103][Scenario-103]]
+- See more: [[Workshop/Scenario-103][Workshop/Scenario-103]]
 
 ** Scenario-201: 3-Nodes K8S Deployment I
 - Objective: Know how to deployment k8s cluster env
@@ -83,7 +83,7 @@ See more Kubernetes from Denny: [[https://github.com/topics/denny-kubernetes][#d
 #+END_EXAMPLE
 
 - Main Tech:
-- See more: [[Scenario-201][Scenario-201]]
+- See more: [[Workshop/Scenario-201][Workshop/Scenario-201]]
 #+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 #+END_HTML
@@ -99,7 +99,7 @@ See more Kubernetes from Denny: [[https://github.com/topics/denny-kubernetes][#d
 #+END_EXAMPLE
 
 - Main Tech:
-- See more: [[Scenario-202][Scenario-202]]
+- See more: [[Workshop/Scenario-202][Workshop/Scenario-202]]
 - TODO
 
 ** Scenario-203: 3-Nodes K8S Deployment II
@@ -114,7 +114,7 @@ See more Kubernetes from Denny: [[https://github.com/topics/denny-kubernetes][#d
 #+END_EXAMPLE
 
 - Main Tech:
-- See more: [[Scenario-203][Scenario-203]]
+- See more: [[Workshop/Scenario-203][Workshop/Scenario-203]]
 - TODO
 
 ** Scenario-301: Use helm To Deploy Service I
@@ -126,7 +126,7 @@ See more Kubernetes from Denny: [[https://github.com/topics/denny-kubernetes][#d
 #+END_EXAMPLE
 
 - Main Tech: minikube, helm, volume
-- See more: [[Scenario-301][Scenario-301]]
+- See more: [[Workshop/Scenario-301][Workshop/Scenario-301]]
 
 #+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
@@ -142,7 +142,7 @@ See more Kubernetes from Denny: [[https://github.com/topics/denny-kubernetes][#d
 #+END_EXAMPLE
 
 - Main Tech: minikube, helm, volume
-- See more: [[Scenario-302][Scenario-302]]
+- See more: [[Workshop/Scenario-302][Workshop/Scenario-302]]
 
 ** Scenario-303: Use helm To Deploy Service III
 - Objective: HA deployemnt with helm
@@ -153,7 +153,7 @@ See more Kubernetes from Denny: [[https://github.com/topics/denny-kubernetes][#d
 #+END_EXAMPLE
 
 - Main Tech: helm, volume
-- See more: [[Scenario-303][Scenario-303]]
+- See more: [[Workshop/Scenario-303][Workshop/Scenario-303]]
 - TODO
 
 ** Scenario-304: Use helm To Deploy Service IV
@@ -165,7 +165,7 @@ See more Kubernetes from Denny: [[https://github.com/topics/denny-kubernetes][#d
 #+END_EXAMPLE
 
 - Main Tech: helm, volume
-- See more: [[Scenario-304][Scenario-304]]
+- See more: [[Workshop/Scenario-304][Workshop/Scenario-304]]
 - TODO
 
 #+BEGIN_HTML
@@ -184,7 +184,7 @@ See more Kubernetes from Denny: [[https://github.com/topics/denny-kubernetes][#d
 #+END_EXAMPLE
 
 - Main Tech:
-- See more: [[Scenario-401][Scenario-401]]
+- See more: [[Workshop/Scenario-401][Workshop/Scenario-401]]
 - TODO
 
 #+BEGIN_HTML
@@ -203,7 +203,7 @@ See more Kubernetes from Denny: [[https://github.com/topics/denny-kubernetes][#d
 #+END_EXAMPLE
 
 - Main Tech:
-- See more: [[Scenario-402][Scenario-402]]
+- See more: [[Workshop/Scenario-402][Workshop/Scenario-402]]
 - TODO
 
 ** Scenario-501: Day2 Mission: Setup Prometheus monitoring
@@ -215,7 +215,7 @@ See more Kubernetes from Denny: [[https://github.com/topics/denny-kubernetes][#d
 #+END_EXAMPLE
 
 - Main Tech:
-- See more: [[Scenario-501][Scenario-501]]
+- See more: [[Workshop/Scenario-501][Workshop/Scenario-501]]
 - TODO
 
 ** Scenario-502: Day2 Mission: Prometheus Operator
@@ -227,7 +227,7 @@ See more Kubernetes from Denny: [[https://github.com/topics/denny-kubernetes][#d
 #+END_EXAMPLE
 
 - Main Tech:
-- See more: [[Scenario-502][Scenario-502]]
+- See more: [[Workshop/Scenario-502][Workshop/Scenario-502]]
 - TODO
 #+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_operator.png"/> </a>
