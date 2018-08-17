@@ -22,8 +22,6 @@ Scenario-101: 1-Node K8S Deployment I
 4. Get familiar with k8s dashboard. Find pods from GUI, check nginx log.
 ```
 
-See [kubernetes.yaml](kubernetes.yaml)
-
 # Background & Highlights
 - Q: How to use your own docker image?
 
@@ -46,9 +44,8 @@ which kubectl
 minikube start
 
 # Create k8s deployment and export service
-kubectl create -f ./kubernetes.yaml
+kubectl apply -f .
 ```
-See [kubernetes.yaml](kubernetes.yaml)
 
 ## Verify Deployment
 - Check k8s web UI Dashboard
@@ -97,7 +94,7 @@ for((i=0; i< 5; i++)); do { curl -I "$service_url";}; done
 Destroy env:
 - Delete k8s resources
 ```
-kubectl delete -f ./kubernetes.yaml
+kubectl apply -R -f .
 ```
 
 - Remove VM

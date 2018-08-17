@@ -21,19 +21,3 @@ spec:
         image: nginx:1.7.9
         ports:
         - containerPort: 80
----
-# Use services to export my app
-# https://kubernetes.io/docs/concepts/services-networking/service/
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-nginx-service
-  labels:
-    app: nginx
-spec:
-  type: NodePort  
-  ports:
-  - port: 80
-    targetPort: 80
-  selector:
-    app: nginx
