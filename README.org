@@ -1,5 +1,9 @@
 * Challenges Your Kubernetes Skills
-Check Kubernetes Topics: github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
+** Kubernetes Topics
+github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
+
+[[https://cdn.dennyzhang.com/images/github/k8s_github_repo.png]]
+
 ** Kubernetes Workshop
  #+BEGIN_HTML
  <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
@@ -254,21 +258,21 @@ Check Kubernetes Topics: github tag [[https://github.com/topics/denny-kubernetes
 
  <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
  #+END_HTML
-** org-mode configuration                                          :noexport:
- #+STARTUP: overview customtime noalign logdone showall
- #+TITLE:  Challenges Your Kubernetes Skills
- #+DESCRIPTION: 
- #+KEYWORDS: 
- #+AUTHOR: Denny Zhang
- #+EMAIL:  denny@dennyzhang.com
- #+TAGS: noexport(n)
- #+PRIORITIES: A D C
- #+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
- #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
- #+EXPORT_EXCLUDE_TAGS: exclude noexport
- #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
- #+LINK_UP:   
- #+LINK_HOME: 
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+TITLE:  Challenges Your Kubernetes Skills
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:   
+#+LINK_HOME: 
 * Discussions for k8s features                                     :noexport:
 ** TODO Difficulties deploying windows based workloads
 ** TODO volume security
