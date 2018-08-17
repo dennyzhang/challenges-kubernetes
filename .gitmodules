@@ -1,0 +1,15 @@
+[submodule "challenges-k8s-istio"]
+	path = challenges-k8s-istio
+	url = git@github.com:dennyzhang/challenges-k8s-istio.git
+[submodule "prepare-k8s-cka"]
+	path = prepare-k8s-cka
+	url = git@github.com:dennyzhang/prepare-k8s-cka.git
+[submodule "challenges-k8s-monitoring"]
+	path = challenges-k8s-monitoring
+	url = git@github.com:dennyzhang/challenges-k8s-monitoring.git
+[submodule "kubernetes-security-practice"]
+	path = kubernetes-security-practice
+	url = git@github.com:dennyzhang/kubernetes-security-practice.git
+[submodule "challenges-k8s-crd"]
+	path = challenges-k8s-crd
+	url = git@github.com:dennyzhang/challenges-k8s-crd.git
