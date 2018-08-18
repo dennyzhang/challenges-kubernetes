@@ -19,3 +19,6 @@
 [submodule "challenges-k8s-storage"]
 	path = challenges-k8s-storage
 	url = git@github.com:dennyzhang/challenges-k8s-storage.git
+[submodule "cheatsheet-docker-A4"]
+	path = cheatsheet-docker-A4
+	url = git@github.com:dennyzhang/cheatsheet-docker-A4.git
