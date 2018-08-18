@@ -16,3 +16,6 @@
 [submodule "challenges-k8s-security"]
 	path = challenges-k8s-security
 	url = git@github.com:dennyzhang/challenges-k8s-security.git
+[submodule "challenges-k8s-storage"]
+	path = challenges-k8s-storage
+	url = git@github.com:dennyzhang/challenges-k8s-storage.git
