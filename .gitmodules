@@ -13,3 +13,6 @@
 [submodule "challenges-k8s-crd"]
 	path = challenges-k8s-crd
 	url = git@github.com:dennyzhang/challenges-k8s-crd.git
+[submodule "cheatsheet-kubernetes-A4"]
+	path = cheatsheet-kubernetes-A4
+	url = git@github.com:dennyzhang/cheatsheet-kubernetes-A4.git

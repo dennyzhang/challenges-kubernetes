@@ -2,7 +2,7 @@
 ** Kubernetes Topics
 github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
 
-[[https://cdn.dennyzhang.com/images/github/k8s_github_repo.png]]
+[[https://cdn.dennyzhang.com/images/github/k8s_github_repo.png][https://github.com/topics/denny-kubernetes]]
 
 ** Kubernetes Workshop
  #+BEGIN_HTML
