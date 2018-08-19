@@ -29,7 +29,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  4. Get familiar with k8s dashboard. Find pods from GUI, check nginx log.
  #+END_EXAMPLE
 
- - See [kubernetes.yaml](bootcamp/Scenario-101/kubernetes.yaml)
+ - See [[https://github.com/dennyzhang/challenges-kubernetes/tree/master/bootcamp/Scenario-101][bootcamp/Scenario-101]]
  - Main Tech: minikube, nginx, dashboard
  - See more: [[bootcamp/Scenario-101][bootcamp/Scenario-101]]
 
@@ -43,7 +43,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  4. When db server is recreated, make sure no data loss.
  #+END_EXAMPLE
 
- - See [kubernetes.yaml](Scenario-102/kubernetes.yaml)
+ - See [[https://github.com/dennyzhang/challenges-kubernetes/tree/master/bootcamp/Scenario-102][bootcamp/Scenario-102]]
  - Main Tech: minikube, mysql, volume
  - See more: [[bootcamp/Scenario-102][bootcamp/Scenario-102]]
 
@@ -60,7 +60,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  3. Make sure we can create no more than 1 pods for DB server. (Hint: ResourceQuota)
  #+END_EXAMPLE
 
- - See [kubernetes.yaml](Scenario-103/kubernetes.yaml)
+ - See [[https://github.com/dennyzhang/challenges-kubernetes/tree/master/bootcamp/Scenario-103][bootcamp/Scenario-103]]
  - Main Tech: minikube, mysql, volume, Job
  - See more: [[bootcamp/Scenario-103][bootcamp/Scenario-103]]
 
@@ -105,7 +105,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  #+END_EXAMPLE
 
  - Main Tech:
- - See more: [[bootcamp/Scenario-203][bootcamp/Scenario-203]]
+ - See more: [[https://github.com/dennyzhang/challenges-kubernetes/tree/master/bootcamp/Scenario-203][bootcamp/Scenario-203]]
  - TODO
 
 *** Scenario-301: Use helm To Deploy Service I
@@ -133,7 +133,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  #+END_EXAMPLE
 
  - Main Tech: minikube, helm, volume
- - See more: [[bootcamp/Scenario-302][bootcamp/Scenario-302]]
+ - See more: [[https://github.com/dennyzhang/challenges-kubernetes/tree/master/bootcamp/Scenario-302][bootcamp/Scenario-302]]
 
 *** Scenario-303: Use helm To Deploy Service III
  - Objective: HA deployemnt with helm
@@ -156,7 +156,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  #+END_EXAMPLE
 
  - Main Tech: helm, volume
- - See more: [[bootcamp/Scenario-304][bootcamp/Scenario-304]]
+ - See more: [[https://github.com/dennyzhang/challenges-kubernetes/tree/master/bootcamp/Scenario-304][bootcamp/Scenario-304]]
  - TODO
 
  #+BEGIN_HTML
@@ -175,7 +175,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  #+END_EXAMPLE
 
  - Main Tech:
- - See more: [[bootcamp/Scenario-401][bootcamp/Scenario-401]]
+ - See more: [[https://github.com/dennyzhang/challenges-kubernetes/tree/master/bootcamp/Scenario-401][bootcamp/Scenario-401]]
  - TODO
 
  #+BEGIN_HTML
@@ -194,7 +194,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  #+END_EXAMPLE
 
  - Main Tech:
- - See more: [[bootcamp/Scenario-402][bootcamp/Scenario-402]]
+ - See more: [[https://github.com/dennyzhang/challenges-kubernetes/tree/master/bootcamp/Scenario-402][bootcamp/Scenario-402]]
  - TODO
 
 *** Scenario-501: Day2 Mission: Setup Prometheus monitoring
@@ -218,7 +218,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  #+END_EXAMPLE
 
  - Main Tech:
- - See more: [[bootcamp/Scenario-502][bootcamp/Scenario-502]]
+ - See more: [[https://github.com/dennyzhang/challenges-kubernetes/tree/master/bootcamp/Scenario-502][bootcamp/Scenario-502]]
  - TODO
  #+BEGIN_HTML
  <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_operator.png"/> </a>
