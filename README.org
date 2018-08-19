@@ -29,7 +29,6 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  4. Get familiar with k8s dashboard. Find pods from GUI, check nginx log.
  #+END_EXAMPLE
 
- - See [[https://github.com/dennyzhang/challenges-kubernetes/tree/master/bootcamp/Scenario-101][bootcamp/Scenario-101]]
  - Main Tech: minikube, nginx, dashboard
  - See more: [[bootcamp/Scenario-101][bootcamp/Scenario-101]]
 
@@ -43,7 +42,6 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  4. When db server is recreated, make sure no data loss.
  #+END_EXAMPLE
 
- - See [[https://github.com/dennyzhang/challenges-kubernetes/tree/master/bootcamp/Scenario-102][bootcamp/Scenario-102]]
  - Main Tech: minikube, mysql, volume
  - See more: [[bootcamp/Scenario-102][bootcamp/Scenario-102]]
 
@@ -60,7 +58,6 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  3. Make sure we can create no more than 1 pods for DB server. (Hint: ResourceQuota)
  #+END_EXAMPLE
 
- - See [[https://github.com/dennyzhang/challenges-kubernetes/tree/master/bootcamp/Scenario-103][bootcamp/Scenario-103]]
  - Main Tech: minikube, mysql, volume, Job
  - See more: [[bootcamp/Scenario-103][bootcamp/Scenario-103]]
 
