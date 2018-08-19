@@ -4,7 +4,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
 
 [[https://github.com/topics/denny-kubernetes][https://cdn.dennyzhang.com/images/github/k8s_github_repo.png]]
 
-** Kubernetes Workshop
+** Kubernetes BootCamp
  #+BEGIN_HTML
  <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
  <a href="https://github.com/DennyZhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
@@ -29,9 +29,9 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  4. Get familiar with k8s dashboard. Find pods from GUI, check nginx log.
  #+END_EXAMPLE
 
- - See [kubernetes.yaml](Workshop/Scenario-101/kubernetes.yaml)
+ - See [kubernetes.yaml](bootcamp/Scenario-101/kubernetes.yaml)
  - Main Tech: minikube, nginx, dashboard
- - See more: [[Workshop/Scenario-101][Workshop/Scenario-101]]
+ - See more: [[bootcamp/Scenario-101][bootcamp/Scenario-101]]
 
 *** Scenario-102: 1-Node K8S Deployment II
  - Objective: Single node deployment for stateful service
@@ -45,7 +45,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
 
  - See [kubernetes.yaml](Scenario-102/kubernetes.yaml)
  - Main Tech: minikube, mysql, volume
- - See more: [[Workshop/Scenario-102][Workshop/Scenario-102]]
+ - See more: [[bootcamp/Scenario-102][bootcamp/Scenario-102]]
 
  #+BEGIN_HTML
  <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
@@ -62,7 +62,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
 
  - See [kubernetes.yaml](Scenario-103/kubernetes.yaml)
  - Main Tech: minikube, mysql, volume, Job
- - See more: [[Workshop/Scenario-103][Workshop/Scenario-103]]
+ - See more: [[bootcamp/Scenario-103][bootcamp/Scenario-103]]
 
 *** Scenario-201: 3-Nodes K8S Deployment I
  - Objective: Know how to deployment k8s cluster env
@@ -74,7 +74,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  #+END_EXAMPLE
 
  - Main Tech:
- - See more: [[Workshop/Scenario-201][Workshop/Scenario-201]]
+ - See more: [[bootcamp/Scenario-201][bootcamp/Scenario-201]]
  #+BEGIN_HTML
  <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
  #+END_HTML
@@ -90,7 +90,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  #+END_EXAMPLE
 
  - Main Tech:
- - See more: [[Workshop/Scenario-202][Workshop/Scenario-202]]
+ - See more: [[bootcamp/Scenario-202][bootcamp/Scenario-202]]
  - TODO
 
 *** Scenario-203: 3-Nodes K8S Deployment II
@@ -105,7 +105,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  #+END_EXAMPLE
 
  - Main Tech:
- - See more: [[Workshop/Scenario-203][Workshop/Scenario-203]]
+ - See more: [[bootcamp/Scenario-203][bootcamp/Scenario-203]]
  - TODO
 
 *** Scenario-301: Use helm To Deploy Service I
@@ -117,7 +117,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  #+END_EXAMPLE
 
  - Main Tech: minikube, helm, volume
- - See more: [[Workshop/Scenario-301][Workshop/Scenario-301]]
+ - See more: [[bootcamp/Scenario-301][bootcamp/Scenario-301]]
 
  #+BEGIN_HTML
  <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
@@ -133,7 +133,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  #+END_EXAMPLE
 
  - Main Tech: minikube, helm, volume
- - See more: [[Workshop/Scenario-302][Workshop/Scenario-302]]
+ - See more: [[bootcamp/Scenario-302][bootcamp/Scenario-302]]
 
 *** Scenario-303: Use helm To Deploy Service III
  - Objective: HA deployemnt with helm
@@ -144,7 +144,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  #+END_EXAMPLE
 
  - Main Tech: helm, volume
- - See more: [[Workshop/Scenario-303][Workshop/Scenario-303]]
+ - See more: [[bootcamp/Scenario-303][bootcamp/Scenario-303]]
  - TODO
 
 *** Scenario-304: Use helm To Deploy Service IV
@@ -156,7 +156,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  #+END_EXAMPLE
 
  - Main Tech: helm, volume
- - See more: [[Workshop/Scenario-304][Workshop/Scenario-304]]
+ - See more: [[bootcamp/Scenario-304][bootcamp/Scenario-304]]
  - TODO
 
  #+BEGIN_HTML
@@ -175,7 +175,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  #+END_EXAMPLE
 
  - Main Tech:
- - See more: [[Workshop/Scenario-401][Workshop/Scenario-401]]
+ - See more: [[bootcamp/Scenario-401][bootcamp/Scenario-401]]
  - TODO
 
  #+BEGIN_HTML
@@ -194,7 +194,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  #+END_EXAMPLE
 
  - Main Tech:
- - See more: [[Workshop/Scenario-402][Workshop/Scenario-402]]
+ - See more: [[bootcamp/Scenario-402][bootcamp/Scenario-402]]
  - TODO
 
 *** Scenario-501: Day2 Mission: Setup Prometheus monitoring
@@ -206,7 +206,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  #+END_EXAMPLE
 
  - Main Tech:
- - See more: [[Workshop/Scenario-501][Workshop/Scenario-501]]
+ - See more: [[bootcamp/Scenario-501][bootcamp/Scenario-501]]
  - TODO
 
 *** Scenario-502: Day2 Mission: Prometheus Operator
@@ -218,7 +218,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  #+END_EXAMPLE
 
  - Main Tech:
- - See more: [[Workshop/Scenario-502][Workshop/Scenario-502]]
+ - See more: [[bootcamp/Scenario-502][bootcamp/Scenario-502]]
  - TODO
  #+BEGIN_HTML
  <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_operator.png"/> </a>

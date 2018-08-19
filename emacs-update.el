@@ -1,4 +1,3 @@
-;; https://github.com/DennyZhang/challenges-leetcode-interesting/blob/master/automate.sh
 ;; Invoke elisp from command line: /Applications/Emacs.app/Contents/MacOS/Emacs-x86_64-10_9 --batch -l ../update_md.el
 ;;
 ;; (add-to-list 'load-path "/Applications/Emacs.app/Contents/Resources/lisp/emacs-lisp")
