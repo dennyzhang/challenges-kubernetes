@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -e
 function refresh_wordpress() {
     echo "Use emacs to update README.ord"
     for f in $(ls -1t */README.org); do
@@ -12,7 +12,7 @@ function refresh_wordpress() {
 
 function git_push() {
     for d in $(ls -1); do
-        if [ -d "$d" ] && [ -d "$d/.git" ]; then
+        if [ -d "$d" ] && [ -f "$d/.git" ]; then
             cd "$d"
             echo "In ${d}, git commit and push"
             git commit -am "update doc"

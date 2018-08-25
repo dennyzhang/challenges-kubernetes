@@ -22,3 +22,6 @@
 [submodule "cheatsheet-docker-A4"]
 	path = cheatsheet-docker-A4
 	url = git@github.com:dennyzhang/cheatsheet-docker-A4.git
+[submodule "challenges-k8s-logging"]
+	path = challenges-k8s-logging
+	url = git@github.com:dennyzhang/challenges-k8s-logging.git
