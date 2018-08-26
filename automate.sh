@@ -24,6 +24,18 @@ function git_push() {
     done
 }
 
+function git_pull() {
+    for d in $(ls -1); do
+        if [ -d "$d" ] && [ -f "$d/.git" ] ; then
+            cd "$d"
+            echo "In ${d}, git commit and push"
+            git pull origin
+            cd ..
+        fi
+    done
+    git pull origin
+}
+
 function refresh_link() {
     echo "refresh link"
     cd problems
@@ -54,18 +66,4 @@ function refresh_link() {
 cd .
 
 action=${1?}
-case "$action" in 
-    refresh_wordpress)
-        refresh_wordpress
-        ;;
-    refresh_link)
-        refresh_link
-        ;;
-    git_push)
-        git_push
-        ;;
-        *) 
-            echo "ERROR: no matched action."
-            exit 1
-        ;;
-esac
+eval "$action"
