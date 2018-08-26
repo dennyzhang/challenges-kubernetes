@@ -25,3 +25,6 @@
 [submodule "challenges-k8s-logging"]
 	path = challenges-k8s-logging
 	url = git@github.com:dennyzhang/challenges-k8s-logging.git
+[submodule "kubernetes-scripts"]
+	path = kubernetes-scripts
+	url = git@github.com:dennyzhang/kubernetes-scripts.git
