@@ -273,4 +273,6 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
 ** TODO Difficulties deploying windows based workloads
 ** TODO volume security
 ** TODO kubectl namespace security
-* TODO export challenges-k8s-networking as github                  :noexport:
+* TODO export folder to github repo                                :noexport:
+** TODO export challenges-k8s-networking to github                 :noexport:
+** TODO export challenges-k8s-storage to github

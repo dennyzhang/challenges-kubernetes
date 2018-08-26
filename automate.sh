@@ -5,7 +5,7 @@ function refresh_wordpress() {
         echo "Update $f"
         dirname=$(basename $(dirname $f))
         cd $dirname
-        /Applications/Emacs.app/Contents/MacOS/Emacs-x86_64-10_10 --batch -l ./emacs-update.el
+        /Applications/Emacs.app/Contents/MacOS/Emacs-x86_64-10_10 --batch -l ../emacs-update.el
         cd ..
     done
 }
