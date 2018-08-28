@@ -1,0 +1,83 @@
+* Deep Dive Into Kubernetes Source Code                             :Concept:
+:PROPERTIES:
+:type:     networking
+:END:
+
+Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-sourcecode, Category: [[https://kubernetes.dennyzhang.com/category/concept][concept]]
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/challenges-kubernetes"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+File me [[https://github.com/DennyZhang/kubernetes-security-practice/issues][Issues]] or star [[https://github.com/DennyZhang/kubernetes-security-practice][this repo]].
+
+See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubernetes][denny-kubernetes]]
+** Code Structure
+| Name                 | Summary                                                                |
+|----------------------+------------------------------------------------------------------------|
+| Cloud provider       | [[https://github.com/kubernetes/kubernetes/tree/cd06419973297dd1f65d1e47e9a3363bfbbcc899/pkg/cloudprovider/providers][kubernetes/pkg/cloudprovider/providers]]                                 |
+| kubelet.go           | [[https://github.com/kubernetes/kubernetes/blob/cd06419973297dd1f65d1e47e9a3363bfbbcc899/pkg/kubelet/kubelet.go][kubernetes/pkg/kubelet/kubelet.go]]                                      |
+| CRD                  | [[https://github.com/kubernetes/kubernetes/tree/cd06419973297dd1f65d1e47e9a3363bfbbcc899/staging/src/k8s.io/apiextensions-apiserver/pkg/registry/customresource][staging/src/k8s.io/apiextensions-apiserver/pkg/registry/customresource]] |
+| kubectl              | [[https://github.com/kubernetes/kubernetes/tree/cd06419973297dd1f65d1e47e9a3363bfbbcc899/pkg/kubectl][kubernetes/pkg/kubectl]]                                                 |
+| kubectl describe pod | [[https://github.com/kubernetes/kubernetes/blob/cd06419973297dd1f65d1e47e9a3363bfbbcc899/pkg/printers/internalversion/describe.go][kubernetes/pkg/printers/internalversion/describe.go]]                    |
+
+** Align Up With Upstream
+| Name            | Summary                                                                           |
+|-----------------+-----------------------------------------------------------------------------------|
+| Release Note    | https://kubernetes.io/docs/setup/release/notes/                                   |
+| Milestones      | https://github.com/kubernetes/kubernetes/milestones/                              |
+| Design Proposal | https://github.com/kubernetes/community/tree/master/contributors/design-proposals |
+
+** Questions
+*** Allows all containers in a pod to share a process namespace
+ https://github.com/kubernetes/kubernetes/blob/9edf196c017c12ade054f6b5ecdc7ffcb66ee94d/pkg/features/kube_features.go#L117
+*** why describe pod is multiple API calls
+*** how kubelet makes sure resource status consistent with the declaration?
+** controller demo
+https://github.com/aaronlevy/kube-controller-demo
+** More Resources
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:   
+#+LINK_HOME: 
+* TODO Blog: Catch up with k8s upstream                            :noexport:
+** Check k8s code to get all feature candidates
+https://github.com/kubernetes/kubernetes/blob/master/pkg/features/kube_features.go#L369-L437
+** Check Release Notes
+** Dig out how the feature is implemented
+- Google: github "Enable container log rotation for cri container runtime"
+- Find ticket link
+- Find PR link
+
+https://github.com/kubernetes/kubernetes/pull/59898/files
+Add CRI container log rotation support
+
+** Google for Github and kubernetes.io website
+** How I know whether I'm using a minor feature which might get deprecated?
+** TODO Try minikube for latest k8s
+** Where to get help: https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
+** Try in GKE
