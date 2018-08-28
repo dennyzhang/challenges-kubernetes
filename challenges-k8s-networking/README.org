@@ -21,6 +21,9 @@ Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-networking, Category:
 File me [[https://github.com/DennyZhang/kubernetes-security-practice/issues][Issues]] or star [[https://github.com/DennyZhang/kubernetes-security-practice][this repo]].
 
 See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubernetes][denny-kubernetes]]
+** Questions
+*** What IPVS-based load balancing is?
+https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.11.md#sig-network
 ** Pod & Container networking
 https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/
 

@@ -275,4 +275,9 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
 ** TODO kubectl namespace security
 * TODO export folder to github repo                                :noexport:
 ** TODO export challenges-k8s-networking to github                 :noexport:
-** TODO export challenges-k8s-storage to github
+** TODO export challenges-k8s-sourcecode to github                 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* Blog: 10 Kubenetes Depcreated Features, But I still miss them    :noexport:
+** gitRepo
+https://github.com/kubernetes/kubernetes/issues/17676#issuecomment-228650586
+** heapster
