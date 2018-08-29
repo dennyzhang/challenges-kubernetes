@@ -1,6 +1,6 @@
 * Deep Dive Into Kubernetes Source Code                             :Concept:
 :PROPERTIES:
-:type:     networking
+:type:     code
 :END:
 
 Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-sourcecode, Category: [[https://kubernetes.dennyzhang.com/category/concept][concept]]
@@ -31,17 +31,31 @@ See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubern
 | kubectl describe pod | [[https://github.com/kubernetes/kubernetes/blob/cd06419973297dd1f65d1e47e9a3363bfbbcc899/pkg/printers/internalversion/describe.go][kubernetes/pkg/printers/internalversion/describe.go]]                    |
 
 ** Align Up With Upstream
-| Name            | Summary                                                                           |
-|-----------------+-----------------------------------------------------------------------------------|
-| Release Note    | https://kubernetes.io/docs/setup/release/notes/                                   |
-| Milestones      | https://github.com/kubernetes/kubernetes/milestones/                              |
-| Design Proposal | https://github.com/kubernetes/community/tree/master/contributors/design-proposals |
+| Name            | Summary                                                                                 |
+|-----------------+-----------------------------------------------------------------------------------------|
+| Release Note    | https://kubernetes.io/docs/setup/release/notes/                                         |
+| Milestones      | https://github.com/kubernetes/kubernetes/milestones?direction=asc&sort=title&state=open |
+| Design Proposal | https://github.com/kubernetes/community/tree/master/contributors/design-proposals       |
 
 ** Questions
 *** Allows all containers in a pod to share a process namespace
  https://github.com/kubernetes/kubernetes/blob/9edf196c017c12ade054f6b5ecdc7ffcb66ee94d/pkg/features/kube_features.go#L117
 *** why describe pod is multiple API calls
-*** how kubelet makes sure resource status consistent with the declaration?
+*** How often k8s perodically check the desired state?
+Once you've set your desired state, the Kubernetes Control Plane works to make the cluster's current state match the desired state.
+
+https://kubernetes.io/docs/concepts/
+
+A Kubernetes object is a "record of intent"–once you create the object, the Kubernetes system will constantly work to ensure that object exists.
+
+https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/
+** k8s go client
+*** pod watch interface
+client-go/kubernetes/typed/core/v1/pod.go
+*** pod put and pod patch
+client-go/kubernetes/typed/core/v1/pod.go
+*** Start a pod and run a REST kubelet API call
+client-go/rest/config.go
 ** controller demo
 https://github.com/aaronlevy/kube-controller-demo
 ** More Resources
@@ -81,3 +95,45 @@ Add CRI container log rotation support
 ** TODO Try minikube for latest k8s
 ** Where to get help: https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
 ** Try in GKE
+* k8s go client                                                    :noexport:
+** events
+https://github.com/kubernetes/client-go/blob/master/listers/core/v1/event.go
+** TODO Client-go does not use a Swagger generator. Instead, it uses source code generators
+source code generators are originated from the Kubernetes project, to create Kubernetes-style API objects and serializers.
+
+https://medium.com/programming-kubernetes/building-stuff-with-the-kubernetes-api-part-4-using-go-b1d0e3c1c899
+** sample: subscribe to events
+#+BEGIN_SRC go
+    ch := watcher.ResultChan()
+
+    fmt.Printf("--- PVC Watch (max claims %v) ----\n", maxClaimedQuant.String())
+    for event := range ch {
+	pvc, ok := event.Object.(*v1.PersistentVolumeClaim)
+	if !ok {
+		log.Fatal("unexpected type")
+	}
+	quant := pvc.Spec.Resources.Requests[v1.ResourceStorage]
+
+	switch event.Type {
+	case watch.Added:
+		totalClaimedQuant.Add(quant)
+		log.Printf("PVC %s added, claim size %s\n", pvc.Name, quant.String())
+
+		// is claim overage?
+		if totalClaimedQuant.Cmp(maxClaimedQuant) == 1 {
+			log.Printf("\nClaim overage reached: max %s at %s",
+				maxClaimedQuant.String(),
+				totalClaimedQuant.String(),
+			)
+			// trigger action
+			log.Println("*** Taking action ***")
+		}
+
+	case watch.Modified:
+		//log.Printf("Pod %s modified\n", pod.GetName())
+	case watch.Deleted:
+		quant := pvc.Spec.Resources.Requests[v1.ResourceStorage]
+		totalClaimedQuant.Sub(quant)
+#+END_SRC
+
+https://github.com/vladimirvivien/k8s-client-examples/blob/master/go/pvcwatch/main.go
