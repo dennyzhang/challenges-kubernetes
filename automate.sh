@@ -1,7 +1,8 @@
 #!/bin/bash -e
 function refresh_wordpress() {
-    echo "Use emacs to update README.ord"
-    for f in $(ls -1t */README.org); do
+    local max_days=${MAX_DAYS:-"7"}
+    echo "Use emacs to update README.org"
+    for f in $(find * -name 'README.org' -mtime -${max_days} | grep -v '^README.org$'); do
         echo "Update $f"
         dirname=$(basename $(dirname $f))
         cd $dirname
@@ -11,8 +12,6 @@ function refresh_wordpress() {
 }
 
 function git_push() {
-    git commit -am "update doc"
-    git push origin
     for d in $(ls -1); do
         if [ -d "$d" ] && [ -f "$d/.git" ]; then
             cd "$d"
@@ -22,6 +21,8 @@ function git_push() {
             cd ..
         fi
     done
+    git commit -am "update doc"
+    git push origin
 }
 
 function git_pull() {

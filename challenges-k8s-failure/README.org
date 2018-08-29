@@ -6,7 +6,7 @@
 Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-failure, Category: [[https://kubernetes.dennyzhang.com/category/concept][concept]]
 
 #+BEGIN_HTML
-<a href="https://github.com/dennyzhang/challenges-kubernetes"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<a href="https://github.com/dennyzhang/challenges-kubernetes/tree/master/challenges-k8s-failure"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
@@ -22,13 +22,13 @@ File me [[https://github.com/DennyZhang/kubernetes-security-practice/issues][Iss
 
 See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubernetes][denny-kubernetes]]
 ** Platform Failures
-| Name        | Summary                                                                           |
-|-------------+-----------------------------------------------------------------------------------|
-| Computing   | VM(s) shutdown                                                                    |
-| Network     | Network partition within cluster, or between cluster and users                    |
-| Application | Crashes in Kubernetes software                                                    |
-| Data        | Data loss or unavailability of persistent storage (e.g. GCE PD or AWS EBS volume) |
-| Human Error | Operator error, e.g. misconfigured Kubernetes software or application software    |
+| Name                 | Summary                                                                           |
+|----------------------+-----------------------------------------------------------------------------------|
+| Computing            | VM(s) shutdown                                                                    |
+| Network Failure      | Network partition within cluster, or between cluster and users                    |
+| Application Crash    | Crashes in Kubernetes software. (e.g Apiserver VM shutdown or apiserver crashing) |
+| Data Reliability     | Data loss or unavailability of persistent storage (e.g. GCE PD or AWS EBS volume) |
+| Operator Human Error | Operator error, e.g. misconfigured Kubernetes software or application software    |
 
 https://kubernetes.io/docs/tasks/debug-application-cluster/debug-cluster/#a-general-overview-of-cluster-failure-modes
 ** Deployment Failures

@@ -6,7 +6,7 @@
 Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-schedule, Category: [[https://kubernetes.dennyzhang.com/category/concept][concept]]
 
 #+BEGIN_HTML
-<a href="https://github.com/dennyzhang/challenges-kubernetes"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<a href="https://github.com/dennyzhang/challenges-kubernetes/tree/master/challenges-k8s-schedule"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
@@ -28,6 +28,9 @@ See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubern
 | Taints and Tolerations      | taint a node thus no pods can schedule onto it unless a pod explicitly "tolerates" it |
 | Reserve & Limits            |                                                                                       |
 ** Questions
+*** How Resource Quota is implemented for CPU millicores
+*** How Resource Quota is implemented for disk usage
+*** Cant I limit how much disk capcity one namespace can use?
 ** Reserve: Tell k8s your estimation for resource usage(CPU/RAM) per Pod
 https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
 
