@@ -10,12 +10,12 @@ Write A Series of Blog: Understand K8S beyond technical details
 # Proposed Topics For Writing
 
 ## [? & ?] 5 Major differences between public k8s service and on-premise service
-[https://github.com/dennyzhang/challenges-kubernetes/tree/master/misc/blog_ideas/k8s-public-private.md](blog_ideas/k8s-public-private.md)
+[blog_ideas/k8s-public-private.md](https://github.com/dennyzhang/challenges-kubernetes/tree/master/misc/blog_ideas/k8s-public-private.md)
 
 ## [? & ?] 6 must-check security suggestions when you run your k8s service
-[https://github.com/dennyzhang/challenges-kubernetes/tree/master/misc/blog_ideas/security-pratice.md](blog_ideas/security-pratice.md)
+[blog_ideas/security-pratice.md](https://github.com/dennyzhang/challenges-kubernetes/tree/master/misc/blog_ideas/security-pratice.md)
 
 ## [Denny]: Secret manage for enterprise users in Kubernetes world.
-[https://github.com/dennyzhang/challenges-kubernetes/tree/master/misc/blog_ideas/k8s-secrets.md](blog_ideas/k8s-secrets.md)
+[blog_ideas/k8s-secrets.md](https://github.com/dennyzhang/challenges-kubernetes/tree/master/misc/blog_ideas/k8s-secrets.md)
 
 ## ?
