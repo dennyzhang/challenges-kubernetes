@@ -36,17 +36,18 @@ See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubern
 | Release Note    | https://kubernetes.io/docs/setup/release/notes/                                         |
 | Milestones      | https://github.com/kubernetes/kubernetes/milestones?direction=asc&sort=title&state=open |
 | Design Proposal | https://github.com/kubernetes/community/tree/master/contributors/design-proposals       |
+| Open Tickets    | https://github.com/kubernetes/kubernetes/issues                                         |
 
 ** Questions
 *** Allows all containers in a pod to share a process namespace
- https://github.com/kubernetes/kubernetes/blob/9edf196c017c12ade054f6b5ecdc7ffcb66ee94d/pkg/features/kube_features.go#L117
+[[https://github.com/kubernetes/kubernetes/blob/9edf196c017c12ade054f6b5ecdc7ffcb66ee94d/pkg/features/kube_features.go#L117][kubernetes/pkg/features/kube_features.go]]
 *** why describe pod is multiple API calls
 *** How often k8s perodically check the desired state?
 Once you've set your desired state, the Kubernetes Control Plane works to make the cluster's current state match the desired state.
 
 https://kubernetes.io/docs/concepts/
 
-A Kubernetes object is a "record of intent"–once you create the object, the Kubernetes system will constantly work to ensure that object exists.
+A Kubernetes object is a "record of intent"-once you create the object, the Kubernetes system will constantly work to ensure that object exists.
 
 https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/
 ** k8s go client
