@@ -1,12 +1,12 @@
-* Kubernetes Networking                                             :Concept:
+* Kubernetes Federation                                             :Concept:
 :PROPERTIES:
-:type:     networking
+:type:     federation
 :END:
 
-Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-networking, Category: [[https://kubernetes.dennyzhang.com/category/concept][concept]]
+Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-federation, Category: [[https://kubernetes.dennyzhang.com/category/concept][concept]]
 
 #+BEGIN_HTML
-<a href="https://github.com/dennyzhang/challenges-kubernetes/tree/master/challenges-k8s-networking"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<a href="https://github.com/dennyzhang/challenges-kubernetes/tree/master/challenges-k8s-federation"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
@@ -21,30 +21,28 @@ Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-networking, Category:
 File me [[https://github.com/DennyZhang/kubernetes-security-practice/issues][Issues]] or star [[https://github.com/DennyZhang/kubernetes-security-practice][this repo]].
 
 See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubernetes][denny-kubernetes]]
-** CNI
-| Name     | Summary                                            |
-|----------+----------------------------------------------------|
-| [[https://github.com/coreos/flannel][flanneld]] | gre/vxlan (layer 2) networking                     |
-| [[https://github.com/projectcalico/calico][calico]]   | bgp (layer 3) networking.                          |
-| [[https://github.com/projectcalico/canal][canal]]    | a composition of calico and flannel plugins        |
-| [[https://github.com/cilium/cilium][cilium]]   | layer 3/4 networking                               |
-| [[https://github.com/contiv/install][contiv]]   | supports vlan, vxlan, bgp and Cisco SDN networking |
-| [[https://github.com/weaveworks/weave][weave]]    | a lightweight container overlay network that       |
-| [[https://docs.vmware.com/en/VMware-NSX-T/index.html][nsx-t]]    |                                                    |
+** Summary
+Kubernetes federation makes it easy to manage multiple clusters.
 
-[[https://kubernetes.io/docs/concepts/cluster-administration/networking/][link: Kubernetes Cluster Networking]]
-** Questions
-*** Network models: WaveNet vs NSX-T vs Calico
-*** What IPVS-based load balancing is?
-https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.11.md#sig-network
-** Ingress Service
-** Pod & Container networking
-https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/
+** Use Cases of k8s federations
+| Name                                 | Summary                                                    |
+|--------------------------------------+------------------------------------------------------------|
+| Low latency for geolocation traffic  | serve request from the cluster that is closest to visitors |
+| Avoid provider lock-in               | multiple vendors                                           |
+| Noisy neighborhood & fault isolation | break a large cluster to multiple small ones               |
 
-- Each Pod is assigned a unique IP address. 
-- Every container in a Pod shares the network namespace, including the IP address and network ports. 
-- Containers inside a Pod can communicate with one another using localhost.
+** Features of k8s federations
+| Name                           | Summary                                                         |
+|--------------------------------+-----------------------------------------------------------------|
+| Sync resources across clusters | keep resources for multiple k8s clusters                        |
+| Cross cluster discovery        | auto-configure DNS servers and load balancers from all clusters |
+
+** Question
+*** Where k8s federation v2 saves the information about shared resources?
+
 ** More Resources
+[[https://kubernetes.io/docs/concepts/cluster-administration/federation][link: Federation]]
+
 #+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
