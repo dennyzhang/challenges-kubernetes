@@ -3,8 +3,6 @@
 :type:     federation
 :END:
 
-Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-federation, Category: [[https://kubernetes.dennyzhang.com/category/concept][concept]]
-
 #+BEGIN_HTML
 <a href="https://github.com/dennyzhang/challenges-kubernetes/tree/master/challenges-k8s-federation"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 
@@ -18,10 +16,12 @@ Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-federation, Category:
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
+Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-federation, Category: [[https://kubernetes.dennyzhang.com/category/concept][concept]]
+
 File me [[https://github.com/DennyZhang/kubernetes-security-practice/issues][Issues]] or star [[https://github.com/DennyZhang/kubernetes-security-practice][this repo]].
 
 See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubernetes][denny-kubernetes]]
-** Summary
+** Kubernetes federation
 *Kubernetes federation* makes it easy to manage multiple k8s clusters. +Not multiple k8s namespaces+
 
 ** Use Cases of k8s federations
@@ -30,16 +30,24 @@ See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubern
 | Noisy neighborhood & fault isolation  | break a large cluster to multiple small ones               |
 | Low latency for geolocation traffic   | serve request from the cluster that is closest to visitors |
 | Avoid provider lock-in & hybrid cloud | multiple vendors                                           |
+| Enfaced security                      | Enforce different security policies for different clusters |
 
 ** Features of k8s federations
 | Name                           | Summary                                                         |
 |--------------------------------+-----------------------------------------------------------------|
 | Sync resources across clusters | keep resources for multiple k8s clusters                        |
 | Cross cluster discovery        | auto-configure DNS servers and load balancers from all clusters |
+** Disadvantages of k8s federations
+- Increased operational overhead
+- Raised complexities
 
+** Components
+| Name    | Summary                                                                         |
+|---------+---------------------------------------------------------------------------------|
+| [[https://kubernetes.io/docs/reference/setup-tools/kubefed/kubefed/][kubefed]] | command line to deploy new k8s clusters' control panels, or add/remove clusters |
 ** Question
 *** Where k8s federation v2 saves the information about shared resources?
-
+*** try kubefed tool to understand the workflow
 ** More Resources
 [[https://kubernetes.io/docs/concepts/cluster-administration/federation][link: Federation]]
 
