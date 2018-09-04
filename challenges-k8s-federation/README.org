@@ -42,9 +42,10 @@ See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubern
 - Raised complexities
 
 ** Components
-| Name    | Summary                                                                         |
-|---------+---------------------------------------------------------------------------------|
-| [[https://kubernetes.io/docs/reference/setup-tools/kubefed/kubefed/][kubefed]] | command line to deploy new k8s clusters' control panels, or add/remove clusters |
+| Name    | Summary                                                     |
+|---------+-------------------------------------------------------------|
+| [[https://kubernetes.io/docs/reference/setup-tools/kubefed/kubefed/][kubefed]] | the command line to control a Kubernetes Cluster Federation |
+
 ** Question
 *** Where k8s federation v2 saves the information about shared resources?
 *** try kubefed tool to understand the workflow
