@@ -22,14 +22,14 @@ File me [[https://github.com/DennyZhang/kubernetes-security-practice/issues][Iss
 
 See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubernetes][denny-kubernetes]]
 ** Summary
-Kubernetes federation makes it easy to manage multiple clusters.
+*Kubernetes federation* makes it easy to manage multiple k8s clusters. +Not multiple k8s namespaces+
 
 ** Use Cases of k8s federations
-| Name                                 | Summary                                                    |
-|--------------------------------------+------------------------------------------------------------|
-| Low latency for geolocation traffic  | serve request from the cluster that is closest to visitors |
-| Avoid provider lock-in               | multiple vendors                                           |
-| Noisy neighborhood & fault isolation | break a large cluster to multiple small ones               |
+| Name                                  | Summary                                                    |
+|---------------------------------------+------------------------------------------------------------|
+| Noisy neighborhood & fault isolation  | break a large cluster to multiple small ones               |
+| Low latency for geolocation traffic   | serve request from the cluster that is closest to visitors |
+| Avoid provider lock-in & hybrid cloud | multiple vendors                                           |
 
 ** Features of k8s federations
 | Name                           | Summary                                                         |
