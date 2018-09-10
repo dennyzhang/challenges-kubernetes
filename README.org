@@ -255,24 +255,20 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
 
  <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
  #+END_HTML
-* org-mode configuration                                           :noexport:
-#+STARTUP: overview customtime noalign logdone showall
-#+DESCRIPTION: 
-#+KEYWORDS: 
-#+AUTHOR: Denny Zhang
-#+EMAIL:  denny@dennyzhang.com
-#+TAGS: noexport(n)
-#+PRIORITIES: A D C
-#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+EXPORT_EXCLUDE_TAGS: exclude noexport
-#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+LINK_UP:   
-#+LINK_HOME: 
-* Discussions for k8s features                                     :noexport:
-** TODO Difficulties deploying windows based workloads
-** TODO volume security
-** TODO kubectl namespace security
+** org-mode configuration                                          :noexport:
+ #+STARTUP: overview customtime noalign logdone showall
+ #+DESCRIPTION: 
+ #+KEYWORDS: 
+ #+AUTHOR: Denny Zhang
+ #+EMAIL:  denny@dennyzhang.com
+ #+TAGS: noexport(n)
+ #+PRIORITIES: A D C
+ #+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+ #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+ #+EXPORT_EXCLUDE_TAGS: exclude noexport
+ #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+ #+LINK_UP:   
+ #+LINK_HOME: 
 * TODO export folder to github repo                                :noexport:
 ** TODO export challenges-k8s-networking to github                 :noexport:
 ** TODO export challenges-k8s-sourcecode to github                 :noexport:
@@ -282,4 +278,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
 https://github.com/kubernetes/kubernetes/issues/17676#issuecomment-228650586
 ** heapster
 * TODO How I can easily list all questions for k8s sub-domains     :noexport:
+* TODO manage sns bottom: /Users/zdenny/Dropbox/git_code/quiz.dennyzhang.com/posts/kubernetes-concept :noexport:
 * TODO Adsense page view count is so so wrong                      :noexport:
+* TODO less indentation: https://kubernetes.dennyzhang.com/challenges-k8s-federation :noexport:
+* TODO Put adsense to lower position: https://kubernetes.dennyzhang.com/challenges-k8s-monitoring :noexport:

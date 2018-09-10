@@ -28,6 +28,17 @@ See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubern
 | rkt        | https://github.com/rkt/rkt |
 | containerd | https://containerd.io/     |
 
+** Node condition
+| Name               | Summary                                                              |
+|--------------------+----------------------------------------------------------------------|
+| OutOfDisk          | whether insufficient free space on the node for adding new pods      |
+| Ready              | whether node is healthy and ready to accept pods: true/false/unknown |
+| MemoryPressure     | whether pressure exists on the node memory                           |
+| PIDPressure        | whether pressure exists on the processes                             |
+| DiskPressure       | whether pressure exists on the disk size                             |
+| NetworkUnavailable | whether the network for the node is not correctly configured         |
+| ConfigOK           | whether the kubelet is correctly configured                          |
+[[https://kubernetes.io/docs/concepts/architecture/nodes/#condition][link: Nodes - Condition]]
 ** Summary
 | Name                        | Summary                                                                               |
 |-----------------------------+---------------------------------------------------------------------------------------|
@@ -44,8 +55,8 @@ and collective resource requirements, hardware/software/policy
 constraints, affinity and anti-affinity specifications, data locality,
 inter-workload interference and deadlines
 #+END_EXAMPLE
-
 ** Questions
+*** "kubectl drain" vs "kubectl cordon"?
 *** How Resource Quota is implemented for CPU millicores
 *** How Resource Quota is implemented for disk usage
 *** What bootID and machineID are in "kubectl get node -o yaml"?
@@ -99,17 +110,18 @@ spec:
 
 <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 #+END_HTML
-* org-mode configuration                                           :noexport:
-#+STARTUP: overview customtime noalign logdone showall
-#+DESCRIPTION: 
-#+KEYWORDS: 
-#+AUTHOR: Denny Zhang
-#+EMAIL:  denny@dennyzhang.com
-#+TAGS: noexport(n)
-#+PRIORITIES: A D C
-#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+EXPORT_EXCLUDE_TAGS: exclude noexport
-#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+LINK_UP:   
-#+LINK_HOME: 
+** org-mode configuration                                          :noexport:
+ #+STARTUP: overview customtime noalign logdone showall
+ #+DESCRIPTION: 
+ #+KEYWORDS: 
+ #+AUTHOR: Denny Zhang
+ #+EMAIL:  denny@dennyzhang.com
+ #+TAGS: noexport(n)
+ #+PRIORITIES: A D C
+ #+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+ #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+ #+EXPORT_EXCLUDE_TAGS: exclude noexport
+ #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+ #+LINK_UP:   
+ #+LINK_HOME: 
+* TODO Difficulties deploying windows based workloads              :noexport:

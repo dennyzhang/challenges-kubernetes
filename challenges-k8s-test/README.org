@@ -22,12 +22,13 @@ File me [[https://github.com/DennyZhang/kubernetes-security-practice/issues][Iss
 
 See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubernetes][denny-kubernetes]]
 ** Summary
-| Name                  | Summary                                                                                      |
-|-----------------------+----------------------------------------------------------------------------------------------|
-| test-infra            | https://github.com/kubernetes/test-infra                                                     |
-| Node Conformance Test | Validates whether the node meets the minimum requirements for k8s. [[https://kubernetes.io/docs/setup/node-conformance][link: Validate Node Setup]] |
+| Name                  | Summary                                                                      |
+|-----------------------+------------------------------------------------------------------------------|
+| Node conformance test | Validates whether nodes meet minimum requirements. [[https://kubernetes.io/docs/setup/node-conformance][link: Validate Node Setup]] |
+| Performance test      | https://github.com/kubernetes/perf-tests                                     |
+| test-infra            | https://github.com/kubernetes/test-infra                                     |
 ** Questions
-*** How k8s run e2e tests and regression tests?
+*** How k8s implement e2e tests and regression tests?
 ** More Resources
 #+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>

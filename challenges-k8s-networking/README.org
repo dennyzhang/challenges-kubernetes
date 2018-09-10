@@ -21,20 +21,49 @@ Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-networking, Category:
 File me [[https://github.com/DennyZhang/kubernetes-security-practice/issues][Issues]] or star [[https://github.com/DennyZhang/kubernetes-security-practice][this repo]].
 
 See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubernetes][denny-kubernetes]]
+** Network Scenarios In Kubernetes
+| Name                                  | Summary                                              |
+|---------------------------------------+------------------------------------------------------|
+| Container-to-Container communications | This is solved by pods and localhost communications. |
+| Pod-to-Pod communications             |                                                      |
+| Pod-to-Service communications         |                                                      |
+| External-to-Service communications    |                                                      |
+
+[[https://kubernetes.io/docs/concepts/cluster-administration/networking/][link: Cluster Networking]]
+
 ** CNI
-| Name     | Summary                                            |
-|----------+----------------------------------------------------|
-| [[https://github.com/coreos/flannel][flanneld]] | gre/vxlan (layer 2) networking                     |
-| [[https://github.com/projectcalico/calico][calico]]   | bgp (layer 3) networking.                          |
-| [[https://github.com/projectcalico/canal][canal]]    | a composition of calico and flannel plugins        |
-| [[https://github.com/cilium/cilium][cilium]]   | layer 3/4 networking                               |
-| [[https://github.com/contiv/install][contiv]]   | supports vlan, vxlan, bgp and Cisco SDN networking |
-| [[https://github.com/weaveworks/weave][weave]]    | a lightweight container overlay network that       |
-| [[https://docs.vmware.com/en/VMware-NSX-T/index.html][nsx-t]]    |                                                    |
+| Name      | Summary                                                                                           |
+|-----------+---------------------------------------------------------------------------------------------------|
+| [[https://github.com/Huawei-PaaS/CNI-Genie][CNI-Genie]] | enables Kubernetes to seamlessly connect to a choice of CNI plugins                               |
+| [[https://github.com/coreos/flannel][flanneld]]  | gre/vxlan (layer 2) networking                                                                    |
+| [[https://github.com/projectcalico/calico][calico]]    | bgp (layer 3) networking.                                                                         |
+| [[https://github.com/projectcalico/canal][canal]]     | unites Flannel and Calico, providing networking and network policy.                               |
+| [[https://github.com/cilium/cilium][cilium]]    | layer 3/4 networking, also can enforce HTTP/API/L7 policies transparently.                        |
+| [[https://github.com/contiv/install][contiv]]    | supports vlan, vxlan, bgp and Cisco SDN networking                                                |
+| [[https://github.com/weaveworks/weave][weave]]     | a lightweight container overlay network that                                                      |
+| [[https://kubernetes.io/docs/concepts/cluster-administration/addons/][Weave Net]] | provides networking and network policy                                                            |
+|-----------+---------------------------------------------------------------------------------------------------|
+| [[https://github.com/nuagenetworks/nuage-kubernetes/blob/v5.1.1-1/docs/kubernetes-1-installation.rst][Nuage]]     | a SDN platform that provides policy-based networking between Pods and non-Kubernetes environments |
+| [[https://romana.io/][Romana]]    | a Layer 3 networking solution for pod networks                                                    |
+| [[https://github.com/noironetworks/aci-containers][ACI]]       | provides integrated container networking and network security with Cisco ACI                      |
+| [[https://docs.vmware.com/en/VMware-NSX-T/index.html][nsx-t]]     | Container Plug-in (NCP) provides integration between VMware NSX-T and container orchestrators     |
 
 [[https://kubernetes.io/docs/concepts/cluster-administration/networking/][link: Kubernetes Cluster Networking]]
+
+[[https://kubernetes.io/docs/concepts/cluster-administration/addons/][link: Installing Addons]]
+** Proxies In Kubernetes
+| Name                                           | Summary                                               |
+|------------------------------------------------+-------------------------------------------------------|
+| kubectl proxy                                  |                                                       |
+| apiserver proxy                                |                                                       |
+| kube proxy                                     | run on each node to make sure services are reachable  |
+| a proxy/load-balancer in front of apiserver(s) | acts as load balancer if there are several apiservers |
+| cloud load balancers on external services      | e.g, AWS ELB, Google Cloud Load Balancer              |
+[[https://kubernetes.io/docs/concepts/cluster-administration/proxies/][link: Proxies in Kubernetes]]
 ** Questions
 *** Network models: WaveNet vs NSX-T vs Calico
+*** Understand 5 different types of proxy services
+*** apiserver proxy: External users can access my pod directly. Is it true?
 *** What IPVS-based load balancing is?
 https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.11.md#sig-network
 ** Ingress Service
@@ -50,17 +79,17 @@ https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/
 
 <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 #+END_HTML
-* org-mode configuration                                           :noexport:
-#+STARTUP: overview customtime noalign logdone showall
-#+DESCRIPTION: 
-#+KEYWORDS: 
-#+AUTHOR: Denny Zhang
-#+EMAIL:  denny@dennyzhang.com
-#+TAGS: noexport(n)
-#+PRIORITIES: A D C
-#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+EXPORT_EXCLUDE_TAGS: exclude noexport
-#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+LINK_UP:   
-#+LINK_HOME: 
+** org-mode configuration                                          :noexport:
+ #+STARTUP: overview customtime noalign logdone showall
+ #+DESCRIPTION: 
+ #+KEYWORDS: 
+ #+AUTHOR: Denny Zhang
+ #+EMAIL:  denny@dennyzhang.com
+ #+TAGS: noexport(n)
+ #+PRIORITIES: A D C
+ #+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+ #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+ #+EXPORT_EXCLUDE_TAGS: exclude noexport
+ #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+ #+LINK_UP:   
+ #+LINK_HOME: 

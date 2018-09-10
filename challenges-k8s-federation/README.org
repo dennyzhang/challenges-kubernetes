@@ -22,15 +22,15 @@ File me [[https://github.com/DennyZhang/kubernetes-security-practice/issues][Iss
 
 See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubernetes][denny-kubernetes]]
 ** Kubernetes federation
-*Kubernetes federation* makes it easy to manage multiple k8s clusters. +Not multiple k8s namespaces+
+*Kubernetes federation* makes it easy to manage multiple k8s clusters.
 
 ** Use Cases of k8s federations
-| Name                                  | Summary                                                    |
-|---------------------------------------+------------------------------------------------------------|
-| Noisy neighborhood & fault isolation  | break a large cluster to multiple small ones               |
-| Low latency for geolocation traffic   | serve request from the cluster that is closest to visitors |
-| Avoid provider lock-in & hybrid cloud | multiple vendors                                           |
-| Enfaced security                      | Enforce different security policies for different clusters |
+| Name                                  | Summary                                                     |
+|---------------------------------------+-------------------------------------------------------------|
+| Noisy neighborhood & fault isolation  | break a large cluster into multiple small ones              |
+| Low latency for geolocation traffic   | serve requests from the cluster that is closest to visitors |
+| Avoid provider lock-in & hybrid cloud | multiple vendors                                            |
+| Enhanced security                     | Enforce different security policies for different clusters  |
 
 ** Features of k8s federations
 | Name                           | Summary                                                         |
@@ -49,6 +49,9 @@ See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubern
 ** Question
 *** Where k8s federation v2 saves the information about shared resources?
 *** try kubefed tool to understand the workflow
+** Facts
+- k8s federation is supposed to manage multiple clusters. +Not multiple k8s namespaces+
+- k8s federation won't handle server provisioning
 ** More Resources
 [[https://kubernetes.io/docs/concepts/cluster-administration/federation][link: Federation]]
 
