@@ -48,6 +48,8 @@ See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubern
 
 ** Question
 *** Where k8s federation v2 saves the information about shared resources?
+*** What are Limitations of Kubernetes Multi-tenancy?
+https://ahmet.im/blog/google-cloud-next-18/
 *** try kubefed tool to understand the workflow
 ** Facts
 - k8s federation is supposed to manage multiple clusters. +Not multiple k8s namespaces+

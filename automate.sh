@@ -2,7 +2,7 @@
 function refresh_wordpress() {
     local max_days=${MAX_DAYS:-"7"}
     echo "Use emacs to update README.org"
-    for f in $(find * -name 'README.org' -mtime -${max_days} | grep -v '^README.org$'); do
+    for f in $(find . -name 'README.org' -mtime -${max_days} | grep -v '^README.org$'); do
         echo "Update $f"
         dirname=$(basename $(dirname $f))
         cd $dirname
@@ -16,8 +16,8 @@ function git_push() {
         if [ -d "$d" ] && [ -f "$d/.git" ]; then
             cd "$d"
             echo "In ${d}, git commit and push"
-            git commit -am "update doc"
-            git push origin
+            git commit --amend --no-edit
+            git push origin master --force
             cd ..
         fi
     done
@@ -29,7 +29,7 @@ function git_pull() {
     for d in $(ls -1); do
         if [ -d "$d" ] && [ -f "$d/.git" ] ; then
             cd "$d"
-            echo "In ${d}, git commit and push"
+            echo "In ${d}, git pull"
             git pull origin
             cd ..
         fi

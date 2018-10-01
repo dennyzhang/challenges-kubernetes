@@ -24,7 +24,7 @@ Scenario-203: 3-Nodes K8S Deployment II
 3. Create a nightly job to backup elasticsearch cluster. (Hint: Cron Jobs)
 4. If any es instance has crashed, get alerts.
 ```
-<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
+<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/dennyzhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
 
 # Background & Highlights
 - Here we assume you know how to use and deployment elasticsearch cluster

@@ -218,7 +218,7 @@ github tag [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
  - See more: [[https://github.com/dennyzhang/challenges-kubernetes/tree/master/bootcamp/Scenario-502][bootcamp/Scenario-502]]
  - TODO
  #+BEGIN_HTML
- <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_operator.png"/> </a>
+ <a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/dennyzhang/challenges-kubernetes/master/images/k8s_operator.png"/> </a>
  #+END_HTML
 ** More Resources
  License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].

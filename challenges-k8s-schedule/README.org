@@ -21,6 +21,36 @@ Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-schedule, Category: [
 File me [[https://github.com/DennyZhang/kubernetes-security-practice/issues][Issues]] or star [[https://github.com/DennyZhang/kubernetes-security-practice][this repo]].
 
 See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubernetes][denny-kubernetes]]
+
+** Questions
+*** "kubectl drain" vs "kubectl cordon"?
+*** How Resource Quota is implemented for CPU millicores
+*** How Resource Quota is implemented for disk usage
+*** What bootID and machineID are in "kubectl get node -o yaml"?
+*** Pod Disruption Budgets are your friends.
+https://hackernoon.com/top-10-kubernetes-tips-and-tricks-27528c2d0222
+*** What are the capabilities of adminission controller?
+*** Cant I limit how much disk capcity one namespace can use?
+*** How it applies to VSphere?
+** Summary
+| Name                                 | Summary                                                                               |
+|--------------------------------------+---------------------------------------------------------------------------------------|
+| [[https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/][Pod Priority and Preemption]]          | Not all pods are equally important                                                    |
+| Pod Affinity/Anti-Affinity           | set rules on which nodes are selected by the scheduler                                |
+| Dedicated nodes (taints/tolerations) | taint a node thus no pods can schedule onto it unless a pod explicitly "tolerates" it |
+| Resource Quotas                      |                                                                                       |
+| Limit Ranges                         |                                                                                       |
+| Handler: PreStop & PostStart         |                                                                                       |
+| Reserve/Limits                       |                                                                                       |
+
+#+BEGIN_EXAMPLE
+https://kubernetes.io/docs/concepts/overview/components/#kube-scheduler
+
+Factors taken into account for scheduling decisions include individual
+and collective resource requirements, hardware/software/policy
+constraints, affinity and anti-affinity specifications, data locality,
+inter-workload interference and deadlines
+#+END_EXAMPLE
 ** CRI: Container Runtime
 | Name       | Summary                    |
 |------------+----------------------------|
@@ -39,28 +69,12 @@ See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubern
 | NetworkUnavailable | whether the network for the node is not correctly configured         |
 | ConfigOK           | whether the kubelet is correctly configured                          |
 [[https://kubernetes.io/docs/concepts/architecture/nodes/#condition][link: Nodes - Condition]]
-** Summary
-| Name                        | Summary                                                                               |
-|-----------------------------+---------------------------------------------------------------------------------------|
-| Node Affinity/Anti-Affinity | set rules on which nodes are selected by the scheduler                                |
-| Taints and Tolerations      | taint a node thus no pods can schedule onto it unless a pod explicitly "tolerates" it |
-| Reserve & Limits            |                                                                                       |
-| [[https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/][Pod Priority and Preemption]] | Not all pods are equally important                                                    |
+** k8s on bare metal
+Hyper-Converged Infrastructure
 
-#+BEGIN_EXAMPLE
-https://kubernetes.io/docs/concepts/overview/components/#kube-scheduler
-
-Factors taken into account for scheduling decisions include individual
-and collective resource requirements, hardware/software/policy
-constraints, affinity and anti-affinity specifications, data locality,
-inter-workload interference and deadlines
-#+END_EXAMPLE
-** Questions
-*** "kubectl drain" vs "kubectl cordon"?
-*** How Resource Quota is implemented for CPU millicores
-*** How Resource Quota is implemented for disk usage
-*** What bootID and machineID are in "kubectl get node -o yaml"?
-*** Cant I limit how much disk capcity one namespace can use?
+https://www.vmware.com/products/hyper-converged-infrastructure/dell-emc-vxrail.html
+** CCM(Cloud controller manager)
+https://kubernetes.io/docs/concepts/architecture/cloud-controller
 ** Reserve: Tell k8s your estimation for resource usage(CPU/RAM) per Pod
 https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
 

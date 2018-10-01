@@ -22,7 +22,7 @@ Scenario-201: 3-Nodes K8S Deployment I
    One as controller, the other two as worker
 2. Deploy k8s web UI, which is missing by default.
 ```
-<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
+<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/dennyzhang/challenges-kubernetes/master/images/k8s_concept3.png"/> </a>
 
 # Background & Highlights
 
