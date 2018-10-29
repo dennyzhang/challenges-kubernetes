@@ -23,7 +23,6 @@ File me [[https://github.com/DennyZhang/kubernetes-security-practice/issues][Iss
 See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubernetes][denny-kubernetes]]
 
 ** Questions
-*** "kubectl drain" vs "kubectl cordon"?
 *** How Resource Quota is implemented for CPU millicores
 *** How Resource Quota is implemented for disk usage
 *** What bootID and machineID are in "kubectl get node -o yaml"?
@@ -31,7 +30,23 @@ See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubern
 https://hackernoon.com/top-10-kubernetes-tips-and-tricks-27528c2d0222
 *** What are the capabilities of adminission controller?
 *** Cant I limit how much disk capcity one namespace can use?
+*** What Automatic binpacking mean?
+https://kubernetes.io/
+#+BEGIN_EXAMPLE
+Automatic binpacking
+
+Automatically places containers based on their resource requirements
+and other constraints, while not sacrificing availability. Mix
+critical and best-effort workloads in order to drive up utilization
+and save even more resources.
+#+END_EXAMPLE
 *** How it applies to VSphere?
+*** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+*** DONE "kubectl drain" vs "kubectl cordon"?
+    CLOSED: [2018-10-02 Tue 20:11]
+- kubectl drain: safely evict all of your pods from a node before you perform maintenance on the node 
+- kubectl cordon: Marking a node as unschedulable prevents new pods from being scheduled to that node, but does not affect any existing pods on the node. This is useful as a preparatory step before a node reboot, etc.
+https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/
 ** Summary
 | Name                                 | Summary                                                                               |
 |--------------------------------------+---------------------------------------------------------------------------------------|
@@ -52,11 +67,14 @@ constraints, affinity and anti-affinity specifications, data locality,
 inter-workload interference and deadlines
 #+END_EXAMPLE
 ** CRI: Container Runtime
-| Name       | Summary                    |
-|------------+----------------------------|
-| docker     | https://www.docker.com/    |
-| rkt        | https://github.com/rkt/rkt |
-| containerd | https://containerd.io/     |
+| Name          | Summary                    |
+|---------------+----------------------------|
+| docker        | https://www.docker.com/    |
+| rkt           | https://github.com/rkt/rkt |
+| containerd    | https://containerd.io/     |
+| cri-I         |                            |
+| katacontainer |                            |
+| CRX           |                            |
 
 ** Node condition
 | Name               | Summary                                                              |
@@ -118,6 +136,8 @@ spec:
         memory: "128Mi"
         cpu: "500m"
 #+END_EXAMPLE
+** KubeVirt: a Kubernetes addon that provides users the ability to schedule traditional virtual machine workloads side by side with container workloads. 
+https://kubernetes.io/blog/2018/07/27/kubevirt-extending-kubernetes-with-crds-for-virtualized-workloads/
 ** More Resources
 #+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
@@ -139,3 +159,13 @@ spec:
  #+LINK_UP:   
  #+LINK_HOME: 
 * TODO Difficulties deploying windows based workloads              :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* Blog: Kubernetes node lifecycle management
+** node affinity and anti-affinity
+** mark node as unschedulable
+- kubectl drain: safely evict all of your pods from a node before you perform maintenance on the node 
+- kubectl cordon: Marking a node as unschedulable prevents new pods from being scheduled to that node, but does not affect any existing pods on the node. This is useful as a preparatory step before a node reboot, etc.
+** Protect master node from platform admin
+** useful link
+https://banzaicloud.com/blog/drain/
+* TODO Question: kubectl drain node, why not achieve HA?           :noexport:

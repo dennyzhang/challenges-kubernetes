@@ -94,3 +94,4 @@ https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/
  #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
  #+LINK_UP:   
  #+LINK_HOME: 
+* TODO flannel networking https://blog.laputa.io/kubernetes-flannel-networking-6a1cb1f8ec7c :noexport:
