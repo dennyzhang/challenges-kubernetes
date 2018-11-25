@@ -95,3 +95,4 @@ https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/
  #+LINK_UP:   
  #+LINK_HOME: 
 * TODO flannel networking https://blog.laputa.io/kubernetes-flannel-networking-6a1cb1f8ec7c :noexport:
+* TODO cheatsheet https://jimmysong.io/cheatsheets/networking      :noexport:
