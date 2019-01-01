@@ -1,6 +1,3 @@
-[submodule "challenges-k8s-istio"]
-	path = challenges-k8s-istio
-	url = git@github.com:dennyzhang/challenges-k8s-istio.git
 [submodule "prepare-k8s-cka"]
 	path = prepare-k8s-cka
 	url = git@github.com:dennyzhang/prepare-k8s-cka.git
