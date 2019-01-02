@@ -7,21 +7,12 @@
 [submodule "challenges-k8s-crd"]
 	path = challenges-k8s-crd
 	url = git@github.com:dennyzhang/challenges-k8s-crd.git
-[submodule "cheatsheet-kubernetes-A4"]
-	path = cheatsheet-kubernetes-A4
-	url = git@github.com:dennyzhang/cheatsheet-kubernetes-A4.git
 [submodule "challenges-k8s-storage"]
 	path = challenges-k8s-storage
 	url = git@github.com:dennyzhang/challenges-k8s-storage.git
-[submodule "cheatsheet-docker-A4"]
-	path = cheatsheet-docker-A4
-	url = git@github.com:dennyzhang/cheatsheet-docker-A4.git
 [submodule "challenges-k8s-logging"]
 	path = challenges-k8s-logging
 	url = git@github.com:dennyzhang/challenges-k8s-logging.git
 [submodule "kubernetes-scripts"]
 	path = kubernetes-scripts
 	url = git@github.com:dennyzhang/kubernetes-scripts.git
-[submodule "cheatsheet-gcp-A4"]
-	path = cheatsheet-gcp-A4
-	url = git@github.com:dennyzhang/cheatsheet-gcp-A4.git
